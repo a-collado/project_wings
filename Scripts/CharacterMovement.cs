@@ -5,14 +5,13 @@ using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.InputSystem;
 
-public class CharacterController : MonoBehaviour
+public class CharacterMovement : MonoBehaviour
 {
     // "SerializeField" hace que un elemento aparezca en el Inspector de Unity aunque este en privado.
 
     [SerializeField] private InputActionReference mouseButton, mousePosition;
     [SerializeField] private Camera cam;
     [SerializeField] private NavMeshAgent player;
-    [SerializeField] private Animator playerAnimator;
     [SerializeField] private GameObject targetDest; 
 
 
@@ -38,16 +37,4 @@ public class CharacterController : MonoBehaviour
         
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        //  Maquina de estados para las animaciones
-
-        if(player.velocity != Vector3.zero){    // Si la velocidad es no 0, se usa la animacion de caminar.
-            playerAnimator.SetBool("isWalking", true);
-        }else {                                 // En caso contrario, se usa la animacion de idle.
-            playerAnimator.SetBool("isWalking", false);
-        }
-    
-    }
 }
