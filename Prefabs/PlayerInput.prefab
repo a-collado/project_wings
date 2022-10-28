@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6274618712380854108}
   - component: {fileID: 86979974306944973}
+  - component: {fileID: 2033157892}
   m_Layer: 0
   m_Name: PlayerInput
   m_TagString: Untagged
@@ -62,3 +63,18 @@ MonoBehaviour:
   m_DefaultActionMap: Mouse
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
+--- !u!114 &2033157892
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3637212438884308108}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a4f95ceac9c1ef4a94e8142cfcd9c96, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cursor: {fileID: 2800000, guid: e20ff490d22c9a14a9cd5d8a98d76098, type: 3}
+  cursorClicked: {fileID: 2800000, guid: ed491f9e22768a34f975f99977a3f652, type: 3}
+  mouseButton: {fileID: -1790735768212070512, guid: 1a166ec957cf970478c372a33c3cb520, type: 3}
