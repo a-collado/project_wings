@@ -9,7 +9,16 @@ public class CharacterAnimation : MonoBehaviour
 
     private Animator playerAnimator;
     private NavMeshAgent player;
+/*
+    private void OnEnable() {
+        IInteractable._interaction += Interact();
+    }
 
+    private void OnDisable() {
+        IInteractable._interaction -= Interact();
+
+    }
+*/
     private void Start() {
         playerAnimator = gameObject.GetComponent<Animator>();
         player = gameObject.GetComponent<NavMeshAgent>();
@@ -27,4 +36,9 @@ public class CharacterAnimation : MonoBehaviour
         }
     
     }
+
+    public void Interact(){
+        playerAnimator.SetTrigger("interact");
+    }
+
 }

@@ -15,21 +15,29 @@ public class Interactor : MonoBehaviour
 
     private Collider[] _colliders = new Collider[3];
 
-    // Esta funcion detecta objetos interactuables en un cierto radio.
     private void Update() 
     {
         _numFound = Physics.OverlapSphereNonAlloc(gameObject.transform.position, 
-        _interactionPointRadius, _colliders, _interactableMask);
+        _interactionPointRadius, _colliders, _interactableMask);            // Detecta todosl os objetos en un radio dado al rededor del personaje.
 
-        if (_numFound > 0)
+        if (_numFound > 0)                                                  // Si se ha encontrado algun objeto
         {
-            var interactable = _colliders[0].GetComponent<IInteractable>();
-            if (interactable != null && InteractorClicked(interactable))
+            var interactable = _colliders[0].GetComponent<IInteractable>(); // Comprobas si es un objeto interactuable
+            if (interactable != null && InteractorClicked(interactable))    // Detectamos si lo estamos pulsando con el raton
             {
-                interactable.Interact();
+                interactable.Interact();                            // Interactuamos con el objeto
             }
         }
 
+    }
+
+    public bool inRange(IInteractable target){
+        for (int i = 0; i < _numFound; i++)                     // Miramos todos los objetos en nustro rango
+        {
+            var interactable = _colliders[i].GetComponent<IInteractable>();     // Miramos si son interactuables
+            if (interactable == target) return true;                            // Si lo son, devolvemos true
+        }
+        return false;
     }
 
     private bool InteractorClicked(IInteractable target){
