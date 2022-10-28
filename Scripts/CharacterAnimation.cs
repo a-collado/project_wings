@@ -9,6 +9,7 @@ public class CharacterAnimation : MonoBehaviour
 {
 
     [SerializeField] private InputActionReference powerButton;
+    [SerializeField] private GameObject powerAnim;
     private Animator playerAnimator;
     private NavMeshAgent player;
 
@@ -27,6 +28,7 @@ public class CharacterAnimation : MonoBehaviour
         playerAnimator = gameObject.GetComponent<Animator>();
         player = gameObject.GetComponent<NavMeshAgent>();
         objectPicked = false;
+        powerAnim.SetActive(true);
     }
 
     // Update is called once per frame
@@ -34,17 +36,17 @@ public class CharacterAnimation : MonoBehaviour
     {
         //  Maquina de estados para las animaciones
 
-        if(player.velocity != Vector3.zero){    // Si la velocidad es no 0, se usa la animacion de caminar.
+        if(player.velocity != Vector3.zero)    // Si la velocidad es no 0, se usa la animacion de caminar.
             playerAnimator.SetBool("isWalking", true);
-        }else {                                 // En caso contrario, se usa la animacion de idle.
+        else                                  // En caso contrario, se usa la animacion de idle.
             playerAnimator.SetBool("isWalking", false);
-        }
+        
 
-        /*if (powerButton.action.ReadValue<float>() > 0){
+        if (powerButton.action.ReadValue<float>() > 0)
+            powerAnim.SetActive(true);
+        else
+            powerAnim.SetActive(false);
             
-        }*/
-
-    
     }
 
     public void Interact(){

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class PickNDrop : MonoBehaviour, IInteractable
+public class Pick : MonoBehaviour, IInteractable
 {
 
     public UnityEvent interacted;
