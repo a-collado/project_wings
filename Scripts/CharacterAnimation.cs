@@ -2,13 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.InputSystem;
 
 [RequireComponent(typeof(Animator))]
 public class CharacterAnimation : MonoBehaviour
 {
 
+    [SerializeField] private InputActionReference powerButton;
     private Animator playerAnimator;
     private NavMeshAgent player;
+
+    private bool objectPicked;
 /*
     private void OnEnable() {
         IInteractable._interaction += Interact();
@@ -22,6 +26,7 @@ public class CharacterAnimation : MonoBehaviour
     private void Start() {
         playerAnimator = gameObject.GetComponent<Animator>();
         player = gameObject.GetComponent<NavMeshAgent>();
+        objectPicked = false;
     }
 
     // Update is called once per frame
@@ -34,11 +39,22 @@ public class CharacterAnimation : MonoBehaviour
         }else {                                 // En caso contrario, se usa la animacion de idle.
             playerAnimator.SetBool("isWalking", false);
         }
+
+        /*if (powerButton.action.ReadValue<float>() > 0){
+            
+        }*/
+
     
     }
 
     public void Interact(){
         playerAnimator.SetTrigger("interact");
+    }
+
+    public void pickObject(bool b){
+        objectPicked = b;
+        playerAnimator.SetBool("objectPicked", b);
+
     }
 
 }

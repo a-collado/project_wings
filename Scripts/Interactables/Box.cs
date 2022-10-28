@@ -10,5 +10,10 @@ public class Box : MonoBehaviour, IInteractable
         Debug.Log("Interacting with " + name);
         interacted.Invoke();
     }
+
+    public void Power()
+    {
+        Debug.Log("Using your power with " + name);
+    }
     
 }

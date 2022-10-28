@@ -7,7 +7,7 @@ public class Interactor : MonoBehaviour
 {
     [SerializeField] private float _interactionPointRadius = 1.5f;
     [SerializeField] private LayerMask _interactableMask;
-    [SerializeField] private InputActionReference mouseButton, mousePosition;
+    [SerializeField] private InputActionReference mouseButton, mousePosition, powerButton;
     [SerializeField] private Camera cam;
 
 
@@ -25,7 +25,10 @@ public class Interactor : MonoBehaviour
             var interactable = _colliders[0].GetComponent<IInteractable>(); // Comprobas si es un objeto interactuable
             if (interactable != null && InteractorClicked(interactable))    // Detectamos si lo estamos pulsando con el raton
             {
-                interactable.Interact();                            // Interactuamos con el objeto
+                interactable.Interact();                           // Interactuamos con el objeto
+            }
+            if (interactable != null && powerButton.action.ReadValue<float>() > 0){
+                interactable.Power();
             }
         }
 
