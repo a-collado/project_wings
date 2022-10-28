@@ -13,9 +13,11 @@ public class CharacterMovement : MonoBehaviour
     [SerializeField] private Camera cam;
     [SerializeField] private GameObject targetDest; 
     private NavMeshAgent player;
+    private Interactor interactor;
 
     private void Awake() {
         player = GetComponent<NavMeshAgent>();
+        interactor = GetComponent<Interactor>();
     }
 
     // Estos dos metodos son para utilizar el Input System
@@ -33,8 +35,13 @@ public class CharacterMovement : MonoBehaviour
         Ray ray = cam.ScreenPointToRay(mousePosition.action.ReadValue<Vector2>());    // Se dispara un rayo desde la camara a la posicion del raton
         RaycastHit hitPoint;
         if(Physics.Raycast(ray, out hitPoint))  // Si este rayo inpacta sobre cualquier geometria:
-        {             
-            Move(hitPoint);
+        {   
+            var interactable = hitPoint.transform.GetComponent<IInteractable>(); // Comprobas si es un objeto interactuable
+            if (!interactor.inRange(interactable))    // Detectamos si lo estamos pulsando con el raton
+            {
+                 Move(hitPoint);                         // Interactuamos con el objeto
+            }
+
         }
         
     }
