@@ -38,6 +38,7 @@ public class Interactor : MonoBehaviour
         for (int i = 0; i < _numFound; i++)                     // Miramos todos los objetos en nustro rango
         {
             var interactable = _colliders[i].GetComponent<IInteractable>();     // Miramos si son interactuables
+            Debug.Log(interactable);
             if (interactable == target) return true;                            // Si lo son, devolvemos true
         }
         return false;

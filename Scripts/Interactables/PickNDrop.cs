@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class Pick : MonoBehaviour, IInteractable
+public class PickNDrop : MonoBehaviour, IInteractable
 {
 
     public UnityEvent interacted;
@@ -23,15 +23,16 @@ public class Pick : MonoBehaviour, IInteractable
         gameObject.transform.localPosition = new Vector3(0.07f,0.87f,0.64f);
     }
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
+       public void drop(GameObject p){
+
+        if (p.transform.GetComponentInParent<Interactor>() != null)
+        {
+            p.transform.SetParent(gameObject.transform);
+            p.transform.localPosition = new Vector3(0f,0f,0f);
+            p.transform.rotation = Quaternion.identity;
+        }
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }
+
+
