@@ -6,19 +6,24 @@ using UnityEngine.InputSystem;
 public class Interactor : MonoBehaviour
 {
     [SerializeField] private float _interactionPointRadius = 1.5f;
-    [SerializeField] private LayerMask _interactableMask;
+    [SerializeField] private LayerMask _interactableMask, _triggerMask;
     [SerializeField] private InputActionReference mouseButton, mousePosition, powerButton;
     [SerializeField] private Camera cam;
 
 
     private int _numFound;
+    private int _numFoundT;
 
     private Collider[] _colliders = new Collider[3];
+    private Collider[] _triggers = new Collider[3];
 
     private void Update() 
     {
         _numFound = Physics.OverlapSphereNonAlloc(gameObject.transform.position, 
         _interactionPointRadius, _colliders, _interactableMask);            // Detecta todosl os objetos en un radio dado al rededor del personaje.
+
+        _numFoundT = Physics.OverlapSphereNonAlloc(gameObject.transform.position, 
+        _interactionPointRadius, _triggers, _triggerMask);            // Detecta todosl os objetos en un radio dado al rededor del personaje.
 
         if (_numFound > 0)                                                  // Si se ha encontrado algun objeto
         {
@@ -38,8 +43,16 @@ public class Interactor : MonoBehaviour
         for (int i = 0; i < _numFound; i++)                     // Miramos todos los objetos en nustro rango
         {
             var interactable = _colliders[i].GetComponent<IInteractable>();     // Miramos si son interactuables
-            Debug.Log(interactable);
             if (interactable == target) return true;                            // Si lo son, devolvemos true
+        }
+        return false;
+    }
+
+    public bool triggerInRange(Collider target){
+        for (int i = 0; i < _numFoundT; i++)                     // Miramos todos los objetos en nustro rango
+        {
+            var trigger = _triggers[i].GetComponent<Collider>();     // Miramos si son un collider
+            if (trigger == target && trigger.isTrigger) return true;                            // Si lo son, devolvemos true
         }
         return false;
     }

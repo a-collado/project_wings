@@ -37,7 +37,6 @@ public class CharacterMovement : MonoBehaviour
         if(Physics.Raycast(ray, out hitPoint))  // Si este rayo inpacta sobre cualquier geometria:
         {   
             var interactable = hitPoint.transform.GetComponent<IInteractable>(); // Comprobas si es un objeto interactuable
-            Debug.Log(interactable);
             if (!interactor.inRange(interactable))    // Detectamos si lo estamos pulsando con el raton
             {
                  Move(hitPoint);                         // Interactuamos con el objeto
