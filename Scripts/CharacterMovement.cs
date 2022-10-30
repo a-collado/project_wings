@@ -12,12 +12,17 @@ public class CharacterMovement : MonoBehaviour
     [SerializeField] private InputActionReference mouseButton, mousePosition;
     [SerializeField] private Camera cam;
     [SerializeField] private GameObject targetDest; 
+    [SerializeField] private CursorController cursorController;
+
     private NavMeshAgent player;
     private Interactor interactor;
+
+    private MeshRenderer destinationIcon;
 
     private void Awake() {
         player = GetComponent<NavMeshAgent>();
         interactor = GetComponent<Interactor>();
+        destinationIcon = targetDest.transform.GetChild(0).GetComponent<MeshRenderer>();
     }
 
     // Estos dos metodos son para utilizar el Input System
@@ -29,15 +34,31 @@ public class CharacterMovement : MonoBehaviour
         mouseButton.action.performed -= Click;
     }
 
+    private void Update() {
+    }
+
     // Esta funcion se llama cada vez que alguien pulse el boton de moverse (click izquierdo)
     private void Click(InputAction.CallbackContext obj)
     {
+        
         Ray ray = cam.ScreenPointToRay(mousePosition.action.ReadValue<Vector2>());    // Se dispara un rayo desde la camara a la posicion del raton
         RaycastHit hitPoint;
         if(Physics.Raycast(ray, out hitPoint))  // Si este rayo inpacta sobre cualquier geometria:
         {   
             var interactable = hitPoint.transform.GetComponent<IInteractable>(); // Comprobas si es un objeto interactuable
-            if (!interactor.inRange(interactable))    // Detectamos si lo estamos pulsando con el raton
+
+            if (mouseButton.action.ReadValue<float>() > 0)
+            {
+                destinationIcon.enabled = true;   // Mostramos el marcador    
+            }
+
+            if (interactable != null)                                            // Si el objeto es interactuable: 
+            {
+                cursorController.ChangeCursor(CursorController.Cursors.cursorClicked);          // Cambiamos el cursor
+                destinationIcon.enabled = false;  // No mostramos en marcador     
+            }
+
+            if (!interactor.inRange(interactable))    // Detectamos si esta en el rango del personaje
             {
                  Move(hitPoint);                         // Interactuamos con el objeto
             }

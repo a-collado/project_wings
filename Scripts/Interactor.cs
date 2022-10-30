@@ -10,7 +10,6 @@ public class Interactor : MonoBehaviour
     [SerializeField] private InputActionReference mouseButton, mousePosition, powerButton;
     [SerializeField] private Camera cam;
 
-
     private int _numFound;
     private int _numFoundT;
 
