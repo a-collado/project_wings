@@ -4,3 +4,4 @@ Para que todo funcione bien hay que importar los paquetes:
   - Cinemachine
   - Input System
   - Universal Render Pipeline
+  - com.unity.ai.navigation (experimental)
