@@ -18,4 +18,9 @@ public class TreetoGrow : MonoBehaviour, IInteractable
         powered.Invoke();
     }
 
+    public void ActivateObject(GameObject o)
+    {
+        o.GetComponent<Animator>().SetBool("hasGrown", true);
+        Debug.Log("Grow");
+    }
 }

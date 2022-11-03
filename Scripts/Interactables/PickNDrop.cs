@@ -23,7 +23,7 @@ public class PickNDrop : MonoBehaviour, IInteractable
         gameObject.transform.localPosition = new Vector3(0.07f,0.87f,0.64f);
     }
 
-       public void drop(GameObject p){
+    public void drop(GameObject p){
 
         if (p.transform.GetComponentInParent<Interactor>() != null)
         {
@@ -31,6 +31,12 @@ public class PickNDrop : MonoBehaviour, IInteractable
             p.transform.localPosition = new Vector3(0f,0f,0f);
             p.transform.rotation = Quaternion.identity;
         }
+    }
+
+    public void rotateObjectXN90(GameObject o)
+    {
+        o.transform.Rotate(new Vector3(-90,0,0));
+
     }
 
 }
