@@ -32,11 +32,16 @@ public class LevelManager : MonoBehaviour
 
     void Start()
     {
+
+
+        sequenceOkay = true;
+        key = true;
         //TestPlaying - Delete to play the complete level
+        /*
         key = true;
         stairsOut = false;
         numTorches = 1;
-        sequenceOkay = true;
+        */
     }
 
     void Update()
@@ -54,7 +59,7 @@ public class LevelManager : MonoBehaviour
         if (stairsOut)
         {
             //Unlock Obstacle
-            Destroy(stairsObstacle);
+            stairsObstacle.SetActive(false);
         }
         
     }
@@ -73,9 +78,9 @@ public class LevelManager : MonoBehaviour
     public void activateFountain()
     {
         if (key) {
-            water1.active = false;
-            water2.active = false;
-            waterObstacle.active = false;
+            water1.SetActive(false);
+            water2.SetActive(false);
+            waterObstacle.SetActive(false);
         }
     }
 
@@ -86,10 +91,10 @@ public class LevelManager : MonoBehaviour
         //activate path and delete obstacle
         if (sequenceOkay)
         {
-            path.active = true;
-            manivela1.active = true; ;
-            manivela2.active = true; ;
-            pathObstacle.active = false; ;
+            path.SetActive(true);
+            manivela1.SetActive(true);
+            manivela2.SetActive(true);
+            pathObstacle.SetActive(false);
 }
     }
 }
