@@ -10,7 +10,7 @@ public class Button : MonoBehaviour
     private void OnTriggerEnter(Collider other) {
 
         if (other.tag == "Player")
-            gameObject.transform.position =  new Vector3 (gameObject.transform.position.x, 1f ,gameObject.transform.position.z);// Aqui hay que poner una animacion
+            gameObject.transform.Translate(new Vector3(0, -0.4f, 0));// Aqui hay que poner una animacion
     }
 
     private void OnTriggerStay(Collider other) {
@@ -21,6 +21,6 @@ public class Button : MonoBehaviour
 
     private void OnTriggerExit(Collider other) {
          if (other.tag == "Player")
-            gameObject.transform.position =  new Vector3 (gameObject.transform.position.x, 1.379f ,gameObject.transform.position.z);// Aqui hay que poner una animacion  
+            gameObject.transform.Translate(new Vector3(0, 0.4f, 0));// Aqui hay que poner una animacion  
     }
 }
