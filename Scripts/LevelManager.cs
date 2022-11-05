@@ -16,6 +16,9 @@ public class LevelManager : MonoBehaviour
     public GameObject manivela1;
     public GameObject manivela2;
     public GameObject pathObstacle;
+    public GameObject portalA;
+    public GameObject portalB;
+    public GameObject portalPrefab;
 
     //States
     private int torchesPositioned = 0;
@@ -28,13 +31,15 @@ public class LevelManager : MonoBehaviour
     private float stairsCurrentDistance = 0;
     //Sequence
     private bool sequenceOkay = false;
-
+    private int[] sequence = new int[4];
+    private int currentSeq;
+    private bool _portalA, _portalB;
 
     void Start()
     {
 
-
-        sequenceOkay = true;
+        currentSeq = 0;
+        sequenceOkay = false;
         key = true;
         //TestPlaying - Delete to play the complete level
         /*
@@ -89,12 +94,57 @@ public class LevelManager : MonoBehaviour
     {
         //if combination okay
         //activate path and delete obstacle
-        if (sequenceOkay)
-        {
             path.SetActive(true);
             manivela1.SetActive(true);
             manivela2.SetActive(true);
             pathObstacle.SetActive(false);
-}
+    }
+
+    public void setSequence(int num){
+        int[] correctSeq = {1,2,3,4};
+        sequence[currentSeq] = num;
+        if(currentSeq == 3)
+        {
+            if (sequence[0] == correctSeq[0] && sequence[1] == correctSeq[1] && sequence[2] == correctSeq[2] && sequence[3] == correctSeq[3])
+                activatePortalPath();
+            else
+                currentSeq = 0;    
+        }
+        else    
+            currentSeq++;
+    }
+
+    public void checkPortalA(){
+
+        Debug.Log(portalA.transform.rotation.y);
+        if (portalA.transform.rotation.y >= -0.25  && portalA.transform.rotation.y <= -0.05)
+        {
+            Debug.Log("A");
+            manivela1.GetComponent<Rotation>().enable(false);
+            _portalA = true;
+            createPortal();
+        }
+        else
+            _portalA = false;    
+        
+    }
+
+    public void checkPortalB(){
+
+        Debug.Log(portalB.transform.rotation.y);
+        if (portalB.transform.rotation.y >= -0.17  && portalB.transform.rotation.y <= 0.16)
+        { 
+            Debug.Log("B");
+            manivela2.GetComponent<Rotation>().enable(false);
+            _portalB = true;
+            createPortal();
+        }
+        else
+            _portalB = false;
+    }
+
+    private void createPortal(){
+        if (_portalA && _portalB)
+            portalPrefab.SetActive(true);
     }
 }

@@ -19,6 +19,7 @@ public class FlowerTrail : MonoBehaviour
     private int flowerNumber;
     
     private void Start() {
+        flowerNumber = 0;
         player = gameObject.GetComponent<NavMeshAgent>();
         _lastFlower = player.transform.position;
     }    
@@ -37,7 +38,11 @@ public class FlowerTrail : MonoBehaviour
     }
 
     private void spawnFlower(){
-        int _randomFlower = 0; //Esto todabia no es random;
+
+        if(flowerNumber == 2)
+            flowerNumber = 0;
+        else    
+            flowerNumber++;        
 
         Vector3 from = this.transform.position;
         Vector3 to = new Vector3(this.transform.position.x, this.transform.position.y - (transform.localScale.y / 2.0f) + 
@@ -46,7 +51,7 @@ public class FlowerTrail : MonoBehaviour
 
         RaycastHit hit;
         if (Physics.Raycast(from, direction, out hit)){
-            GameObject flower = Instantiate(_flowerPrefabs[_randomFlower], hit.point, Quaternion.identity, flowerParent);
+            GameObject flower = Instantiate(_flowerPrefabs[flowerNumber], hit.point + new Vector3(0,0.1f,0), Quaternion.Euler(-90,0,0), flowerParent);
             _lastFlower = flower.transform.position;
         }
     }
