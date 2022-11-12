@@ -29,7 +29,7 @@ public class Rotation : MonoBehaviour, IInteractable
         //gameObject.transform.rotation = Quaternion.Slerp(gameObject.transform.rotation, rotation, Time.deltaTime);
         //Debug.Log(gameObject.transform.rotation);
         if (enabled)
-            toRotate.transform.rotation *= Quaternion.Euler(0,0.05f,0);
+            toRotate.transform.rotation *= Quaternion.Euler(0, 0, 0.05f);
         //Debug.Log(toRotate.transform.rotation);
     }
 

@@ -33,10 +33,17 @@ public class LevelManager : MonoBehaviour
     private bool sequenceOkay = false;
     private int[] sequence = new int[4];
     private int currentSeq;
+    //Portal
     private bool _portalA, _portalB;
+    public float portalAangle = 0;
+    public float portalBangle = 0;
+
 
     void Start()
     {
+        portalAangle = portalA.transform.rotation.eulerAngles.y;
+        portalBangle = portalB.transform.rotation.eulerAngles.y;
+
 
         currentSeq = 0;
         sequenceOkay = false;
@@ -51,6 +58,17 @@ public class LevelManager : MonoBehaviour
 
     void Update()
     {
+
+      /*
+        Debug.Log(portalA.transform.rotation.eulerAngles.y);
+        Quaternion angleA = portalA.transform.rotation;
+        angleA.eulerAngles = new Vector3(portalA.transform.rotation.eulerAngles.x, portalAangle, portalA.transform.rotation.eulerAngles.z);
+        portalA.transform.rotation = angleA;
+
+        Quaternion angleB = portalB.transform.rotation;
+        angleB.eulerAngles = new Vector3(portalB.transform.rotation.eulerAngles.x, portalBangle, portalB.transform.rotation.eulerAngles.z);
+        portalB.transform.rotation = angleB;
+        */
 
         //Step 1: Position Torches and then move stairs
         if (torchesPositioned >= numTorches && stairsCurrentDistance <= stairsMaxDistance && !stairsOut)
@@ -116,8 +134,9 @@ public class LevelManager : MonoBehaviour
 
     public void checkPortalA(){
 
-        Debug.Log(portalA.transform.rotation.y);
-        if (portalA.transform.rotation.y >= -0.25  && portalA.transform.rotation.y <= -0.05)
+        Debug.Log(portalA.transform.rotation.eulerAngles.y);
+        
+        if (portalA.transform.rotation.eulerAngles.y >= 607-360  && portalA.transform.rotation.eulerAngles.y <= 609 - 360)
         {
             Debug.Log("A");
             manivela1.GetComponent<Rotation>().enable(false);
@@ -125,14 +144,16 @@ public class LevelManager : MonoBehaviour
             createPortal();
         }
         else
-            _portalA = false;    
+            _portalA = false; 
+        
         
     }
 
     public void checkPortalB(){
 
-        Debug.Log(portalB.transform.rotation.y);
-        if (portalB.transform.rotation.y >= -0.17  && portalB.transform.rotation.y <= 0.16)
+        Debug.Log(portalB.transform.rotation.eulerAngles.y);
+        
+        if (portalB.transform.rotation.eulerAngles.y >= 424 - 360 && portalB.transform.rotation.eulerAngles.y <= 426 - 360)
         { 
             Debug.Log("B");
             manivela2.GetComponent<Rotation>().enable(false);
@@ -141,6 +162,7 @@ public class LevelManager : MonoBehaviour
         }
         else
             _portalB = false;
+        
     }
 
     private void createPortal(){
