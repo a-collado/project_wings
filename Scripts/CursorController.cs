@@ -19,8 +19,8 @@ public class CursorController : MonoBehaviour
 
     private void Update() {
 
-        if (!mouseButton.action.IsPressed())
-            ChangeCursor(Cursors.normalCursor);
+       // if (!mouseButton.action.IsPressed())
+       //     ChangeCursor(Cursors.normalCursor);
     }
 
     private void Awake() {

@@ -7,8 +7,9 @@ public class Interactor : MonoBehaviour
 {
     [SerializeField] private float _interactionPointRadius = 1.5f;
     [SerializeField] private LayerMask _interactableMask, _triggerMask;
-    [SerializeField] private InputActionReference mouseButton, mousePosition, powerButton;
+    [SerializeField] private InputActionReference mouseButton, mousePosition, powerButton, actionButton;
     [SerializeField] private Camera cam;
+    [SerializeField] private InteractablePrompt prompt;
 
     private int _numFound;
     private int _numFoundT;
@@ -18,6 +19,9 @@ public class Interactor : MonoBehaviour
 
     private void Update() 
     {
+        prompt.lookAtCamera(cam);
+        prompt.gameObject.GetComponent<MeshRenderer>().enabled = false;
+
         _numFound = Physics.OverlapSphereNonAlloc(gameObject.transform.position, 
         _interactionPointRadius, _colliders, _interactableMask);            // Detecta todosl os objetos en un radio dado al rededor del personaje.
 
@@ -27,6 +31,8 @@ public class Interactor : MonoBehaviour
         if (_numFound > 0)                                                  // Si se ha encontrado algun objeto
         {
             var interactable = _colliders[0].GetComponent<IInteractable>(); // Comprobas si es un objeto interactuable
+            setPrompt(_colliders[0].transform);
+
             if (interactable != null && InteractorClicked(interactable))    // Detectamos si lo estamos pulsando con el raton
             {
                 interactable.Interact();                           // Interactuamos con el objeto
@@ -57,7 +63,7 @@ public class Interactor : MonoBehaviour
     }
 
     private bool InteractorClicked(IInteractable target){
-        if (mouseButton.action.ReadValue<float>() > 0)
+        /*if (mouseButton.action.ReadValue<float>() > 0)
         {
             Ray ray = cam.ScreenPointToRay(mousePosition.action.ReadValue<Vector2>());    // Se dispara un rayo desde la camara a la posicion del raton
             RaycastHit hitPoint;
@@ -69,6 +75,13 @@ public class Interactor : MonoBehaviour
             }
         }
         return false;
+        */
+        return actionButton.action.ReadValue<float>() > 0;
+    }
+
+    private void setPrompt(Transform obj){
+        prompt.moveToObject(obj.transform);
+        prompt.gameObject.GetComponent<MeshRenderer>().enabled = true;
     }
 
     // Esta funcion dibuja el radio de interaccion
