@@ -7,7 +7,7 @@ public class Rotation : MonoBehaviour, IInteractable
 {
 
     public UnityEvent interacted;
-    private bool enabled = true;
+    private bool RotEnabled = true;
 
 
     public void Interact(){
@@ -21,14 +21,14 @@ public class Rotation : MonoBehaviour, IInteractable
     }
 
     public void enable(bool enable){
-        enabled = enable;
+        RotEnabled = enable;
     }
 
     public void Rotate(GameObject toRotate){
         //Quaternion rotation = Quaternion.Euler(0, 91, 0);
         //gameObject.transform.rotation = Quaternion.Slerp(gameObject.transform.rotation, rotation, Time.deltaTime);
         //Debug.Log(gameObject.transform.rotation);
-        if (enabled)
+        if (RotEnabled)
             toRotate.transform.rotation *= Quaternion.Euler(0, 0, 0.05f);
         //Debug.Log(toRotate.transform.rotation);
     }

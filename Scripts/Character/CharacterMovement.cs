@@ -11,7 +11,7 @@ public class CharacterMovement : MonoBehaviour
 
     [SerializeField] private InputActionReference mouseButton, mousePosition;
     [SerializeField] private Camera cam;
-    [SerializeField] private GameObject targetDest; 
+    [SerializeField] private Transform targetDest; 
     [SerializeField] private CursorController cursorController;
 
     private NavMeshAgent player;
@@ -34,9 +34,6 @@ public class CharacterMovement : MonoBehaviour
         mouseButton.action.performed -= Click;
     }
 
-    private void Update() {
-    }
-
     // Esta funcion se llama cada vez que alguien pulse el boton de moverse (click izquierdo)
     private void Click(InputAction.CallbackContext obj)
     {
@@ -49,26 +46,32 @@ public class CharacterMovement : MonoBehaviour
 
             if (mouseButton.action.ReadValue<float>() > 0)
             {
+                Animation destAnim = destinationIcon.GetComponentInChildren<Animation>();
+                destAnim.Stop();
+                destAnim.Play();
                 destinationIcon.enabled = true;   // Mostramos el marcador    
             }
 
             if (interactable != null)                                            // Si el objeto es interactuable: 
             {
-                cursorController.ChangeCursor(CursorController.Cursors.cursorClicked);          // Cambiamos el cursor
+                //cursorController.ChangeCursor(CursorController.Cursors.cursorClicked);          // Cambiamos el cursor
                 destinationIcon.enabled = false;  // No mostramos en marcador     
             }
 
+            /*
             if (!interactor.inRange(interactable))    // Detectamos si esta en el rango del personaje
             {
                  Move(hitPoint);                         // Interactuamos con el objeto
-            }
+            }*/
+
+            Move(hitPoint);
 
         }
         
     }
 
     private void Move(RaycastHit hitPoint){
-        targetDest.transform.position = hitPoint.point;     // Se mueve el GameObject "targetDest" a la posicion en la que ha golpeado el rayo
+        targetDest.position = hitPoint.point;     // Se mueve el GameObject "targetDest" a la posicion en la que ha golpeado el rayo
         player.SetDestination(hitPoint.point);              // El jugador se mueve hacia el esta posicion.
     }
 
