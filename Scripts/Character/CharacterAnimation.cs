@@ -54,7 +54,7 @@ public class CharacterAnimation : MonoBehaviour
 
     void Update()
     {
-        Debug.Log(velocity);
+        //Debug.Log(velocity);
         SynchronizeAnimationAndAgent();
         powerAnim.SetActive(powerButton.action.ReadValue<float>() > 0);
 
