@@ -5,16 +5,14 @@ using System.Collections;
 public class PlaceItemsToMove : Puzzle{
 
     
-    [SerializeField]
-    private GameObject[] objectsToPlace;
+    [SerializeField] private GameObject[] objectsToPlace;
     private int objectsPlaced;
-    [SerializeField]
-    private GameObject[] objectsToMove;
+    [SerializeField] private GameObject[] objectsToMove;
     
 
 
     
-    public override void Start() {
+    public void Start() {
         //Initialize Variables
         objectsPlaced = 0;
 
@@ -30,7 +28,12 @@ public class PlaceItemsToMove : Puzzle{
 
     }
 
-    public override void checkPuzzle() {
+    public override void initializeObjectPositions()
+    {
+        throw new System.NotImplementedException();
+    }
+
+    public void checkPuzzle() {
         objectsPlaced++;
 
         if (objectsPlaced == objectsToPlace.Length){

@@ -23,10 +23,10 @@ public class Interactor : MonoBehaviour
         prompt.gameObject.GetComponent<MeshRenderer>().enabled = false;
 
         _numFound = Physics.OverlapSphereNonAlloc(gameObject.transform.position, 
-        _interactionPointRadius, _colliders, _interactableMask);            // Detecta todosl os objetos en un radio dado al rededor del personaje.
+        _interactionPointRadius, _colliders, _interactableMask);            // Detecta todos los objetos en un radio dado alrededor del personaje.
 
         _numFoundT = Physics.OverlapSphereNonAlloc(gameObject.transform.position, 
-        _interactionPointRadius, _triggers, _triggerMask);            // Detecta todosl os objetos en un radio dado al rededor del personaje.
+        _interactionPointRadius, _triggers, _triggerMask);            // Detecta todos los objetos en un radio dado alrededor del personaje.
 
         if (_numFound > 0)                                                  // Si se ha encontrado algun objeto
         {
@@ -57,7 +57,7 @@ public class Interactor : MonoBehaviour
         for (int i = 0; i < _numFoundT; i++)                     // Miramos todos los objetos en nustro rango
         {
             var trigger = _triggers[i].GetComponent<Collider>();     // Miramos si son un collider
-            if (trigger == target && trigger.isTrigger) return true;                            // Si lo son, devolvemos true
+            if (trigger == target && trigger.isTrigger) return true;  // Si lo son, devolvemos true
         }
         return false;
     }
