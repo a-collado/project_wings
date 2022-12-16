@@ -7,18 +7,36 @@ public class DropZone : MonoBehaviour, IInteractable
 {
 
     //public UnityEvent interacted;
+
     private GameObject block;
     private GameObject player;
     private Inventory playerInventory;
 
+    private System.Diagnostics.Stopwatch stopWatch;
+    private bool actionPerformed;
+
     void Awake() {
         player = GameObject.FindGameObjectsWithTag("Player")[0];
         playerInventory = player.GetComponent<Inventory>();
+        stopWatch = new System.Diagnostics.Stopwatch();
+        stopWatch.Start();
+        actionPerformed = false;
+    }
+
+    void Update() {
+        double time = stopWatch.Elapsed.TotalMilliseconds/1000;
+        if(actionPerformed){
+            if(time > 0.2)
+            {
+                drop();
+            }
+            stopWatch.Restart();
+        }
+
     }
     public void Interact()
     {
-        //interacted.Invoke();
-        drop();
+        actionPerformed = true;
     }
 
     public void Power()
@@ -44,6 +62,10 @@ public class DropZone : MonoBehaviour, IInteractable
             block.transform.SetParent(player.transform);
             block.transform.localPosition = new Vector3(0.07f,0.87f,0.64f);
         }
+
+        
+        actionPerformed=false;
+
     }
 
     public GameObject getBlock() {

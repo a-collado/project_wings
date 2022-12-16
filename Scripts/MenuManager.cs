@@ -31,7 +31,7 @@ public class MenuManager : MonoBehaviour
             {
                 pauseGame();
             }
-        stopWatch.Restart();
+            stopWatch.Restart();
         }
     }
 

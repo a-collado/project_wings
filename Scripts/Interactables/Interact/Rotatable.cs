@@ -6,12 +6,17 @@ using UnityEngine.Events;
 public class Rotatable : MonoBehaviour, IInteractable
 {
 
-    public UnityEvent interacted;
+    //public UnityEvent interacted;
     private bool RotEnabled = true;
+    [SerializeField] private GameObject toRotate;
+    [SerializeField] private float lockRotAngle;
+    [SerializeField] private float angularSpeed = 0.05f;
 
 
     public void Interact(){
-        interacted.Invoke();
+        //interacted.Invoke();
+        rotate(toRotate);
+
     }
 
     public void Power()
@@ -23,12 +28,12 @@ public class Rotatable : MonoBehaviour, IInteractable
         RotEnabled = enable;
     }
 
-    public void Rotate(GameObject toRotate){
+    public void rotate(GameObject toRotate){
         //Quaternion rotation = Quaternion.Euler(0, 91, 0);
         //gameObject.transform.rotation = Quaternion.Slerp(gameObject.transform.rotation, rotation, Time.deltaTime);
         //Debug.Log(gameObject.transform.rotation);
         if (RotEnabled)
-            toRotate.transform.rotation *= Quaternion.Euler(0, 0, 0.05f);
+            toRotate.transform.rotation *= Quaternion.Euler(0, 0, angularSpeed);
         //Debug.Log(toRotate.transform.rotation);
     }
 
