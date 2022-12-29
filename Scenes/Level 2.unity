@@ -1032,24 +1032,6 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -870077520638187916, guid: db1b7a9c4327003499654368b1748f13, type: 3}
---- !u!1 &492953856 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1265379406494703150, guid: 940571d21d6368443b9cb87ef1faef4e, type: 3}
-  m_PrefabInstance: {fileID: 609071553}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &492953859
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 492953856}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 68e1ebdae9e10084ab439d9806a90ae4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerTransform: {fileID: 1285950411}
 --- !u!1 &502943581 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: f8c4318658919f94199edbd197565a72, type: 3}
@@ -1127,38 +1109,6 @@ PrefabInstance:
     - target: {fileID: 164935583621620424, guid: 940571d21d6368443b9cb87ef1faef4e, type: 3}
       propertyPath: m_Name
       value: NinjaController
-      objectReference: {fileID: 0}
-    - target: {fileID: 1265379406492907404, guid: 940571d21d6368443b9cb87ef1faef4e, type: 3}
-      propertyPath: m_CullingMask.m_Bits
-      value: 383
-      objectReference: {fileID: 0}
-    - target: {fileID: 1265379406494703148, guid: 940571d21d6368443b9cb87ef1faef4e, type: 3}
-      propertyPath: m_NavMeshData
-      value: 
-      objectReference: {fileID: 23800000, guid: 7eb45545745f22744af3f825f2ab9c33, type: 2}
-    - target: {fileID: 1265379406494703148, guid: 940571d21d6368443b9cb87ef1faef4e, type: 3}
-      propertyPath: m_UseGeometry
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1265379406494703148, guid: 940571d21d6368443b9cb87ef1faef4e, type: 3}
-      propertyPath: m_CollectObjects
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1265379406494703148, guid: 940571d21d6368443b9cb87ef1faef4e, type: 3}
-      propertyPath: m_LayerMask.m_Bits
-      value: 264
-      objectReference: {fileID: 0}
-    - target: {fileID: 1265379406494703148, guid: 940571d21d6368443b9cb87ef1faef4e, type: 3}
-      propertyPath: m_OverrideVoxelSize
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1265379407796239575, guid: 940571d21d6368443b9cb87ef1faef4e, type: 3}
-      propertyPath: m_CullingMask.m_Bits
-      value: 128
-      objectReference: {fileID: 0}
-    - target: {fileID: 4676164077818354527, guid: 940571d21d6368443b9cb87ef1faef4e, type: 3}
-      propertyPath: m_Drag
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7246053642718335205, guid: 940571d21d6368443b9cb87ef1faef4e, type: 3}
       propertyPath: m_RootOrder
@@ -2357,11 +2307,6 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: a1b0229281079c44795e4a208aaec2e6, type: 3}
   m_PrefabInstance: {fileID: 1280389565}
-  m_PrefabAsset: {fileID: 0}
---- !u!4 &1285950411 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 1586743303128465882, guid: 940571d21d6368443b9cb87ef1faef4e, type: 3}
-  m_PrefabInstance: {fileID: 609071553}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1331652283
 PrefabInstance:
