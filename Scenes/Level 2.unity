@@ -573,11 +573,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: f8c4318658919f94199edbd197565a72, type: 3}
       propertyPath: m_Layer
-      value: 7
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: f8c4318658919f94199edbd197565a72, type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 0
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f8c4318658919f94199edbd197565a72, type: 3}
@@ -695,7 +695,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: db1b7a9c4327003499654368b1748f13, type: 3}
       propertyPath: m_Layer
-      value: 7
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: db1b7a9c4327003499654368b1748f13, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: db1b7a9c4327003499654368b1748f13, type: 3}
@@ -817,6 +821,10 @@ PrefabInstance:
       value: Bridge
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 01fb5d1e4f1065a4db41954f603e5041, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 01fb5d1e4f1065a4db41954f603e5041, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
@@ -884,11 +892,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 9b6a36808a1455e42990323c6301306e, type: 3}
       propertyPath: m_Layer
-      value: 7
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 9b6a36808a1455e42990323c6301306e, type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 0
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9b6a36808a1455e42990323c6301306e, type: 3}
@@ -916,36 +924,6 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -8823167565974616915, guid: 9b6a36808a1455e42990323c6301306e, type: 3}
---- !u!114 &455724836
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 455724832}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7a5ac11cc976e418e8d13136b07e1f52, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_AgentTypeID: 0
-  m_CollectObjects: 2
-  m_Size: {x: 10, y: 10, z: 10}
-  m_Center: {x: 0, y: 2, z: 0}
-  m_LayerMask:
-    serializedVersion: 2
-    m_Bits: 128
-  m_UseGeometry: 1
-  m_DefaultArea: 0
-  m_IgnoreNavMeshAgent: 1
-  m_IgnoreNavMeshObstacle: 1
-  m_OverrideTileSize: 0
-  m_TileSize: 256
-  m_OverrideVoxelSize: 0
-  m_VoxelSize: 0.060000002
-  m_MinRegionArea: 2
-  m_NavMeshData: {fileID: 23800000, guid: 9a860a26558c6de41b1a22929d06e939, type: 2}
-  m_BuildHeightMesh: 0
 --- !u!1001 &468173256
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1003,11 +981,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: cce180da70a9ba942ae873839bbe8fdd, type: 3}
       propertyPath: m_Layer
-      value: 7
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: cce180da70a9ba942ae873839bbe8fdd, type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 0
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cce180da70a9ba942ae873839bbe8fdd, type: 3}
@@ -1040,36 +1018,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: db1b7a9c4327003499654368b1748f13, type: 3}
   m_PrefabInstance: {fileID: 393255966}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &491712039
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 491712035}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7a5ac11cc976e418e8d13136b07e1f52, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_AgentTypeID: 0
-  m_CollectObjects: 2
-  m_Size: {x: 10, y: 10, z: 10}
-  m_Center: {x: 0, y: 2, z: 0}
-  m_LayerMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_UseGeometry: 0
-  m_DefaultArea: 0
-  m_IgnoreNavMeshAgent: 1
-  m_IgnoreNavMeshObstacle: 1
-  m_OverrideTileSize: 0
-  m_TileSize: 256
-  m_OverrideVoxelSize: 0
-  m_VoxelSize: 0.060000002
-  m_MinRegionArea: 2
-  m_NavMeshData: {fileID: 23800000, guid: ed6fb6957c808f341b245b48a5d2c9b7, type: 2}
-  m_BuildHeightMesh: 0
 --- !u!64 &491712040
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -1084,6 +1032,24 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -870077520638187916, guid: db1b7a9c4327003499654368b1748f13, type: 3}
+--- !u!1 &492953856 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1265379406494703150, guid: 940571d21d6368443b9cb87ef1faef4e, type: 3}
+  m_PrefabInstance: {fileID: 609071553}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &492953859
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 492953856}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68e1ebdae9e10084ab439d9806a90ae4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerTransform: {fileID: 1285950411}
 --- !u!1 &502943581 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: f8c4318658919f94199edbd197565a72, type: 3}
@@ -1162,10 +1128,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: NinjaController
       objectReference: {fileID: 0}
+    - target: {fileID: 1265379406492907404, guid: 940571d21d6368443b9cb87ef1faef4e, type: 3}
+      propertyPath: m_CullingMask.m_Bits
+      value: 383
+      objectReference: {fileID: 0}
     - target: {fileID: 1265379406494703148, guid: 940571d21d6368443b9cb87ef1faef4e, type: 3}
       propertyPath: m_NavMeshData
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 23800000, guid: 7eb45545745f22744af3f825f2ab9c33, type: 2}
     - target: {fileID: 1265379406494703148, guid: 940571d21d6368443b9cb87ef1faef4e, type: 3}
       propertyPath: m_UseGeometry
       value: 1
@@ -1176,11 +1146,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1265379406494703148, guid: 940571d21d6368443b9cb87ef1faef4e, type: 3}
       propertyPath: m_LayerMask.m_Bits
-      value: 239
+      value: 264
       objectReference: {fileID: 0}
     - target: {fileID: 1265379406494703148, guid: 940571d21d6368443b9cb87ef1faef4e, type: 3}
       propertyPath: m_OverrideVoxelSize
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1265379407796239575, guid: 940571d21d6368443b9cb87ef1faef4e, type: 3}
+      propertyPath: m_CullingMask.m_Bits
+      value: 128
       objectReference: {fileID: 0}
     - target: {fileID: 4676164077818354527, guid: 940571d21d6368443b9cb87ef1faef4e, type: 3}
       propertyPath: m_Drag
@@ -2108,6 +2082,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Bridge_Stairs (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: f8c4318658919f94199edbd197565a72, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: f8c4318658919f94199edbd197565a72, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f8c4318658919f94199edbd197565a72, type: 3}
 --- !u!4 &1131567834 stripped
@@ -2376,6 +2358,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: a1b0229281079c44795e4a208aaec2e6, type: 3}
   m_PrefabInstance: {fileID: 1280389565}
   m_PrefabAsset: {fileID: 0}
+--- !u!4 &1285950411 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1586743303128465882, guid: 940571d21d6368443b9cb87ef1faef4e, type: 3}
+  m_PrefabInstance: {fileID: 609071553}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1331652283
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2430,6 +2417,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 9c5e1e92c0971654c8ce9e19ab0afb77, type: 3}
       propertyPath: m_Name
       value: Stairs
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 9c5e1e92c0971654c8ce9e19ab0afb77, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 9c5e1e92c0971654c8ce9e19ab0afb77, type: 3}
       propertyPath: m_StaticEditorFlags

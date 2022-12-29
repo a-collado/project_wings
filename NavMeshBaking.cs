@@ -14,10 +14,13 @@ public class NavMeshBaking : MonoBehaviour
         navMesh = this.gameObject.GetComponent<NavMeshSurface>();
     }
 
+    void Update(){
+        navMesh.gameObject.transform.position = playerTransform.position;
+    }
+
     // Update is called once per frame
     void FixedUpdate()
     {
-        navMesh.gameObject.transform.position = playerTransform.position;
         navMesh.BuildNavMesh();
     }
 }

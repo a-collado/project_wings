@@ -37,7 +37,7 @@ public class Rotatable : MonoBehaviour, IInteractable
         //gameObject.transform.rotation = Quaternion.Slerp(gameObject.transform.rotation, rotation, Time.deltaTime);
         //Debug.Log(gameObject.transform.rotation);
         if (RotEnabled){
-            toRotate.transform.rotation *= Quaternion.Euler(0, 0, angularSpeed*Time.deltaTime);
+            toRotate.transform.rotation *= Quaternion.Euler(0, angularSpeed*Time.deltaTime, 0);
             //Debug.Log(toRotate.transform.rotation.eulerAngles.y);
             if ((toRotate.transform.rotation.eulerAngles.y > lockRotAngle - 0.2) && (toRotate.transform.rotation.eulerAngles.y < lockRotAngle + 0.2)){
                 RotEnabled = false;
