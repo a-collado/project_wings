@@ -12,6 +12,11 @@ public class Vine : MonoBehaviour, IInteractable
     private Collider colliderB;
 
     public UnityEvent interacted;
+
+
+    public void Update() {
+
+    }
   public void Interact()
     {
         interacted.Invoke();
@@ -30,6 +35,14 @@ public class Vine : MonoBehaviour, IInteractable
             if (player.GetComponent<Interactor>().triggerInRange(colliderB))
                 player.transform.position = colliderA.transform.position;    
         }
+    }
+
+    public void activate(bool flag){
+        this.enabled = flag;
+    }
+
+    public bool isActive() {
+        return this.enabled;
     }
 
 }

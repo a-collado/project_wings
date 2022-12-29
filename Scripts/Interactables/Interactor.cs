@@ -28,18 +28,42 @@ public class Interactor : MonoBehaviour
         _numFoundT = Physics.OverlapSphereNonAlloc(gameObject.transform.position, 
         _interactionPointRadius, _triggers, _triggerMask);            // Detecta todos los objetos en un radio dado alrededor del personaje.
 
+
+        string log = "[Interactor] colliders found num= " + _numFound + " (" + _colliders + ": " + _colliders.Length + " ) : ";
+        
         if (_numFound > 0)                                                  // Si se ha encontrado algun objeto
         {
-            var interactable = _colliders[0].GetComponent<IInteractable>(); // Comprobas si es un objeto interactuable
-            setPrompt(_colliders[0].transform);
+            int indexInteractable = -1;
 
-            if (interactable != null && InteractorClicked(interactable))    // Detectamos si lo estamos pulsando con el raton
+            for (int i = 0; i < _colliders.Length-1; i++)
             {
-                interactable.Interact();                           // Interactuamos con el objeto
+                log += " , ["+ i + "]" + _colliders[i] + " : ";
+                if (_colliders[i].GetComponent<IInteractable>().isActive()){
+                    indexInteractable = i;
+                    
+                    break;
+                }
             }
-            if (interactable != null && powerButton.action.ReadValue<float>() > 0){
-                interactable.Power();
+            //Debug.Log(log);
+
+            if (indexInteractable != -1){
+                var interactable = _colliders[indexInteractable].GetComponent<IInteractable>(); // Comprobas si es un objeto interactuable
+                
+                if (interactable != null && interactable.isActive()){
+                    //Debug.Log("[Interactor] setPrompt: interactable = " + interactable + " is = " + interactable.isActive() + " as ray collided with: " + _colliders[0]);
+                    setPrompt(_colliders[indexInteractable].transform);
+                
+
+                    if (InteractorClicked(interactable))    // Detectamos si lo estamos pulsando con el raton
+                    {
+                        interactable.Interact();                           // Interactuamos con el objeto
+                    }
+                    if (powerButton.action.ReadValue<float>() > 0){
+                        interactable.Power();
+                    }
+                }
             }
+            
         }
 
     }
@@ -87,8 +111,8 @@ public class Interactor : MonoBehaviour
     // Esta funcion dibuja el radio de interaccion
     private void OnDrawGizmos() {
         Gizmos.color = Color.red;
-        Gizmos.DrawSphere(gameObject.transform.position, _interactionPointRadius);
-    }
+        Gizmos.DrawWireSphere(gameObject.transform.position, _interactionPointRadius);
+    } 
 
     
 }
