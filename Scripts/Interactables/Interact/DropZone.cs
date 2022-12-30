@@ -113,8 +113,8 @@ public class DropZone : MonoBehaviour, IInteractable
             //activate parent
             Debug.Log("[DropZone]: complete() iscomplete");
             Debug.Log("[DropZone]: Activating parent of DropZone: " + parent.GetComponent<IInteractable>());
-
-            parent.GetComponent<IInteractable>().activate(true); 
+            if(parent.GetComponent<IInteractable>() != null) parent.GetComponent<IInteractable>().activate(true); 
+            
             //This is because we will always activate the parent component of the
             //DropZone once it is correctly dropped
             //lock currents
