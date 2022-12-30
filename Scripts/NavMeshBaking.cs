@@ -12,15 +12,19 @@ public class NavMeshBaking : MonoBehaviour
     void Start()
     {
         navMesh = this.gameObject.GetComponent<NavMeshSurface>();
+        navMesh.BuildNavMesh();
     }
 
     void Update(){
-        navMesh.gameObject.transform.position = playerTransform.position;
+        //navMesh.center = playerTransform.gameObject.transform.position;
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
-        navMesh.BuildNavMesh();
+        //navMesh.RemoveData();
+        //navMesh.gameObject.transform.position = playerTransform.position;
+        navMesh.center = playerTransform.position - playerTransform.parent.transform.position;
+        navMesh.UpdateNavMesh(navMesh.navMeshData);
     }
 }
