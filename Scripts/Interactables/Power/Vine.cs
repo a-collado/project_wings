@@ -8,10 +8,13 @@ public class Vine : MonoBehaviour, IInteractable
 
     private bool isCompleted;
 
+    [SerializeField] Animator animator;
+
     private System.Diagnostics.Stopwatch stopWatch; // delay to prevent key spam
 
     void Awake() { // Load and initialize stuff
         stopWatch = new System.Diagnostics.Stopwatch();
+        animator = GetComponent<Animator>();
         stopWatch.Start();
     }
     public void Update() {
@@ -36,7 +39,7 @@ public class Vine : MonoBehaviour, IInteractable
             if (player.GetComponent<Interactor>().triggerInRange(colliderB))
                 player.transform.position = colliderA.transform.position;    
         } */
-
+        animator.SetBool("isGrown", true);
 
     }
 
