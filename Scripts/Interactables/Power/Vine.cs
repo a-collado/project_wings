@@ -6,35 +6,38 @@ using UnityEngine.Events;
 public class Vine : MonoBehaviour, IInteractable
 {
 
-    [SerializeField]
-    private Collider colliderA;
-    [SerializeField]
-    private Collider colliderB;
+    private bool isCompleted;
 
-    public UnityEvent interacted;
+    private System.Diagnostics.Stopwatch stopWatch; // delay to prevent key spam
 
-
+    void Awake() { // Load and initialize stuff
+        stopWatch = new System.Diagnostics.Stopwatch();
+        stopWatch.Start();
+    }
     public void Update() {
 
     }
-  public void Interact()
+    public void Interact()
     {
-        interacted.Invoke();
+       throw new System.NotImplementedException();
     }
 
     public void Power()
     {
-        throw new System.NotImplementedException();
+        
+        activateWine();
     }
 
-    public void transferPlayer(GameObject player){
-        if(gameObject.transform.childCount > 0)
+    public void activateWine(){
+       /*  if(gameObject.transform.childCount > 0)
         {
             if (player.GetComponent<Interactor>().triggerInRange(colliderA))
                 player.transform.position = colliderB.transform.position;
             if (player.GetComponent<Interactor>().triggerInRange(colliderB))
                 player.transform.position = colliderA.transform.position;    
-        }
+        } */
+
+
     }
 
     public void activate(bool flag){
