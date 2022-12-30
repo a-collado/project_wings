@@ -38,7 +38,7 @@ public class Interactor : MonoBehaviour
             for (int i = 0; i < _colliders.Length-1; i++)
             {
                 log += " , ["+ i + "]" + _colliders[i] + " : ";
-                if (_colliders[i].GetComponent<IInteractable>().isActive()){
+                if (_colliders[i] && _colliders[i].GetComponent<IInteractable>().isActive()){
                     indexInteractable = i;
                     
                     break;
