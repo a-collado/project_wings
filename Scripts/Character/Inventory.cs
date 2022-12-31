@@ -6,10 +6,11 @@ public class Inventory : MonoBehaviour
 {
 
     private GameObject block; //Objeto que tiene que llevar a mano
-    private List<GameObject> items; //Item que se guarda en el bolsillo
+    [SerializeField] private List<GameObject> items; //Item que se guarda en el bolsillo
     // Start is called before the first frame update
     void Start()
     {
+        items = new List<GameObject>();
     }
 
     // Update is called once per frame
@@ -34,9 +35,20 @@ public class Inventory : MonoBehaviour
 
     public void addItem(GameObject item) {
         this.items.Add(item);
+
     }
 
-    public void dropItems(){
+    public int dropItems(int numItems, string correctItemTag){
+        int itemsDropped = 0;
+
+        for(int i = items.Count - 1; i >= 0; i--)
+        {
+            if (items[i].CompareTag(correctItemTag) && itemsDropped <= numItems) {
+                itemsDropped++;
+                items.Remove(items[i]);
+            }
+        }
+        return numItems - itemsDropped;
 
     }
 

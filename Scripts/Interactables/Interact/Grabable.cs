@@ -40,8 +40,9 @@ public class Grabable : MonoBehaviour, IInteractable
 
     public void grab(){
 
-        playerInventory.addItem(this.gameObject);
-        Destroy(this.gameObject);
+        ////Debug.Log("[Grabable]: " + playerInventory + " : " + this.gameObject);
+        this.playerInventory.addItem(this.gameObject);
+        this.gameObject.SetActive(false);
 
     }
 
