@@ -5,12 +5,11 @@ using UnityEngine;
 public class Inventory : MonoBehaviour
 {
 
-    GameObject block; //Objeto que tiene que llevar a mano
-    GameObject[] item; //Item que se guarda en el bolsillo
+    private GameObject block; //Objeto que tiene que llevar a mano
+    private List<GameObject> items; //Item que se guarda en el bolsillo
     // Start is called before the first frame update
     void Start()
     {
-        
     }
 
     // Update is called once per frame
@@ -32,4 +31,13 @@ public class Inventory : MonoBehaviour
     public GameObject getBlock() {
         return block;
     }
+
+    public void addItem(GameObject item) {
+        this.items.Add(item);
+    }
+
+    public void dropItems(){
+
+    }
+
 }
