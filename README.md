@@ -5,3 +5,4 @@ Para que todo funcione bien hay que importar los paquetes:
   - Input System
   - Universal Render Pipeline
   - com.unity.ai.navigation (experimental)
+  - Post Processing
