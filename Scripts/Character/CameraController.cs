@@ -12,6 +12,8 @@ public class CameraController : MonoBehaviour
     [SerializeField] private float angleMinY = 10.0f;
     [SerializeField] private float angleMaxY = 60.0f;
     [SerializeField] private InputActionReference mousePosition, mouseScroll;
+    private float invertX = 1f;
+    private float invertY = 1f;
 
     private float zoomSensitivity = 1.0f;
     private float zoomMin = 4.0f;
@@ -24,7 +26,21 @@ public class CameraController : MonoBehaviour
     private Camera cam;
     private Transform camTransform;
 
-    // Start is called before the first frame update
+    private void Awake() {
+        if (PlayerPrefs.HasKey("masterSenX")){
+            sensitivityX = PlayerPrefs.GetFloat("masterSenX");
+        }
+        if (PlayerPrefs.HasKey("masterSenY")){
+            sensitivityY = PlayerPrefs.GetFloat("masterSenY");
+        }
+        if (PlayerPrefs.HasKey("masterInvertX")){
+            invertX = PlayerPrefs.GetFloat("masterInvertX");
+        }
+        if (PlayerPrefs.HasKey("masterInvertY")){
+            invertY = PlayerPrefs.GetFloat("masterInvertY");
+        }
+    }
+
     void Start()
     {
         cam = gameObject.GetComponent<Camera>();
@@ -34,8 +50,8 @@ public class CameraController : MonoBehaviour
 
     private void Update() {
         Vector2 position = mousePosition.action.ReadValue<Vector2>();
-        currentX += position.x * (sensitivityX * 0.01f);
-        currentY += position.y * (sensitivityY * 0.01f);
+        currentX += position.x * (sensitivityX * 0.01f) * invertX;
+        currentY += position.y * (sensitivityY * 0.01f * invertY);
 
         currentY = Mathf.Clamp(currentY, angleMinY, angleMaxY);
 
