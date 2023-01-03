@@ -2,12 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
+//Made for objects that only have an animation component to be activated when decided
+
 public class Activable : MonoBehaviour
 {
     private IInteractable[] childs;
+    private Animator animator;
     void Start()
     {
         childs = this.gameObject.GetComponentsInChildren<IInteractable>();
+        animator = this.gameObject.GetComponent<Animator>();
         
     }
 
@@ -16,7 +21,7 @@ public class Activable : MonoBehaviour
     {
         if(checkIfCompleted()){
             //Do the thing
-
+            animator.SetBool("activate", true);
             //And then disable
             this.enabled = false;
         }

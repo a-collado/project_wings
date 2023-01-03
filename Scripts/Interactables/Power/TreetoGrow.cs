@@ -6,33 +6,44 @@ using UnityEngine.Events;
 public class TreetoGrow : MonoBehaviour, IInteractable
 {
 
-    public UnityEvent powered;
+    private bool isCompleted;
 
-    public void Update(){
+    [SerializeField] Animator animator;
+
+    private System.Diagnostics.Stopwatch stopWatch; // delay to prevent key spam
+
+    void Awake() { // Load and initialize stuff
+        stopWatch = new System.Diagnostics.Stopwatch();
+        animator = GetComponent<Animator>();
+        stopWatch.Start();
+    }
+    public void Update() {
 
     }
-
     public void Interact()
     {
-        throw new System.NotImplementedException();
+       throw new System.NotImplementedException();
     }
 
     public void Power()
     {
-        powered.Invoke();
+        
+        activateTree();
     }
 
-    public void ActivateObject(GameObject o)
-    {
-        o.GetComponent<Animator>().SetBool("hasGrown", true);
-        Debug.Log("Grow");
+    public void activateTree(){
+
+        animator.SetBool("activate", true);
+        activate(false);
+
     }
 
     public void activate(bool flag){
         this.enabled = flag;
     }
 
-     public bool isActive() {
+    public bool isActive() {
         return this.enabled;
     }
+
 }

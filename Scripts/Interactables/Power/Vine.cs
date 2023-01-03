@@ -32,13 +32,7 @@ public class Vine : MonoBehaviour, IInteractable
     }
 
     public void activateWine(){
-       /*  if(gameObject.transform.childCount > 0)
-        {
-            if (player.GetComponent<Interactor>().triggerInRange(colliderA))
-                player.transform.position = colliderB.transform.position;
-            if (player.GetComponent<Interactor>().triggerInRange(colliderB))
-                player.transform.position = colliderA.transform.position;    
-        } */
+
         animator.SetBool("isGrown", true);
 
     }
