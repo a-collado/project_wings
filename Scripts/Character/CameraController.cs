@@ -29,15 +29,26 @@ public class CameraController : MonoBehaviour
     private void Awake() {
         if (PlayerPrefs.HasKey("masterSenX")){
             sensitivityX = PlayerPrefs.GetFloat("masterSenX");
+        } else {
+            sensitivityX = 30.0f;
         }
         if (PlayerPrefs.HasKey("masterSenY")){
             sensitivityY = PlayerPrefs.GetFloat("masterSenY");
         }
+        else {
+            sensitivityY = 10.0f;
+        }
         if (PlayerPrefs.HasKey("masterInvertX")){
             invertX = PlayerPrefs.GetFloat("masterInvertX");
         }
+        else {
+            invertX = 1f;
+        }
         if (PlayerPrefs.HasKey("masterInvertY")){
             invertY = PlayerPrefs.GetFloat("masterInvertY");
+        }
+        else {
+            invertY = 1f;
         }
     }
 

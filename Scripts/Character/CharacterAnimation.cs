@@ -38,9 +38,7 @@ public class CharacterAnimation : MonoBehaviour
     }
 
     private void Start() {
-        
-        playerAnimator.SetFloat("turn", 0.0f);
-        
+                
         objectPicked = false;
         powerAnim.SetActive(true);
     }
