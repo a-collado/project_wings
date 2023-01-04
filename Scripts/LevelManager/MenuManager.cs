@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 public class MenuManager : MonoBehaviour
 {
@@ -53,6 +54,11 @@ public class MenuManager : MonoBehaviour
     public void pauseGame()
     {
         paused = !paused;
+    }
+
+
+    public void goBackToMainMenu(){
+        SceneManager.LoadScene("MainMenu");
     }
 
 
