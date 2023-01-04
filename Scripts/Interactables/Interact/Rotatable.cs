@@ -6,21 +6,20 @@ using UnityEngine.Events;
 public class Rotatable : MonoBehaviour, IInteractable
 {
 
-    //public UnityEvent interacted;
-    private bool RotEnabled = true;
-    [SerializeField] private GameObject toRotate;
-    [SerializeField] private float lockRotAngle;
-    [SerializeField] private float angularSpeed = 10f;
+    ////public UnityEvent interacted;
+    private bool RotEnabled = true; //To set if this is enabled or not
+    [SerializeField] private GameObject toRotate;//GameObject to be rotated
+    [SerializeField] private Vector3 lockRotAngle; //Angle at which it will stop rotating
+    [SerializeField] private Vector3 rotationAxis; //Axis to rotate (for ex: ( 0 0 1))
+    [SerializeField] private float angularSpeed = 10f;//Rotation Speed
+    [SerializeField] private float margin = 0.4f;// Error margin for locking rotation
 
 
     public void Update(){
         
     }
     public void Interact(){
-        //interacted.Invoke();
-        //Debug.Log("[Rotatable]: Rotating");
         rotate(toRotate);
-
     }
 
     public void Power()
@@ -33,19 +32,20 @@ public class Rotatable : MonoBehaviour, IInteractable
     }
 
     public void rotate(GameObject toRotate){
-        //Quaternion rotation = Quaternion.Euler(0, 91, 0);
-        //gameObject.transform.rotation = Quaternion.Slerp(gameObject.transform.rotation, rotation, Time.deltaTime);
-        //Debug.Log(gameObject.transform.rotation);
+
         if (RotEnabled){
-            toRotate.transform.rotation *= Quaternion.Euler(0, angularSpeed*Time.deltaTime, 0);
-            //Debug.Log(toRotate.transform.rotation.eulerAngles.y);
-            if ((toRotate.transform.rotation.eulerAngles.y > lockRotAngle - 0.2) && (toRotate.transform.rotation.eulerAngles.y < lockRotAngle + 0.2)){
+            toRotate.transform.rotation *= Quaternion.Euler(angularSpeed*Time.deltaTime * rotationAxis);
+            if (rotationCompleted()){ 
                 RotEnabled = false;
+                activate(false);
             }
         }
-            
     }
 
+    public bool rotationCompleted() {
+        Vector3 angle = toRotate.transform.rotation.eulerAngles;
+        return (Vector3.Distance(angle, lockRotAngle) < margin);
+    }
     public void activate(bool flag){
         this.RotEnabled = true;
         this.enabled = flag;      

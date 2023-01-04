@@ -43,7 +43,8 @@ public class CharacterMovement : MonoBehaviour
         if(Physics.Raycast(ray, out hitPoint))  // Si este rayo inpacta sobre cualquier geometria:
         {   
 
-            if(hitPoint.normal != Vector3.up) return;
+            //TODO: Comentar a Collado que he quitado esto porque hacia que no me funcionase
+            ////if(hitPoint.normal != Vector3.up) return;
 
             var interactable = hitPoint.transform.GetComponent<IInteractable>(); // Comprobas si es un objeto interactuable
 
