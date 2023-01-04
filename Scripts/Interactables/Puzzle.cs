@@ -7,7 +7,11 @@ using UnityEngine;
 
 public class Puzzle : MonoBehaviour
 {
-    [SerializeField] private TreetoGrow[] toComplete;
+    
+  
+    [SerializeField] private GameObject[] toComplete; //! Solo pueden ser objetos de tipo IInteractable
+
+    
     [SerializeField] private Animator[] toActivate;
     void Start()
     {
@@ -33,9 +37,10 @@ public class Puzzle : MonoBehaviour
 
     public bool checkIfCompleted(){
         bool completed = true;
-        foreach (TreetoGrow piece in this.toComplete)
-        {
-            if (piece.isActive()){ //Si esta activo significa que aun no se ha completado el puzzle
+        foreach (GameObject obj in this.toComplete)
+        {   
+            IInteractable inter = obj.GetComponent<IInteractable>();
+            if (inter.isActive()){ //Si esta activo significa que aun no se ha completado el puzzle
                 completed = false;
             }
         }

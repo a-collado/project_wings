@@ -2,12 +2,20 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using TMPro;
 
 public class ItemDropZone : MonoBehaviour, IInteractable
 {
     
     [SerializeField] private string correctObjectTag; //Correct object for this ItemDropZone
     [SerializeField] private int numItems;
+
+    [SerializeField] private string ouputText1; //Text to show for asking item
+
+    [SerializeField] private string ouputText2; //Text to show after completion
+
+
+    [SerializeField] private TextMeshPro textMesh;
     private GameObject player; //player GameObject
     private Inventory playerInventory; //player Inventory
     private bool isCompleted; // true when this part is done
@@ -44,11 +52,13 @@ public class ItemDropZone : MonoBehaviour, IInteractable
     }
 
     public void drop(){
+ 
         Debug.Log("[ItemDropZone]: drop: " + numItems);
 
         if (!isCompleted ){
             numItems = playerInventory.dropItems(numItems, correctObjectTag);
 
+            textMesh.text = numItems + ouputText1;
             if (numItems <= 0){
                 complete();
             }
@@ -61,6 +71,7 @@ public class ItemDropZone : MonoBehaviour, IInteractable
 
     //Completes everything and lock everything in place
     public void complete() {
+        textMesh.text = ouputText2; 
         //Deactivate this
         this.activate(false);
         //Activate childs
