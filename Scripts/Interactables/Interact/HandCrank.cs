@@ -35,7 +35,7 @@ public class HandCrank : MonoBehaviour, IInteractable
         if (RotEnabled){
             toRotate.transform.rotation *= Quaternion.Euler(angularSpeed*Time.deltaTime * rotationAxis);
             transform.rotation *= Quaternion.Euler(angularSpeed*Time.deltaTime*transform.forward*3);
-            Debug.Log(toRotate.transform.rotation.eulerAngles);
+            //Debug.Log(toRotate.transform.rotation.eulerAngles);
             if (rotationCompleted()){ 
                 RotEnabled = false;
                 activate(false);
