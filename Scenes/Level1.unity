@@ -1462,6 +1462,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: c98b2a6b43a127e4ba9bd096ca15771a, type: 3}
   m_PrefabInstance: {fileID: 165522724}
   m_PrefabAsset: {fileID: 0}
+--- !u!4 &474733278 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2100249601016223293, guid: 940571d21d6368443b9cb87ef1faef4e, type: 3}
+  m_PrefabInstance: {fileID: 746206566}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &579711075
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1989,10 +1994,66 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 823629667, guid: 940571d21d6368443b9cb87ef1faef4e, type: 3}
+      propertyPath: m_fontSize
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 823629667, guid: 940571d21d6368443b9cb87ef1faef4e, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 7064b304b78e7334d917bce04c7a5c5b, type: 2}
+    - target: {fileID: 823629667, guid: 940571d21d6368443b9cb87ef1faef4e, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 823629667, guid: 940571d21d6368443b9cb87ef1faef4e, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 7788934945286350037, guid: 7064b304b78e7334d917bce04c7a5c5b, type: 2}
+    - target: {fileID: 1408520116, guid: 940571d21d6368443b9cb87ef1faef4e, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 7064b304b78e7334d917bce04c7a5c5b, type: 2}
+    - target: {fileID: 1408520116, guid: 940571d21d6368443b9cb87ef1faef4e, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 7788934945286350037, guid: 7064b304b78e7334d917bce04c7a5c5b, type: 2}
+    - target: {fileID: 1578786329, guid: 940571d21d6368443b9cb87ef1faef4e, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 7064b304b78e7334d917bce04c7a5c5b, type: 2}
+    - target: {fileID: 1578786329, guid: 940571d21d6368443b9cb87ef1faef4e, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 7788934945286350037, guid: 7064b304b78e7334d917bce04c7a5c5b, type: 2}
+    - target: {fileID: 2126202689, guid: 940571d21d6368443b9cb87ef1faef4e, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2126202692, guid: 940571d21d6368443b9cb87ef1faef4e, type: 3}
+      propertyPath: m_UiScaleMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2126202692, guid: 940571d21d6368443b9cb87ef1faef4e, type: 3}
+      propertyPath: m_ReferenceResolution.x
+      value: 1920
+      objectReference: {fileID: 0}
+    - target: {fileID: 2126202692, guid: 940571d21d6368443b9cb87ef1faef4e, type: 3}
+      propertyPath: m_ReferenceResolution.y
+      value: 1080
+      objectReference: {fileID: 0}
+    - target: {fileID: 2126202693, guid: 940571d21d6368443b9cb87ef1faef4e, type: 3}
+      propertyPath: m_RenderMode
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 164935583621620424, guid: 940571d21d6368443b9cb87ef1faef4e, type: 3}
       propertyPath: m_Name
       value: NinjaController
       objectReference: {fileID: 0}
+    - target: {fileID: 1265379406492907407, guid: 940571d21d6368443b9cb87ef1faef4e, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 474733278}
     - target: {fileID: 7246053642718335205, guid: 940571d21d6368443b9cb87ef1faef4e, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -2003,7 +2064,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7246053642718335205, guid: 940571d21d6368443b9cb87ef1faef4e, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 67.13
+      value: 64.44
       objectReference: {fileID: 0}
     - target: {fileID: 7246053642718335205, guid: 940571d21d6368443b9cb87ef1faef4e, type: 3}
       propertyPath: m_LocalPosition.z

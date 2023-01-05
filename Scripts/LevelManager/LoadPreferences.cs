@@ -11,6 +11,7 @@ public class LoadPreferences : MonoBehaviour
     [SerializeField] private MainMenu menuController;
 
     [Header("Volume Setting")]
+    [SerializeField]
     private TMP_Text volumeTextValue;
     [SerializeField]
     private Slider volumeSlider;
@@ -32,7 +33,7 @@ public class LoadPreferences : MonoBehaviour
     private Toggle invertY;
 
     [Header("Quality Level Setting")]
-    
+    [SerializeField]
     private TMP_Dropdown qualityDropdown;
 
     [Header("Fullscreen Setting")]
