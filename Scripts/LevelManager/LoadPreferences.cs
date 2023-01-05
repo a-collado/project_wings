@@ -25,6 +25,10 @@ public class LoadPreferences : MonoBehaviour
     private Slider CameraXSlider;
     [SerializeField]
     private Slider CameraYSlider;
+    [SerializeField]
+    private float DefaultCameraXSens = 25;
+    [SerializeField]
+    private float DefaultCameraYSens = 5;
 
     [Header("Invert Setting")]
     [SerializeField]
@@ -92,6 +96,10 @@ public class LoadPreferences : MonoBehaviour
                 CameraXSensText.text = localSensitivityX.ToString("0");
                 CameraXSlider.value = localSensitivityX;
                 menuController.setCameraXSen(localSensitivityX);
+            }else {
+                CameraXSensText.text = DefaultCameraXSens.ToString("0");
+                CameraXSlider.value = DefaultCameraXSens;
+                menuController.setCameraXSen(DefaultCameraXSens);
             }
             if(PlayerPrefs.HasKey("masterSenY"))
             {
@@ -100,6 +108,10 @@ public class LoadPreferences : MonoBehaviour
                 CameraYSensText.text = localSensitivityY.ToString("0");
                 CameraYSlider.value = localSensitivityY;
                 menuController.setCameraYSen(localSensitivityY);
+            }else{
+                CameraYSensText.text = DefaultCameraYSens.ToString("0");
+                CameraYSlider.value = DefaultCameraYSens;
+                menuController.setCameraYSen(DefaultCameraYSens);
             }
             if(PlayerPrefs.HasKey("masterInvertX"))
             {
