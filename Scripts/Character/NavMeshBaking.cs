@@ -25,6 +25,7 @@ public class NavMeshBaking : MonoBehaviour
         //navMesh.RemoveData();
         //navMesh.gameObject.transform.position = playerTransform.position;
         navMesh.center = playerTransform.localPosition;
+        //Debug.Log(navMesh.gameObject.transform.position);
         navMesh.UpdateNavMesh(navMesh.navMeshData);
     }
 }

@@ -7,6 +7,13 @@ using TMPro;
 
 public class MainMenu : MonoBehaviour
 {
+    [Header("Transition")]
+    [SerializeField]
+    private Animator transition;
+    [SerializeField]
+    private float transitionTime = 1.0f; 
+
+
     [Header("Volume Setting")]
     [SerializeField]
     private TMP_Text volumeTextValue;
@@ -88,15 +95,23 @@ public class MainMenu : MonoBehaviour
     }
     
     public void play(){
-        if (PlayerPrefs.HasKey("SavedLevel"))
+        StartCoroutine(LoadLevel());
+    }
+
+    IEnumerator LoadLevel()
+    {
+          transition.SetTrigger("start");
+
+          yield return new WaitForSeconds(transitionTime); 
+
+          if (PlayerPrefs.HasKey("SavedLevel"))
         {
             levelToLoad = PlayerPrefs.GetString("SavedLevel");
             SceneManager.LoadScene(levelToLoad);
         } else 
         {
             SceneManager.LoadScene(newGameLevel);
-        }
-        
+        } 
     }
 
     public void exit(){
