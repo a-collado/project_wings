@@ -6,11 +6,12 @@ using UnityEngine.Events;
 public class HandCrank : MonoBehaviour, IInteractable
 {
 
-    //public UnityEvent interacted;
-    private bool rotEnabled = true;
-    [SerializeField] private GameObject toRotate;
-    [SerializeField] private float lockTargetAngle;
-    [SerializeField] private float angularSpeed = 10f;
+    private bool RotEnabled = true; //To set if this is enabled or not
+    [SerializeField] private GameObject toRotate;//GameObject to be rotated
+    [SerializeField] private Vector3 lockRotAngle; //Angle at which it will stop rotating
+    [SerializeField] private Vector3 rotationAxis; //Axis to rotate (for ex: ( 0 0 1))
+    [SerializeField] private float angularSpeed = 10f;//Rotation Speed
+    [SerializeField] private float margin = 0.4f;// Error margin for locking rotation
 
 
     public void Update(){
@@ -26,22 +27,28 @@ public class HandCrank : MonoBehaviour, IInteractable
     }
 
     public void enable(bool enable){
-        rotEnabled = enable;
+        RotEnabled = enable;
     }
 
     public void rotate(GameObject toRotate){
-        if (rotEnabled){
-            toRotate.transform.rotation *= Quaternion.Euler(0, angularSpeed*Time.deltaTime, 0);
-            //Debug.Log(toRotate.transform.rotation.eulerAngles.y);
-            if ((toRotate.transform.rotation.eulerAngles.y > lockTargetAngle - 0.2) && (toRotate.transform.rotation.eulerAngles.y < lockTargetAngle + 0.2)){
-                rotEnabled = false;
+
+        if (RotEnabled){
+            toRotate.transform.rotation *= Quaternion.Euler(angularSpeed*Time.deltaTime * rotationAxis);
+            transform.rotation *= Quaternion.Euler(angularSpeed*Time.deltaTime*transform.forward*3);
+            Debug.Log(toRotate.transform.rotation.eulerAngles);
+            if (rotationCompleted()){ 
+                RotEnabled = false;
+                activate(false);
             }
         }
-            
     }
-
+    //289.5 189.83 279.91
+    public bool rotationCompleted() {
+        Vector3 angle = toRotate.transform.rotation.eulerAngles;
+        return (Vector3.Distance(angle, lockRotAngle) < margin);
+    }
     public void activate(bool flag){
-        this.rotEnabled = flag;
+        this.RotEnabled = true;
         this.enabled = flag;      
        if (flag){
             this.gameObject.layer = LayerMask.NameToLayer (LayerMask.LayerToName(3));
@@ -52,10 +59,6 @@ public class HandCrank : MonoBehaviour, IInteractable
 
     public bool isActive() {
         return this.enabled;
-    }
-
-    public bool isCompleted() {
-        return !this.rotEnabled;
     }
 
 }

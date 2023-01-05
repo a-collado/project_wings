@@ -39,7 +39,7 @@ public class CharacterAnimation : MonoBehaviour
 
     private void Start() {
         
-        playerAnimator.SetFloat("turn", 0.0f);
+        ////playerAnimator.SetFloat("turn", 0.0f);
         
         objectPicked = false;
         powerAnim.SetActive(true);
@@ -68,11 +68,11 @@ public class CharacterAnimation : MonoBehaviour
         float dx = Vector3.Dot(transform.right, wordDeltaPosition);
         float dy = Vector3.Dot(transform.forward, wordDeltaPosition);
         Vector2 deltaPosition = new Vector3(dx, dy);
-
-        float smooth = Mathf.Min(1, Time.deltaTime / 0.1f);
+        
+        float smooth = Mathf.Min(1, Time.fixedDeltaTime / 0.1f);
         smoothDeltaPosition = Vector2.Lerp(smoothDeltaPosition, deltaPosition, smooth);
 
-        velocity = smoothDeltaPosition / Time.deltaTime;
+        velocity = smoothDeltaPosition / Time.fixedDeltaTime;
         if (player.remainingDistance <= player.stoppingDistance)
         {
             velocity = Vector2.Lerp(
