@@ -9,7 +9,7 @@ public class NavMeshBaking : MonoBehaviour
     private NavMeshSurface navMesh;
     [SerializeField] private Transform playerTransform;
     
-    void Start()
+    void Awake()
     {
         navMesh = this.gameObject.GetComponent<NavMeshSurface>();
         navMesh.BuildNavMesh();
@@ -24,7 +24,14 @@ public class NavMeshBaking : MonoBehaviour
     {
         //navMesh.RemoveData();
         //navMesh.gameObject.transform.position = playerTransform.position;
-        navMesh.center = playerTransform.position - playerTransform.parent.transform.position;
+        //gameObject.transform.localPosition = playerTransform.localPosition;
+        navMesh.center = playerTransform.localPosition;
+        gameObject.transform.localPosition = playerTransform.localPosition;
+        Debug.Log("[NavMeshBaking]: navMesh.center = " + navMesh.center +
+        " || navMeshObject localPos = " + gameObject.transform.localPosition + 
+        " || navMeshObject pos = " + gameObject.transform.position + 
+        " || player.localPos = " + playerTransform.localPosition  + 
+        " || player.pos = " + playerTransform.position);
         navMesh.UpdateNavMesh(navMesh.navMeshData);
     }
 }

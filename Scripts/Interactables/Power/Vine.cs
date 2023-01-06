@@ -8,7 +8,7 @@ public class Vine : MonoBehaviour, IInteractable
 
     private bool isCompleted;
 
-    [SerializeField] Animator animator;
+    [SerializeField] private Animator animator;
 
     private System.Diagnostics.Stopwatch stopWatch; // delay to prevent key spam
 
