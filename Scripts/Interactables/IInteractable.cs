@@ -7,7 +7,7 @@ using UnityEngine.Events;
 public interface IInteractable
 {
     void Update();
-    public void Interact();
+    AnimationsEnum Interact();
 
     public void Power();
 

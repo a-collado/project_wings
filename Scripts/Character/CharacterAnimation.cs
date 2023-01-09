@@ -103,10 +103,31 @@ public class CharacterAnimation : MonoBehaviour
         playerAnimator.SetTrigger("interact");
     }
 
-    public void pickObject(bool b){
+    public void playAnimation(AnimationsEnum animation){
+        switch(animation){
+            case AnimationsEnum.NONE:
+            break;
+            case AnimationsEnum.GRAB_LOW:
+                grabObjectLow();
+            break; 
+            case AnimationsEnum.PRESS_BTN:
+                pressBtn();
+            break;
+        }
+    }
+
+    private void pickObject(bool b){
         objectPicked = b;
         playerAnimator.SetBool("objectPicked", b);
         Debug.Log(playerAnimator.GetBool("objectPicked"));
+    }
+
+    private void grabObjectLow(){
+        playerAnimator.SetTrigger("grabLow");
+    }
+
+    private void pressBtn(){
+        playerAnimator.SetTrigger("press");
     }
 
 

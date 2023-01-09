@@ -20,7 +20,7 @@ public class TreetoGrow : MonoBehaviour, IInteractable
     public void Update() {
 
     }
-    public void Interact()
+    public AnimationsEnum Interact()
     {
        throw new System.NotImplementedException();
     }

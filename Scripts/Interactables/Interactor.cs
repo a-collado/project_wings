@@ -10,12 +10,18 @@ public class Interactor : MonoBehaviour
     [SerializeField] private InputActionReference mouseButton, mousePosition, powerButton, actionButton;
     [SerializeField] private Camera cam;
     [SerializeField] private InteractablePrompt prompt;
+    [SerializeField] private CharacterAnimation animator;
 
     private int _numFound;
     private int _numFoundT;
 
     private Collider[] _colliders = new Collider[3];
     private Collider[] _triggers = new Collider[3];
+
+
+    private void Awake() {
+        animator = GetComponent<CharacterAnimation>();
+    }
 
     private void Update() 
     {
@@ -56,7 +62,7 @@ public class Interactor : MonoBehaviour
 
                     if (InteractorClicked(interactable))    // Detectamos si lo estamos pulsando con el raton
                     {
-                        interactable.Interact();                           // Interactuamos con el objeto
+                        animator.playAnimation(interactable.Interact());                           // Interactuamos con el objeto
                     }
                     if (powerButton.action.ReadValue<float>() > 0){
                         interactable.Power();
@@ -68,14 +74,15 @@ public class Interactor : MonoBehaviour
 
     }
 
-    public bool inRange(IInteractable target){
+
+    /*public bool inRange(IInteractable target){
         for (int i = 0; i < _numFound; i++)                     // Miramos todos los objetos en nustro rango
         {
             var interactable = _colliders[i].GetComponent<IInteractable>();     // Miramos si son interactuables
             if (interactable == target) return true;                            // Si lo son, devolvemos true
         }
         return false;
-    }
+    }*/
 
     public bool triggerInRange(Collider target){
         for (int i = 0; i < _numFoundT; i++)                     // Miramos todos los objetos en nustro rango
@@ -108,11 +115,23 @@ public class Interactor : MonoBehaviour
         prompt.gameObject.GetComponent<MeshRenderer>().enabled = true;
     }
 
+    private void animate(AnimationsEnum animation){
+        switch(animation){
+            case AnimationsEnum.NONE:
+            break;
+            case AnimationsEnum.GRAB_LOW:
+                
+            break;
+        }
+    }
+
+
     // Esta funcion dibuja el radio de interaccion
     private void OnDrawGizmos() {
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(gameObject.transform.position, _interactionPointRadius);
-    } 
+    }
+
 
     
 }

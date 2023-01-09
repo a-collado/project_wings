@@ -23,14 +23,17 @@ public class Pickable : MonoBehaviour, IInteractable
         
     }
 
-    public void Interact()
+    public AnimationsEnum Interact()
     {
         double time = stopWatch.Elapsed.TotalMilliseconds/1000;
         if(time > 0.2)
         {
             pick();
+            stopWatch.Restart();
+            return AnimationsEnum.PICK_TWO_LOW;
         }
         stopWatch.Restart();
+        return AnimationsEnum.NONE;
     }
 
     public void Power()

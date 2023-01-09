@@ -25,14 +25,17 @@ public class DropZone : MonoBehaviour, IInteractable
         //Something
     }
 
-    public void Interact()
+    public AnimationsEnum Interact()
     {   //On Interact do drop() and prevent spam
         double time = stopWatch.Elapsed.TotalMilliseconds/1000;
         if(time > 0.2)
         {
             drop();
+            stopWatch.Restart();
+            return AnimationsEnum.DROP_TWO_LOW;
         }
         stopWatch.Restart();
+        return AnimationsEnum.NONE;
         
     }
 

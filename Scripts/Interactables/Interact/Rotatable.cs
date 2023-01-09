@@ -18,8 +18,9 @@ public class Rotatable : MonoBehaviour, IInteractable
     public void Update(){
         
     }
-    public void Interact(){
+    public AnimationsEnum Interact(){
         rotate(toRotate);
+        return AnimationsEnum.CRANK;
     }
 
     public void Power()

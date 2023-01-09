@@ -35,8 +35,9 @@ public class Toggleable : MonoBehaviour, IInteractable
     {
     }
 
-    void IInteractable.Interact()
+    AnimationsEnum IInteractable.Interact()
     {
+        return AnimationsEnum.NONE;
     }
 
     void IInteractable.Power()
@@ -50,6 +51,6 @@ public class Toggleable : MonoBehaviour, IInteractable
 
     bool IInteractable.isActive()
     {
-        return !this.gameObject.active;
+        return !this.gameObject.activeSelf;
     }
 }
