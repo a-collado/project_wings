@@ -14,6 +14,8 @@ public class CharacterAnimation : MonoBehaviour
     private NavMeshAgent player;
     private bool objectPicked;
 
+    private PlayerSoundController playerSound;
+
     private Vector2 velocity;
     private Vector2 smoothDeltaPosition;
 
@@ -55,6 +57,7 @@ public class CharacterAnimation : MonoBehaviour
         //Debug.Log(velocity);
         SynchronizeAnimationAndAgent();
         powerAnim.SetActive(powerButton.action.ReadValue<float>() > 0);
+
 
     }
 

@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.AI;
 
 public class Vine : MonoBehaviour, IInteractable
 {
@@ -9,13 +10,15 @@ public class Vine : MonoBehaviour, IInteractable
     private bool isCompleted;
 
     [SerializeField] private Animator animator;
+    private OffMeshLink meshLink;
 
     private System.Diagnostics.Stopwatch stopWatch; // delay to prevent key spam
 
     void Awake() { // Load and initialize stuff
         stopWatch = new System.Diagnostics.Stopwatch();
-        animator = GetComponent<Animator>();
+        //animator = GetComponent<Animator>();
         stopWatch.Start();
+        meshLink = GetComponent<OffMeshLink>();
     }
     public void Update() {
 
@@ -32,7 +35,7 @@ public class Vine : MonoBehaviour, IInteractable
     }
 
     public void activateWine(){
-
+        meshLink.activated = true;
         animator.SetBool("isGrown", true);
 
     }

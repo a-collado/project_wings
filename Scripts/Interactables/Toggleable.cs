@@ -51,6 +51,6 @@ public class Toggleable : MonoBehaviour, IInteractable
 
     bool IInteractable.isActive()
     {
-        return !this.gameObject.activeSelf;
+        return !this.hidden;
     }
 }
