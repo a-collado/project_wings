@@ -61,7 +61,10 @@ public class ItemDropZone : MonoBehaviour, IInteractable
         if (!isCompleted ){
             numItems = playerInventory.dropItems(numItems, correctObjectTag);
 
+            if (textMesh != null){
             textMesh.text = numItems + ouputText1;
+            }
+
             if (numItems <= 0){
                 complete();
             }
