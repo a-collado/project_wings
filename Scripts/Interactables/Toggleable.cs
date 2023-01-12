@@ -5,7 +5,7 @@ using UnityEngine;
 public class Toggleable : MonoBehaviour, IInteractable
 {
 
-    [SerializeField] private bool hidden;
+    [SerializeField] private bool toggled;
 
     private Animator animator;
     // Start is called before the first frame update
@@ -13,20 +13,20 @@ public class Toggleable : MonoBehaviour, IInteractable
     {
         animator = GetComponent<Animator>();
         if (animator!= null){
-            animator.SetBool("hidden", hidden);
+            animator.SetBool("toggled", toggled);
         }else {
-            this.gameObject.SetActive(hidden);
+            this.gameObject.SetActive(toggled);
         }
     }
 
     // Update is called once per frame
     public void toggle()
     {
-        hidden = !hidden;
+        toggled = !toggled;
         if (animator!= null){
-            animator.SetBool("hidden", hidden);
+            animator.SetBool("toggled", toggled);
         }else {
-            this.gameObject.SetActive(hidden);
+            this.gameObject.SetActive(toggled);
         }
         
     }
@@ -51,6 +51,6 @@ public class Toggleable : MonoBehaviour, IInteractable
 
     bool IInteractable.isActive()
     {
-        return !this.hidden;
+        return !this.toggled;
     }
 }

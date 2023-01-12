@@ -3,26 +3,57 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class Button : MonoBehaviour
+public class Button : MonoBehaviour, IInteractable
 {
-    public UnityEvent pulsed;
+    
+    private Animator buttonAnimation;
 
-    private void OnTriggerEnter(Collider other) {
+    [SerializeField]
+    private Toggleable objectToToggle;
+    
+    private System.Diagnostics.Stopwatch stopWatch;
 
-        if (other.tag == "Player")
-            gameObject.transform.Translate(new Vector3(0, -0.4f, 0));// Aqui hay que poner una animacion
-            pulsed.Invoke();
 
+    void Awake() {
+        buttonAnimation = GetComponent<Animator>();
+        stopWatch = new System.Diagnostics.Stopwatch();
+        stopWatch.Start();      
     }
 
-    private void OnTriggerStay(Collider other) {
+    public AnimationsEnum Interact()
+    {
+        double time = stopWatch.Elapsed.TotalMilliseconds/1000;
+        if(time > 0.2)
+        {
+            press();
+            stopWatch.Restart();
+            return AnimationsEnum.NONE;
+        }
+        stopWatch.Restart();
+        return AnimationsEnum.NONE;
+    }
+
+    private void press(){
+        buttonAnimation.SetTrigger("press");
+        objectToToggle.toggle();
+
+        //Podriamos bloquear el boton para que no se vuelva a hacer toggle
+    }
+    public void Power()
+    {
+        throw new System.NotImplementedException();
+    }
+
+    public void Update()
+    {
         
-        /*if (other.tag == "Player")
-            pulsed.Invoke();*/
+    }
+    public bool isActive()
+    {
+        return true;
     }
 
-    private void OnTriggerExit(Collider other) {
-         if (other.tag == "Player")
-            gameObject.transform.Translate(new Vector3(0, 0.4f, 0));// Aqui hay que poner una animacion  
+    public void activate(bool flag)
+    {
     }
 }
