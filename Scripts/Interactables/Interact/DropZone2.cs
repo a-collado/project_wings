@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class DropZone : MonoBehaviour, IInteractable
+public class DropZone2 : MonoBehaviour, IInteractable
 {
     
     [SerializeField] private List<Pickable> correctObjects; //Correct object for this DropZone
@@ -86,58 +86,16 @@ public class DropZone : MonoBehaviour, IInteractable
                 if(pick == item) {
                 //Complete this dropZone
                 isCompleted = true;
-                complete();
                 }
             }   
             
         }
     }
 
-
-    //Check to complete everything and lock everything in place
-    public void complete() {
-        bool isNotComplete = false;
-        //If this and all childrens of parents that have the dropZone Component have
-        GameObject parent = this.gameObject.transform.parent.gameObject;
-        DropZone[] zones = parent.GetComponentsInChildren<DropZone>();
-        Debug.Log("[DropZone]: complete() loading parent of " + this + " parent is: " + parent);
-        Debug.Log("[DropZone]: complete() loading all childrens of parent " + parent + " : " + zones + " ,is of length: " + zones.Length);
-
-
-        //Check for every child
-        Debug.Log("[DropZone]: complete() checking if all DropZones are completed");
-        foreach (DropZone zone in zones)
-        {
-             Debug.Log("[DropZone]: complete() checking zone: " + zone + " zone is completed = " + zone.isCompleted);
-            if(!zone.isCompleted){ //if one is not completed
-                isNotComplete = true; //the puzzle is not completed
-                Debug.Log("[DropZone] One of the zones is not completed so it is not completed, zone : " + zone);
-                break; // so we exit
-            }
-        }
-
-        if (!isNotComplete){ // if everything has been completed we lock and activate next
-            //activate parent
-            Debug.Log("[DropZone]: complete() iscomplete");
-            Debug.Log("[DropZone]: Activating parent of DropZone: " + parent.GetComponent<IInteractable>());
-            if(parent.GetComponent<IInteractable>() != null) parent.GetComponent<IInteractable>().activate(true); 
-            
-            //This is because we will always activate the parent component of the
-            //DropZone once it is correctly dropped
-            //lock currents
-            foreach (DropZone zone in zones){
-                   Debug.Log("[DropZone]: Deactivating childrens of DropZone: " + parent.GetComponent<IInteractable>());
-                   zone.activate(false);
-            }
-        }
-        
-    }
-
-
     public void activate(bool flag){
         this.enabled = flag;      
         if (flag){
-            this.gameObject.layer = LayerMask.NameToLayer (LayerMask.LayerToName(3));
+            this.gameObject.layer = 3;
         }else{
             this.gameObject.layer = LayerMask.NameToLayer("Default");
         }
@@ -145,14 +103,7 @@ public class DropZone : MonoBehaviour, IInteractable
 
      public bool isActive() {
 
-        //Check if player is holding an object
-        if (this.enabled){
-            if (playerInventory.getBlock() != null){
-                return true;
-            }
-            return false;        
-        }
-        return false;
+        return !isCompleted;
         
     }
 }

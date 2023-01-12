@@ -43,12 +43,16 @@ public class Pickable : MonoBehaviour, IInteractable
 
     public void pick(){
 
+        if(playerInventory.getBlock() == null){
+
         playerInventory.addBlock(this.gameObject);
         gameObject.transform.SetParent(player.transform);
         gameObject.transform.localPosition = new Vector3(0.07f,0.87f,0.64f);
         activate(false);
         this.gameObject.layer = LayerMask.NameToLayer("Default");
         Debug.Log("["+ this.gameObject + "]: attachToPlayer()");
+
+        }
     
 
     }
