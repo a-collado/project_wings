@@ -6,7 +6,7 @@ using UnityEngine.Events;
 public class DropZone : MonoBehaviour, IInteractable
 {
     
-    [SerializeField] private Pickable correctObject; //Correct object for this DropZone
+    [SerializeField] private string correctObjectTag; //Correct object for this DropZone
     private GameObject player; //player GameObject
     private Inventory playerInventory; //player Inventory
     private bool isCompleted; // true when this part is done
@@ -81,7 +81,7 @@ public class DropZone : MonoBehaviour, IInteractable
         Debug.Log("[DropZone]: checkObject()");
         Pickable pick = obj.GetComponent<Pickable>();
         if( pick != null) {
-            if(pick == correctObject) {
+            if(pick.CompareTag(correctObjectTag)) {
                 //Complete this dropZone
                 isCompleted = true;
                 complete();
