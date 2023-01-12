@@ -40,7 +40,8 @@ public class CharacterMovement : MonoBehaviour
         
         Ray ray = cam.ScreenPointToRay(mousePosition.action.ReadValue<Vector2>());    // Se dispara un rayo desde la camara a la posicion del raton
         RaycastHit hitPoint;
-        if(Physics.Raycast(ray, out hitPoint))  // Si este rayo inpacta sobre cualquier geometria:
+         int layerMask = 1 << 8;
+        if(Physics.Raycast(ray, out hitPoint, Mathf.Infinity, layerMask))  // Si este rayo inpacta sobre cualquier geometria:
         {   
 
 
