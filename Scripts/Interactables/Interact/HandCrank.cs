@@ -35,7 +35,7 @@ public class HandCrank : MonoBehaviour, IInteractable
 
         if (RotEnabled){
             toRotate.transform.rotation *= Quaternion.Euler(angularSpeed*Time.deltaTime * rotationAxis);
-            transform.rotation *= Quaternion.Euler(angularSpeed*Time.deltaTime*transform.forward*3);
+            transform.Rotate(new Vector3(0,0,1), angularSpeed*Time.deltaTime*3);// *= Quaternion.Euler(angularSpeed*Time.deltaTime*transform.right*3);
             //Debug.Log(toRotate.transform.rotation.eulerAngles);
             if (rotationCompleted()){ 
                 RotEnabled = false;
@@ -43,7 +43,6 @@ public class HandCrank : MonoBehaviour, IInteractable
             }
         }
     }
-    //289.5 189.83 279.91
     public bool rotationCompleted() {
         Vector3 angle = toRotate.transform.rotation.eulerAngles;
         return (Vector3.Distance(angle, lockRotAngle) < margin);

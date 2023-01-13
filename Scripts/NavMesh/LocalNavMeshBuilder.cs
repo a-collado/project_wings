@@ -51,7 +51,7 @@ public class LocalNavMeshBuilder : MonoBehaviour
         var bounds = QuantizedBounds();
 
         if (asyncUpdate)
-            m_Operation = NavMeshBuilder.UpdateNavMeshDataAsync(m_NavMesh, defaultBuildSettings, m_Sources, bounds);
+                m_Operation = NavMeshBuilder.UpdateNavMeshDataAsync(m_NavMesh, defaultBuildSettings, m_Sources, bounds);
         else
             NavMeshBuilder.UpdateNavMeshData(m_NavMesh, defaultBuildSettings, m_Sources, bounds);
     }
