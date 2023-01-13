@@ -4,7 +4,11 @@ public enum AnimationsEnum
    CRANK,
    PICK_TWO_LOW,
    DROP_TWO_LOW,
+   DROP_TWO_MID,
+   DROP_ONE_MID,
+   DROP_ONE_LOW,
    GRAB_LOW,
+   GRAB_TORCH,
    PRESS_BTN,
    CLIMB
 
