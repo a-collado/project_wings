@@ -28,9 +28,9 @@ public class Pickable : MonoBehaviour, IInteractable
         double time = stopWatch.Elapsed.TotalMilliseconds/1000;
         if(time > 0.2)
         {
-            pick();
             stopWatch.Restart();
-            return AnimationsEnum.PICK_TWO_LOW;
+            AnimationsEnum animation = pick();
+            return animation;
         }
         stopWatch.Restart();
         return AnimationsEnum.NONE;
@@ -41,18 +41,30 @@ public class Pickable : MonoBehaviour, IInteractable
         throw new System.NotImplementedException();
     }
 
-    public void pick(){
-
+    public AnimationsEnum pick(){
         if(playerInventory.getBlock() == null){
 
-        playerInventory.addBlock(this.gameObject);
-        gameObject.transform.SetParent(player.transform);
-        gameObject.transform.localPosition = new Vector3(0.07f,0.87f,0.64f);
-        activate(false);
-        this.gameObject.layer = LayerMask.NameToLayer("Default");
-        Debug.Log("["+ this.gameObject + "]: attachToPlayer()");
+            AnimationsEnum animation;
+            switch(transform.tag){
+                case "Torch": animation = AnimationsEnum.GRAB_TORCH;
+                break;
+                case "Orb": animation = AnimationsEnum.PICK_TWO_LOW;
+                break;
+                default: animation = AnimationsEnum.PICK_TWO_LOW;
+                break;
+            }  
+
+            playerInventory.addBlock(this.gameObject);
+            gameObject.transform.SetParent(player.transform);
+            gameObject.transform.localPosition = new Vector3(0.07f,0.87f,0.64f);
+            activate(false);
+            this.gameObject.layer = LayerMask.NameToLayer("Default");
+            Debug.Log("["+ this.gameObject + "]: attachToPlayer()");
+            return animation;
 
         }
+
+        return AnimationsEnum.NONE;
     
 
     }

@@ -107,6 +107,7 @@ public class CharacterAnimation : MonoBehaviour
     }
 
     public void playAnimation(AnimationsEnum animation){
+        
         switch(animation){
             case AnimationsEnum.NONE:
             break;
@@ -115,6 +116,9 @@ public class CharacterAnimation : MonoBehaviour
             break; 
             case AnimationsEnum.PRESS_BTN:
                 pressBtn();
+            break;
+            case AnimationsEnum.GRAB_TORCH:
+                grabTorch();
             break;
         }
     }
@@ -131,6 +135,10 @@ public class CharacterAnimation : MonoBehaviour
 
     private void pressBtn(){
         playerAnimator.SetTrigger("press");
+    }
+
+    private void grabTorch(){
+        //playerAnimator.SetBool("torchPicked",true);
     }
 
 

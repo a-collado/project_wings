@@ -22,7 +22,6 @@ public class Puzzle : MonoBehaviour
     void Update()
     {
         if(checkIfCompleted()){
-            Debug.Log("Completado");
             foreach (Animator animator in toActivate)
             {
                 //Do the thing
