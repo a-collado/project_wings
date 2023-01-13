@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Level1Start : MonoBehaviour
 {
@@ -11,8 +12,10 @@ public class Level1Start : MonoBehaviour
     private Animator playerAnimator;
 
     private void Awake() {
+        if(SceneManager.GetActiveScene().buildIndex == 1){
         playerAnimator = player.GetComponent<Animator>();
         playerAnimator.SetTrigger("getUp");
+        }
     }
 
     private void Start() {

@@ -1,4 +1,4 @@
-using System.Collections;
+    using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -87,11 +87,12 @@ public class MainMenu : MonoBehaviour
     }
 
 
-    private string newGameLevel;
+    private int newGameLevel;
     private string levelToLoad;
 
     private void Awake() {
-        newGameLevel = "Level1";
+        Time.timeScale = 1;
+        newGameLevel = 1;
     }
     
     public void play(){

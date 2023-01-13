@@ -10,7 +10,7 @@ public class Interactor : MonoBehaviour
     [SerializeField] private InputActionReference mouseButton, mousePosition, powerButton, actionButton;
     [SerializeField] private Camera cam;
     [SerializeField] private InteractablePrompt prompt;
-    [SerializeField] private CharacterAnimation animator;
+    private CharacterAnimation animator;
 
     private int _numFound;
     private int _numFoundT;
@@ -39,6 +39,7 @@ public class Interactor : MonoBehaviour
         
         if (_numFound > 0)                                                  // Si se ha encontrado algun objeto
         {
+
             int indexInteractable = -1;
 
             for (int i = 0; i < _colliders.Length-1; i++)

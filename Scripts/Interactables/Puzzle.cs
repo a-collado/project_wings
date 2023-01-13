@@ -14,10 +14,10 @@ public class Puzzle : MonoBehaviour
     
     [SerializeField] private Animator[] toActivate;
 
-    private AudioSource audio;
+    private AudioSource audioSource;
     void Start()
     {
-        audio = GetComponent<AudioSource>();
+        audioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -28,7 +28,7 @@ public class Puzzle : MonoBehaviour
             {
                 //Do the thing
                 animator.SetBool("activate", true);
-                audio.Play();
+                audioSource.Play();
                 Debug.Log("[Activable]: " + this.gameObject + " has been activated");
             }
             

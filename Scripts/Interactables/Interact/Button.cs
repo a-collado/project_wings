@@ -34,8 +34,10 @@ public class Button : MonoBehaviour, IInteractable
     }
 
     private void press(){
+        Debug.Log("Press");
         buttonAnimation.SetTrigger("press");
         objectToToggle.toggle();
+        activate(false);
 
         //Podriamos bloquear el boton para que no se vuelva a hacer toggle
     }
@@ -55,5 +57,11 @@ public class Button : MonoBehaviour, IInteractable
 
     public void activate(bool flag)
     {
+        this.enabled = false;
+        if (flag){
+            this.gameObject.layer = LayerMask.NameToLayer (LayerMask.LayerToName(3));
+        }else{
+            this.gameObject.layer = LayerMask.NameToLayer("Default");
+        }
     }
 }

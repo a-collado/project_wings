@@ -22,6 +22,7 @@ public class Toggleable : MonoBehaviour, IInteractable
     // Update is called once per frame
     public void toggle()
     {
+        Debug.Log("Toggle");
         toggled = !toggled;
         if (animator!= null){
             animator.SetBool("toggled", toggled);
