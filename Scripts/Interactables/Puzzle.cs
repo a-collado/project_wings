@@ -4,7 +4,7 @@ using UnityEngine;
 
 
 //Made for objects that only have an animation component to be activated when decided
-
+[RequireComponent(typeof(AudioSource))]
 public class Puzzle : MonoBehaviour
 {
     
@@ -13,9 +13,11 @@ public class Puzzle : MonoBehaviour
 
     
     [SerializeField] private Animator[] toActivate;
+
+    private AudioSource audio;
     void Start()
     {
-        
+        audio = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -26,7 +28,7 @@ public class Puzzle : MonoBehaviour
             {
                 //Do the thing
                 animator.SetBool("activate", true);
-
+                audio.Play();
                 Debug.Log("[Activable]: " + this.gameObject + " has been activated");
             }
             
