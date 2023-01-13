@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using TMPro;
 
 public class ChangeHour : MonoBehaviour, IInteractable
@@ -8,17 +9,19 @@ public class ChangeHour : MonoBehaviour, IInteractable
 
     [SerializeField]
     private int correctHour = 0;
-    static private string[] hours = { "I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX", "X", "XI", "XII" };
+    [SerializeField]
+    private List<Sprite> images;
+    [SerializeField]
     private int currentIndex = 0;
-    private TMP_Text text;
+    private Image image;
     private System.Diagnostics.Stopwatch stopWatch;
 
     private void Start() {
         stopWatch = new System.Diagnostics.Stopwatch();
         stopWatch.Start();
         activate(true);
-        text = GetComponentInChildren<TMP_Text>();
-        text.text = hours[currentIndex];
+        image = GetComponentInChildren<Image>();
+        image.sprite = images[currentIndex];
     }
 
     public void activate(bool flag)
@@ -41,14 +44,14 @@ public class ChangeHour : MonoBehaviour, IInteractable
     }
 
     public void nextNumber(){
-        if(currentIndex != 11) { currentIndex++;} 
+        if(currentIndex != 2) { currentIndex++;} 
         else { currentIndex = 0; }
-        text.text = hours[currentIndex];
+        image.sprite = images[currentIndex];
     }
 
     public bool isActive()
     {
-        return this.enabled;
+        return  currentIndex != correctHour;
     }
 
     public void Power()
