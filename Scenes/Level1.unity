@@ -2373,6 +2373,7 @@ MonoBehaviour:
   - {fileID: 545589822}
   toActivate:
   - {fileID: 2029492623}
+  puzzleCam: {fileID: 0}
 --- !u!82 &365070313
 AudioSource:
   m_ObjectHideFlags: 0
@@ -4939,6 +4940,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectToToggle: {fileID: 8778727252957507672}
+  puzzleCam: {fileID: 0}
 --- !u!95 &657192807
 Animator:
   serializedVersion: 4
@@ -5970,6 +5972,18 @@ PrefabInstance:
       propertyPath: m_LightProbeUsage
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1586743303128465882, guid: 940571d21d6368443b9cb87ef1faef4e, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -22.726236
+      objectReference: {fileID: 0}
+    - target: {fileID: 1586743303128465882, guid: 940571d21d6368443b9cb87ef1faef4e, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -4.2855196
+      objectReference: {fileID: 0}
+    - target: {fileID: 1586743303128465882, guid: 940571d21d6368443b9cb87ef1faef4e, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 4.156884
+      objectReference: {fileID: 0}
     - target: {fileID: 2202554969649263697, guid: 940571d21d6368443b9cb87ef1faef4e, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.0000004693857
@@ -6356,6 +6370,7 @@ MonoBehaviour:
   - {fileID: 1086804621}
   toActivate:
   - {fileID: 9087741156712256082}
+  puzzleCam: {fileID: 0}
 --- !u!82 &772351464
 AudioSource:
   m_ObjectHideFlags: 0
@@ -9244,6 +9259,7 @@ MonoBehaviour:
   - {fileID: 1877892040}
   - {fileID: 293356877}
   - {fileID: 1032058310}
+  puzzleCam: {fileID: 0}
 --- !u!82 &1018516757
 AudioSource:
   m_ObjectHideFlags: 0
@@ -39771,6 +39787,7 @@ MonoBehaviour:
   toActivate:
   - {fileID: 2018253210}
   - {fileID: 366647080}
+  puzzleCam: {fileID: 0}
 --- !u!82 &919132149180364197
 AudioSource:
   m_ObjectHideFlags: 0
@@ -54255,6 +54272,7 @@ MonoBehaviour:
   - {fileID: 664925701}
   toActivate:
   - {fileID: 269318169}
+  puzzleCam: {fileID: 0}
 --- !u!82 &8778727252957507675
 AudioSource:
   m_ObjectHideFlags: 0

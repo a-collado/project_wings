@@ -1,3 +1,4 @@
+#if UNITY_EDITOR
 using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
@@ -64,7 +65,7 @@ public class StartFromHere : EditorWindow
     }
     void OnGUI()
     {
-
+        readPlayerPositionHistory();
         
         
 
@@ -238,3 +239,4 @@ public class SerializableVector3
         return new Vector3(x, y, z);
     }
 }
+#endif
