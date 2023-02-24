@@ -11,6 +11,7 @@ public class Button : MonoBehaviour, IInteractable
     [SerializeField]
     private Toggleable objectToToggle;
     
+    [SerializeField] private Camera puzzleCam;
     private System.Diagnostics.Stopwatch stopWatch;
 
 
@@ -34,6 +35,8 @@ public class Button : MonoBehaviour, IInteractable
     }
 
     private void press(){
+        Camera.main.enabled = false;
+        puzzleCam.enabled = true;
         Debug.Log("Press");
         buttonAnimation.SetTrigger("press");
         objectToToggle.toggle();

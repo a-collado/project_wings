@@ -14,6 +14,8 @@ public class Puzzle : MonoBehaviour
     
     [SerializeField] private Animator[] toActivate;
 
+    [SerializeField] private Camera puzzleCam;
+
     private AudioSource audioSource;
     void Start()
     {
@@ -27,6 +29,9 @@ public class Puzzle : MonoBehaviour
             foreach (Animator animator in toActivate)
             {
                 //Do the thing
+                //Switch Main Camera to puzzleCam
+                Camera.main.enabled = false;
+                puzzleCam.enabled = true;
                 animator.SetBool("activate", true);
                 audioSource.Play();
                 Debug.Log("[Activable]: " + this.gameObject + " has been activated");
