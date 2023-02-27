@@ -10,8 +10,8 @@ public class MenuManager : MonoBehaviour
     [SerializeField] private InputActionReference pauseButton;
     [SerializeField] private Canvas pauseCanvas;
 
-    [SerializeField] private CharacterMovement characterMovement;
-    [SerializeField] private CameraController cameraController;
+    //[SerializeField] private CharacterMovement characterMovement;
+    //[SerializeField] private CameraController cameraController;
 
     private System.Diagnostics.Stopwatch stopWatch;
     private bool paused;
@@ -21,6 +21,10 @@ public class MenuManager : MonoBehaviour
         stopWatch = new System.Diagnostics.Stopwatch();
         pauseCanvas.gameObject.SetActive(paused);
         stopWatch.Start();
+    }
+
+    private void Start() {
+        Cursor.lockState = CursorLockMode.Locked;
     }
 
     // Update is called once per frame
@@ -43,17 +47,18 @@ public class MenuManager : MonoBehaviour
     private void managePause()
     {
         pauseCanvas.gameObject.SetActive(paused);
-        characterMovement.enabled = !paused;
-        cameraController.enabled = !paused;
+        //characterMovement.enabled = !paused;
+        //cameraController.enabled = !paused;
         
         if(paused)  Time.timeScale = 0;
-        else Time.timeScale = 1;
+        else { Time.timeScale = 1; Cursor.lockState = CursorLockMode.Locked; }
         
     }
 
     public void pauseGame()
     {
         paused = !paused;
+        Cursor.lockState = CursorLockMode.None;
     }
 
 
