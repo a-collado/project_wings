@@ -35,7 +35,7 @@ public class Interactor : MonoBehaviour
         _interactionPointRadius, _triggers, _triggerMask);            // Detecta todos los objetos en un radio dado alrededor del personaje.
 
 
-        string log = "[Interactor] colliders found num= " + _numFound + " (" + _colliders + ": " + _colliders.Length + " ) : ";
+        //string log = "[Interactor] colliders found num= " + _numFound + " (" + _colliders + ": " + _colliders.Length + " ) : ";
         
         if (_numFound > 0)                                                  // Si se ha encontrado algun objeto
         {
@@ -44,14 +44,13 @@ public class Interactor : MonoBehaviour
 
             for (int i = 0; i < _colliders.Length-1; i++)
             {
-                log += " , ["+ i + "]" + _colliders[i] + " : ";
+                //log += " , ["+ i + "]" + _colliders[i] + " : ";
                 if (_colliders[i] && _colliders[i].GetComponent<IInteractable>().isActive()){
                     indexInteractable = i;
                     
                     break;
                 }
             }
-            //Debug.Log(log);
 
             if (indexInteractable != -1){
                 var interactable = _colliders[indexInteractable].GetComponent<IInteractable>(); // Comprobas si es un objeto interactuable
@@ -95,19 +94,7 @@ public class Interactor : MonoBehaviour
     }
 
     private bool InteractorClicked(IInteractable target){
-        /*if (mouseButton.action.ReadValue<float>() > 0)
-        {
-            Ray ray = cam.ScreenPointToRay(mousePosition.action.ReadValue<Vector2>());    // Se dispara un rayo desde la camara a la posicion del raton
-            RaycastHit hitPoint;
-            if(Physics.Raycast(ray, out hitPoint))  // Si este rayo inpacta sobre cualquier geometria:
-            {         
-                var interactable = hitPoint.transform.GetComponent<IInteractable>();
-                if (interactable != null)
-                    return interactable == target;
-            }
-        }
-        return false;
-        */
+
         return actionButton.action.ReadValue<float>() > 0;
     }
 

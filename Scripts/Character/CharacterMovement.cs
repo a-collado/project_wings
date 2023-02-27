@@ -7,7 +7,6 @@ using UnityEngine.InputSystem;
 
 public class CharacterMovement : MonoBehaviour
 {
-    // "SerializeField" hace que un elemento aparezca en el Inspector de Unity aunque este en privado.
 
     [SerializeField] private InputActionReference mouseButton, mousePosition;
     [SerializeField] private Camera cam;

@@ -34,9 +34,9 @@ public class CharacterAnimation : MonoBehaviour
         playerAnimator = gameObject.GetComponent<Animator>();
         player = gameObject.GetComponent<NavMeshAgent>();
 
-        playerAnimator.applyRootMotion = true;
+        /*playerAnimator.applyRootMotion = true;
         player.updatePosition = false;
-        player.updateRotation = true;
+        player.updateRotation = true;*/
     }
 
     private void Start() {
@@ -45,23 +45,23 @@ public class CharacterAnimation : MonoBehaviour
         powerAnim.SetActive(true);
     }
 
-    private  void OnAnimatorMove() {
+    /*private  void OnAnimatorMove() {
         Vector3 rootPosition = playerAnimator.rootPosition;
         rootPosition.y = player.nextPosition.y;
         transform.position = rootPosition;
         player.nextPosition = rootPosition;
-    }
+    }*/
 
     void Update()
     {
         //Debug.Log(velocity);
-        SynchronizeAnimationAndAgent();
+        //SynchronizeAnimationAndAgent();
         powerAnim.SetActive(powerButton.action.ReadValue<float>() > 0);
 
 
     }
 
-    private void SynchronizeAnimationAndAgent(){
+    /*private void SynchronizeAnimationAndAgent(){
 
         Vector3 wordDeltaPosition = player.nextPosition - transform.position;
         wordDeltaPosition.y = 0;
@@ -100,7 +100,7 @@ public class CharacterAnimation : MonoBehaviour
             );
         }
             
-    }
+    }*/
 
     public void Interact(){
         playerAnimator.SetTrigger("interact");
