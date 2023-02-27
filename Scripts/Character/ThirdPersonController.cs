@@ -20,7 +20,7 @@ public class ThirdPersonController : MonoBehaviour
     [SerializeField] private float jumpButtonGracePeriod = 0.2f;
     [SerializeField] private float jumpHorizontalSpeed = 3.0f;
 
-    private Animator animator;
+    private CharacterAnimation animator;
     private CharacterController controller;
 
     private float velocityY;
@@ -36,8 +36,7 @@ public class ThirdPersonController : MonoBehaviour
 
 
     private void Awake() {
-        animator = gameObject.GetComponent<Animator>();
-        animator.applyRootMotion = true;
+        animator = gameObject.GetComponent<CharacterAnimation>();
         controller = gameObject.GetComponent<CharacterController>();
         originalStepOffset = controller.stepOffset;
     }
@@ -57,7 +56,8 @@ public class ThirdPersonController : MonoBehaviour
             inputMagnitude /= 2;
         }
 
-        animator.SetFloat("Input Magnitude", inputMagnitude, 0.05f, Time.deltaTime);
+
+        animator.animateLocomotion(inputMagnitude);
 
         movementDirection = Quaternion.AngleAxis(cam.transform.rotation.eulerAngles.y, Vector3.up) * movementDirection;
         movementDirection.Normalize();
@@ -142,7 +142,7 @@ public class ThirdPersonController : MonoBehaviour
     {
         if (isGrounded)
         {
-        Vector3 velocity = animator.deltaPosition; 
+        Vector3 velocity = animator.getDeltaPosition(); 
         velocity.y = velocityY * Time.deltaTime;
 
         controller.Move(velocity);
