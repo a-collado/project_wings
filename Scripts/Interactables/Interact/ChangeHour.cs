@@ -54,6 +54,11 @@ public class ChangeHour : MonoBehaviour, IInteractable
         return  currentIndex != correctHour;
     }
 
+    public bool isCompleted()
+    {
+        return isActive();
+    }
+
     public void Power()
     {
         

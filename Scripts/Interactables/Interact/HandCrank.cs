@@ -61,4 +61,9 @@ public class HandCrank : MonoBehaviour, IInteractable
         return this.enabled;
     }
 
+    public bool isCompleted()
+    {
+        return isActive();
+    }
+
 }

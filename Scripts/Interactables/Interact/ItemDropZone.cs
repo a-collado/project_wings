@@ -18,14 +18,14 @@ public class ItemDropZone : MonoBehaviour, IInteractable
     [SerializeField] private TextMeshPro textMesh;
     private GameObject player; //player GameObject
     private Inventory playerInventory; //player Inventory
-    private bool isCompleted; // true when this part is done
+    private bool isComplete; // true when this part is done
 
     private System.Diagnostics.Stopwatch stopWatch; // delay to prevent key spam
 
     void Awake() { // Load and initialize stuff
         player = GameObject.FindGameObjectsWithTag("Player")[0];
         playerInventory = player.GetComponent<Inventory>();
-        isCompleted = false;
+        isComplete = false;
         stopWatch = new System.Diagnostics.Stopwatch();
         stopWatch.Start();
     }
@@ -58,7 +58,7 @@ public class ItemDropZone : MonoBehaviour, IInteractable
  
         Debug.Log("[ItemDropZone]: drop: " + numItems);
 
-        if (!isCompleted ){
+        if (!isComplete ){
             numItems = playerInventory.dropItems(numItems, correctObjectTag);
 
             if (textMesh != null){
@@ -98,6 +98,11 @@ public class ItemDropZone : MonoBehaviour, IInteractable
 
      public bool isActive() {
         return this.enabled;
+    }
+
+    public bool isCompleted()
+    {
+        return isActive();
     }
 }
 

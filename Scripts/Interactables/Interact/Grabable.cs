@@ -64,6 +64,11 @@ public class Grabable : MonoBehaviour, IInteractable
         return this.enabled;
     }
 
+    public bool isCompleted()
+    {
+        return isActive();
+    }
+
 }
 
 

@@ -6,7 +6,6 @@ using UnityEngine.Events;
 public class TreetoGrow : MonoBehaviour, IInteractable
 {
 
-    private bool isCompleted;
 
     [SerializeField] Animator animator;
 
@@ -46,4 +45,8 @@ public class TreetoGrow : MonoBehaviour, IInteractable
         return this.enabled;
     }
 
+    public bool isCompleted()
+        {
+            return isActive();
+        }
 }

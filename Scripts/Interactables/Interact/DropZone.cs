@@ -9,14 +9,14 @@ public class DropZone : MonoBehaviour, IInteractable
     [SerializeField] private List<Pickable> correctObjects; //Correct object for this DropZone
     private GameObject player; //player GameObject
     private Inventory playerInventory; //player Inventory
-    private bool isCompleted; // true when this part is done
+    private bool isComplete; // true when this part is done
 
     private System.Diagnostics.Stopwatch stopWatch; // delay to prevent key spam
 
     void Awake() { // Load and initialize stuff
         player = GameObject.FindGameObjectsWithTag("Player")[0];
         playerInventory = player.GetComponent<Inventory>();
-        isCompleted = false;
+        isComplete = false;
         stopWatch = new System.Diagnostics.Stopwatch();
         stopWatch.Start();
     }
@@ -85,7 +85,7 @@ public class DropZone : MonoBehaviour, IInteractable
             {
                 if(pick == item) {
                 //Complete this dropZone
-                isCompleted = true;
+                isComplete = true;
                 complete();
                 }
             }   
@@ -108,8 +108,8 @@ public class DropZone : MonoBehaviour, IInteractable
         Debug.Log("[DropZone]: complete() checking if all DropZones are completed");
         foreach (DropZone zone in zones)
         {
-             Debug.Log("[DropZone]: complete() checking zone: " + zone + " zone is completed = " + zone.isCompleted);
-            if(!zone.isCompleted){ //if one is not completed
+             Debug.Log("[DropZone]: complete() checking zone: " + zone + " zone is completed = " + zone.isComplete);
+            if(!zone.isComplete){ //if one is not completed
                 isNotComplete = true; //the puzzle is not completed
                 Debug.Log("[DropZone] One of the zones is not completed so it is not completed, zone : " + zone);
                 break; // so we exit
@@ -154,6 +154,11 @@ public class DropZone : MonoBehaviour, IInteractable
         }
         return false;
         
+    }
+
+    public bool isCompleted()
+    {
+        return isActive();
     }
 }
 

@@ -14,7 +14,7 @@ public class Puzzle : MonoBehaviour
     
     [SerializeField] private Animator[] toActivate;
 
-    [SerializeField] private Camera puzzleCam;
+    ////[SerializeField] private Camera puzzleCam;
 
     private AudioSource audioSource;
     void Start()
@@ -30,12 +30,13 @@ public class Puzzle : MonoBehaviour
             {
                 //Do the thing
                 //Switch Main Camera to puzzleCam
-                Camera.main.enabled = false;
-                puzzleCam.enabled = true;
+                ////Camera.main.enabled = false;
+                ////puzzleCam.enabled = true;
                 animator.SetBool("activate", true);
                 audioSource.Play();
                 Debug.Log("[Activable]: " + this.gameObject + " has been activated");
             }
+            Debug.Log("Puzzle completed");
             
             //And then disable
             this.enabled = false;
@@ -47,7 +48,7 @@ public class Puzzle : MonoBehaviour
         foreach (GameObject obj in this.toComplete)
         {   
             IInteractable inter = obj.GetComponent<IInteractable>();
-            if (inter.isActive()){ //Si esta activo significa que aun no se ha completado el puzzle
+            if (inter.isCompleted()){ //Si esta activo significa que aun no se ha completado el puzzle
                 completed = false;
             }
         }

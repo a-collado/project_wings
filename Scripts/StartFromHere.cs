@@ -47,6 +47,8 @@ public class StartFromHere : EditorWindow
 
     void Update()
     {
+        
+        
         Ray ray = SceneView.lastActiveSceneView.camera.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0));
         RaycastHit hit;
         if (Physics.Raycast(ray, out hit))
@@ -63,8 +65,12 @@ public class StartFromHere : EditorWindow
             locationPointer.transform.rotation = Quaternion.LookRotation(hit.normal);
         }
     }
+
+    
+  
     void OnGUI()
     {
+        
         readPlayerPositionHistory();
         
         
@@ -106,7 +112,10 @@ public class StartFromHere : EditorWindow
     {
         savePlayerPositionHistory();
         GameObject.DestroyImmediate(locationPointer);
+        GameObject.DestroyImmediate(GameObject.Find("LocationPointer"));
         Debug.Log("[Start From Here: Disabled]");
+        
+
     }
     static void startHere()
     {

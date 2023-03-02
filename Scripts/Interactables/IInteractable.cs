@@ -15,7 +15,7 @@ public interface IInteractable
 
     public bool isActive();
 
-   
+   public bool isCompleted();
 
     
 }

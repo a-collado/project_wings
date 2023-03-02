@@ -9,14 +9,14 @@ public class DropZone2 : MonoBehaviour, IInteractable
     [SerializeField] private List<Pickable> correctObjects; //Correct object for this DropZone
     private GameObject player; //player GameObject
     private Inventory playerInventory; //player Inventory
-    private bool isCompleted; // true when this part is done
+    private bool isComplete; // true when this part is done
 
     private System.Diagnostics.Stopwatch stopWatch; // delay to prevent key spam
 
     void Awake() { // Load and initialize stuff
         player = GameObject.FindGameObjectsWithTag("Player")[0];
         playerInventory = player.GetComponent<Inventory>();
-        isCompleted = false;
+        isComplete = false;
         stopWatch = new System.Diagnostics.Stopwatch();
         stopWatch.Start();
     }
@@ -85,7 +85,7 @@ public class DropZone2 : MonoBehaviour, IInteractable
             {
                 if(pick == item) {
                 //Complete this dropZone
-                isCompleted = true;
+                isComplete = true;
                 }
             }   
             
@@ -103,8 +103,13 @@ public class DropZone2 : MonoBehaviour, IInteractable
 
      public bool isActive() {
 
-        return !isCompleted;
+        return !isComplete;
         
+    }
+
+    public bool isCompleted()
+    {
+        return isActive();
     }
 }
 

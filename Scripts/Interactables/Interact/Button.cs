@@ -58,6 +58,10 @@ public class Button : MonoBehaviour, IInteractable
         return true;
     }
 
+    public bool isCompleted()
+    {
+        return true;
+    }
     public void activate(bool flag)
     {
         this.enabled = false;

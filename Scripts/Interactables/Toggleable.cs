@@ -54,4 +54,9 @@ public class Toggleable : MonoBehaviour, IInteractable
     {
         return !this.toggled;
     }
+
+    public bool isCompleted()
+    {
+        return !this.toggled;
+    }
 }

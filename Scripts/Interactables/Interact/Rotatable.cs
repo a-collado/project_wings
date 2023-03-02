@@ -61,4 +61,9 @@ public class Rotatable : MonoBehaviour, IInteractable
         return this.enabled;
     }
 
+    public bool isCompleted()
+    {
+        return isActive();
+    }
+
 }

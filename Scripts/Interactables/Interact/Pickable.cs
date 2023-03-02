@@ -90,6 +90,11 @@ public class Pickable : MonoBehaviour, IInteractable
         return this.enabled;
     }
 
+    public bool isCompleted()
+    {
+        return isActive();
+    }
+
 }
 
 
