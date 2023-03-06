@@ -17,31 +17,31 @@ public class MenuManager : MonoBehaviour
     private bool paused;
 
     private void Awake() {
-        paused = false;
+        /*paused = false;
         stopWatch = new System.Diagnostics.Stopwatch();
         pauseCanvas.gameObject.SetActive(paused);
-        stopWatch.Start();
+        stopWatch.Start();*/
     }
 
     private void Start() {
-        Cursor.lockState = CursorLockMode.Locked;
+        //Cursor.lockState = CursorLockMode.Locked;
     }
 
     // Update is called once per frame
     void Update()
     {
-        double time = stopWatch.Elapsed.TotalMilliseconds/1000;
+        /*double time = stopWatch.Elapsed.TotalMilliseconds/1000;
         if(pauseButton.action.ReadValue<float>() > 0){
             if(time > 0.2)
             {
                 pauseGame();
             }
             stopWatch.Restart();
-        }
+        }*/
     }
 
     private void LateUpdate() {
-        managePause();
+        //managePause();
     }
 
     private void managePause()
