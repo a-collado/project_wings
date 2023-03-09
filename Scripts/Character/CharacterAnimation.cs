@@ -8,11 +8,12 @@ using UnityEngine.InputSystem;
 public class CharacterAnimation : MonoBehaviour
 {
 
-    [SerializeField] private InputActionReference powerButton;
     [SerializeField] private GameObject powerAnim;
     
     private Animator playerAnimator;
-    private NavMeshAgent player;
+    
+    private FasTPS.PlayerInput input;
+
     private bool objectPicked;
 
     private PlayerSoundController playerSound;
@@ -33,9 +34,8 @@ public class CharacterAnimation : MonoBehaviour
 
     private void Awake() {
         playerAnimator = gameObject.GetComponent<Animator>();
-        player = gameObject.GetComponent<NavMeshAgent>();
         playerAnimator.applyRootMotion = true;
-
+        input = GetComponentInParent<FasTPS.PlayerInput>();
     }
 
     private void Start() 
@@ -46,7 +46,7 @@ public class CharacterAnimation : MonoBehaviour
 
     void Update()
     {
-        powerAnim.SetActive(powerButton.action.ReadValue<float>() > 0);
+        powerAnim.SetActive(input.Power);
     }
 
     public void Interact()
