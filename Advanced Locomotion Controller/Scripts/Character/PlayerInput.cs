@@ -20,6 +20,10 @@ namespace FasTPS
         public bool DropLedge;
         [HideInInspector]
         public bool Jump;
+        [HideInInspector]
+        public bool Interact;
+        [HideInInspector]
+        public bool Power;
 
         bool disabled;
         bool enabled;
@@ -93,6 +97,23 @@ namespace FasTPS
                     CB.InitiateFallOff();
                 }
             };
+            Controls.Keyboard.Interact.performed += ctx =>
+            {
+                Interact = true;
+            };
+            Controls.Keyboard.Interact.canceled += ctx =>
+            {
+                Interact = false;
+            };
+            Controls.Mouse.Power.performed += ctx =>
+            {
+                Power = true;
+            };
+            Controls.Mouse.Power.canceled += ctx =>
+            {
+                Power = false;
+            };
+
         }
 
         private void LookForClimbSpot()

@@ -7,10 +7,10 @@ public class Interactor : MonoBehaviour
 {
     [SerializeField] private float _interactionPointRadius = 1.5f;
     [SerializeField] private LayerMask _interactableMask, _triggerMask;
-    [SerializeField] private InputActionReference mouseButton, mousePosition, powerButton, actionButton;
     [SerializeField] private Camera cam;
     [SerializeField] private InteractablePrompt prompt;
     private CharacterAnimation animator;
+    private FasTPS.PlayerInput input;
 
     private int _numFound;
     private int _numFoundT;
@@ -21,6 +21,7 @@ public class Interactor : MonoBehaviour
 
     private void Awake() {
         animator = GetComponent<CharacterAnimation>();
+        input = GetComponentInParent<FasTPS.PlayerInput>();
     }
 
     private void Update() 
@@ -35,7 +36,7 @@ public class Interactor : MonoBehaviour
         _interactionPointRadius, _triggers, _triggerMask);            // Detecta todos los objetos en un radio dado alrededor del personaje.
 
 
-        //string log = "[Interactor] colliders found num= " + _numFound + " (" + _colliders + ": " + _colliders.Length + " ) : ";
+        string log = "[Interactor] colliders found num= " + _numFound + " (" + _colliders + ": " + _colliders.Length + " ) : ";
         
         if (_numFound > 0)                                                  // Si se ha encontrado algun objeto
         {
@@ -52,6 +53,8 @@ public class Interactor : MonoBehaviour
                 }
             }
 
+            Debug.Log(indexInteractable);
+
             if (indexInteractable != -1){
                 var interactable = _colliders[indexInteractable].GetComponent<IInteractable>(); // Comprobas si es un objeto interactuable
                 
@@ -64,7 +67,7 @@ public class Interactor : MonoBehaviour
                     {
                         animator.playAnimation(interactable.Interact());                           // Interactuamos con el objeto
                     }
-                    if (powerButton.action.ReadValue<float>() > 0){
+                    if (input.Power){
                         interactable.Power();
                     }
                 }
@@ -95,7 +98,7 @@ public class Interactor : MonoBehaviour
 
     private bool InteractorClicked(IInteractable target){
 
-        return actionButton.action.ReadValue<float>() > 0;
+        return input.Interact;
     }
 
     private void setPrompt(Transform obj){
