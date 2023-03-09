@@ -34,7 +34,7 @@ public class CharacterAnimation : MonoBehaviour
 
     private void Awake() {
         playerAnimator = gameObject.GetComponent<Animator>();
-        playerAnimator.applyRootMotion = true;
+        //playerAnimator.applyRootMotion = true;
         input = GetComponentInParent<FasTPS.PlayerInput>();
     }
 
