@@ -60,7 +60,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 1
-    m_ConditionEvent: Activate
+    m_ConditionEvent: activate
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -8066844613947730490}
@@ -85,7 +85,7 @@ AnimatorController:
   m_Name: open_doorL_inside
   serializedVersion: 5
   m_AnimatorParameters:
-  - m_Name: Activate
+  - m_Name: activate
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
