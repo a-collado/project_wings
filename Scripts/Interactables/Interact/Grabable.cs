@@ -46,6 +46,8 @@ public class Grabable : MonoBehaviour, IInteractable
         ////Debug.Log("[Grabable]: " + playerInventory + " : " + this.gameObject);
         this.playerInventory.addItem(this.gameObject);
         this.gameObject.SetActive(false);
+        GetComponent<Collider>().enabled = false;
+        GetComponent<Grabable>().enabled = false;
 
     }
 
