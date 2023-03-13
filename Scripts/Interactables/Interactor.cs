@@ -53,7 +53,7 @@ public class Interactor : MonoBehaviour
                 }
             }
 
-            Debug.Log(indexInteractable);
+            //Debug.Log(indexInteractable);
 
             if (indexInteractable != -1){
                 var interactable = _colliders[indexInteractable].GetComponent<IInteractable>(); // Comprobas si es un objeto interactuable
