@@ -2,11 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+#if UNITY_EDITOR
+using UnityEditor;
+#endif
 
 public class TreetoGrow : MonoBehaviour, IInteractable
 {
 
 
+
+    [Header("animator (Nullable)")]
     [SerializeField] Animator animator;
 
     private System.Diagnostics.Stopwatch stopWatch; // delay to prevent key spam
