@@ -6,3 +6,4 @@ Para que todo funcione bien hay que importar los paquetes:
   - Universal Render Pipeline
   - com.unity.ai.navigation (experimental)
   - Post Processing
+  - alembic
