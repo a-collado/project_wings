@@ -5,11 +5,12 @@ using UnityEngine;
 public class ActivateMoveByTrigger : MonoBehaviour
 {
 
-    Animator animator;
+    [SerializeField] Animator animator;
 
     // Start is called before the first frame update
     void Start()
     {
+        if (animator == null)
         animator = gameObject.GetComponentInParent<Animator>();
     }
 
