@@ -94,7 +94,6 @@ GameObject:
   - component: {fileID: 216188298492419839}
   - component: {fileID: 2865475260616356572}
   - component: {fileID: 4986357416782092827}
-  - component: {fileID: 4986357416782092823}
   - component: {fileID: 4986357416782092822}
   - component: {fileID: 4986357416782092824}
   m_Layer: 3
@@ -174,24 +173,6 @@ CapsuleCollider:
   m_Height: 0.3
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
---- !u!320 &4986357416782092823
-PlayableDirector:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8220063649374198148}
-  m_Enabled: 0
-  serializedVersion: 3
-  m_PlayableAsset: {fileID: 11400000, guid: 2b9e21a7afbfadb47a24e02ab205d156, type: 2}
-  m_InitialState: 1
-  m_WrapMode: 2
-  m_DirectorUpdateMode: 1
-  m_InitialTime: 0
-  m_SceneBindings: []
-  m_ExposedReferences:
-    m_References:
-    - 4f7261d823d5d6a4682bfc8a7ef32528: {fileID: 2865475260616356572}
 --- !u!95 &4986357416782092822
 Animator:
   serializedVersion: 4
