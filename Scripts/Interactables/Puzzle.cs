@@ -34,7 +34,7 @@ public class Puzzle : MonoBehaviour
                 ////puzzleCam.enabled = true;
                 animator.SetBool("activate", true);
                 audioSource.Play();
-                Debug.Log("[Activable]: " + this.gameObject + " has been activated");
+                Debug.Log("[Activable]: " + animator + " has been activated");
             }
             Debug.Log("Puzzle completed");
             
