@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 5054607622867643562}
   - component: {fileID: 5900849639084748885}
   - component: {fileID: 5900849639084748880}
+  - component: {fileID: 1943806468}
   m_Layer: 6
   m_Name: Pressure_Plate Toggleable
   m_TagString: Untagged
@@ -118,3 +119,17 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1943806468
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6711892498080222591}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7adf7375baca1f449843d26337f6c3b0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  vision: {fileID: 0}
+  timeToDeactivate: 5
