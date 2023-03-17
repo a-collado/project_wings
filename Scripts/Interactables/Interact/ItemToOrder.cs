@@ -5,15 +5,14 @@ using UnityEngine;
 public class ItemToOrder : MonoBehaviour, IInteractable
 {
     
-    [SerializeField] AudioSource audioSource; //sound that may do when you interact
+    private AudioSource audioSource; //sound that may do when you interact
     [SerializeField] List<int> positions; //positions that should take this child in the parent
     private ItemsInOrder parent; //parent check the order of the children
-    private System.Diagnostics.Stopwatch stopWatch; // delay to prevent key spam
 
-    void awake()
+    void Awake()
     {
         parent = GetComponentInParent<ItemsInOrder>();
-        
+        audioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -24,16 +23,21 @@ public class ItemToOrder : MonoBehaviour, IInteractable
 
     public AnimationsEnum Interact()
     {
-        
-        double time = stopWatch.Elapsed.TotalMilliseconds / 1000;
-        if (time > 0.2)
-        {
-            parent.ItemToOrderEvent(positions) ;
-            stopWatch.Restart();
-            return AnimationsEnum.DROP_TWO_LOW;
+  
+        if (isActive()){
+            audioSource.Play();
+            parent.ItemToOrderEvent(positions);
+            activate(false);
+            StartCoroutine(activateCoroutine(true));
         }
-        stopWatch.Restart();
+
         return AnimationsEnum.NONE;
+      
+    }
+
+    IEnumerator activateCoroutine(bool flag){
+        yield return new WaitForSeconds(0.25f);
+        this.enabled = flag;
     }
 
     public void Power() {
@@ -41,9 +45,11 @@ public class ItemToOrder : MonoBehaviour, IInteractable
         throw new System.NotImplementedException();
     }
 
-    public void activate(bool flag) { }
+    public void activate(bool flag) { 
+        this.enabled = flag;
+    }
 
-    public bool isActive() { return false; }
+    public bool isActive() { return this.enabled; }
 
     public bool isCompleted() { return false; }
 }

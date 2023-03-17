@@ -9,7 +9,7 @@ public class ItemsInOrder : MonoBehaviour, IInteractable
     private bool isComplete;
 
     // Start is called before the first frame update
-    public void awake()
+    public void Awake()
     {
         positions = new List<int>();
         isComplete = false;
@@ -34,12 +34,12 @@ public class ItemsInOrder : MonoBehaviour, IInteractable
         }
         else
         {
-            int length = positions.Count;
+            int nextPosition = positions.Count+1;
 
-            if (positions_child.Contains(length)){
-                positions.Add(length);
+            if (positions_child.Contains(nextPosition)){
+                positions.Add(nextPosition);
 
-                if(length+1 == maximum_items)
+                if(nextPosition == maximum_items)
                 {
                     completed = true;
                     isComplete = true;
@@ -51,7 +51,7 @@ public class ItemsInOrder : MonoBehaviour, IInteractable
             }
         }
 
-        Debug.Log("Items in order: ");
+        Debug.Log("Items in order: " + positions.Count);
         foreach (var x in positions)
         {
            
@@ -78,7 +78,7 @@ public class ItemsInOrder : MonoBehaviour, IInteractable
 
     public bool isActive() { return false; }
 
-    public bool isCompleted() { return isComplete; }
+    public bool isCompleted() { return !isComplete; }
 
 
 
