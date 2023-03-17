@@ -514,7 +514,7 @@ namespace FasTPS
                 direction = transform.right * horizontal + transform.forward * vertical;
             }
             MoveDirection = direction;
-            if (direction.magnitude >= 0.1f && !animator.GetCurrentAnimatorStateInfo(0).IsName("Jump Land"))
+            if (direction.magnitude >= 0.1f /*&& !animator.GetCurrentAnimatorStateInfo(0).IsName("Jump Land")*/)
             {
                 if (Analog && !IsCovering)
                 {
