@@ -7,11 +7,11 @@ public class respawn_trigger : MonoBehaviour
 
     // Start is called before the first frame update
     [SerializeField] GameObject respawn;
-    GameObject player;
+    CharacterController playerController;
 
     void Awake()
     {
-        player = GameObject.FindGameObjectsWithTag("Player")[0];
+        playerController = GameObject.FindGameObjectsWithTag("Player")[0].GetComponent<CharacterController>();
     }
 
     // Update is called once per frame
@@ -24,7 +24,10 @@ public class respawn_trigger : MonoBehaviour
     {
         if(other.tag == "Player"){
             Debug.Log("Trigger entered");
-            player.transform.position = respawn.transform.position;
+            playerController.enabled = false;
+            playerController.transform.position = respawn.transform.position;
+            //player.transform.position = respawn.transform.position;
+            playerController.enabled = true;
         }
 
     }
