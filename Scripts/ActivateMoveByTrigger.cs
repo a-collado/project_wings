@@ -16,12 +16,14 @@ public class ActivateMoveByTrigger : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (animator.GetBool("activate") && !this.animator.GetBool("triggerActivate"))
-        {
-            animator.SetBool("triggerActivate", true);
-            Debug.Log("TriggerActivated");
+        if(other.tag == "Player"){
+            if (animator.GetBool("activate") && !this.animator.GetBool("triggerActivate"))
+            {
+                animator.SetBool("triggerActivate", true);
+                Debug.Log("TriggerActivated");
 
-            this.enabled = false;
+                this.enabled = false;
+            }
         }
 
     }
