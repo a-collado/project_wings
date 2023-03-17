@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Cinemachine;
 
 
 //Made for objects that only have an animation component to be activated when decided
@@ -14,12 +15,15 @@ public class Puzzle : MonoBehaviour
     
     [SerializeField] private Animator[] toActivate;
 
-    ////[SerializeField] private Camera puzzleCam;
+    [Header("Cameras")]
+    [SerializeField] private int resolveCameraIndex = -1;
+    [SerializeField] private VirtualCamerasManager cameraManager;
 
     private AudioSource audioSource;
     void Start()
     {
         audioSource = GetComponent<AudioSource>();
+     
     }
 
     // Update is called once per frame
@@ -30,8 +34,9 @@ public class Puzzle : MonoBehaviour
             {
                 //Do the thing
                 //Switch Main Camera to puzzleCam
-                ////Camera.main.enabled = false;
-                ////puzzleCam.enabled = true;
+                if (resolveCameraIndex != -1 && cameraManager != null)
+                    cameraManager.SetVirtualCamera(resolveCameraIndex, 5f);
+                
                 animator.SetBool("activate", true);
                 audioSource.Play();
                 Debug.Log("[Activable]: " + this.gameObject + " has been activated");
