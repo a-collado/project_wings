@@ -39,7 +39,7 @@ public class Puzzle : MonoBehaviour
                 
                 animator.SetBool("activate", true);
                 audioSource.Play();
-                Debug.Log("[Activable]: " + this.gameObject + " has been activated");
+                Debug.Log("[Activable]: " + animator + " has been activated");
             }
             Debug.Log("Puzzle completed");
             
