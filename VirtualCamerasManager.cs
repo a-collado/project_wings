@@ -10,6 +10,7 @@ public class VirtualCamerasManager : MonoBehaviour
     void Start()
     {
         if (virtualCameras.Length < 0)
+        
         {
             Debug.LogError("[VirtualCamerasManager]: No virtual cameras found");
             return;
