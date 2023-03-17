@@ -514,7 +514,7 @@ namespace FasTPS
                 direction = transform.right * horizontal + transform.forward * vertical;
             }
             MoveDirection = direction;
-            if (direction.magnitude >= 0.1f)
+            if (direction.magnitude >= 0.1f && !animator.GetCurrentAnimatorStateInfo(0).IsName("Jump Land"))
             {
                 if (Analog && !IsCovering)
                 {
@@ -594,7 +594,7 @@ namespace FasTPS
         public void Jump()
         {
             //Note: Called from Player Input Script
-            if (IsGrounded)
+            if (IsGrounded && !animator.GetCurrentAnimatorStateInfo(0).IsName("Falling To Roll"))
             {
                 animator.SetBool("IsJumping", true);
                 velocity.y = Mathf.Sqrt(jumpHeight * -2f * Gravity);
