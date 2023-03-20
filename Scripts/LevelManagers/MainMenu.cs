@@ -37,8 +37,8 @@ public class MainMenu : MonoBehaviour
     private int CameraXSens;
     private int CameraYSens;
 
-    private int defaultCameraXSens = 25;
-    private int defaultCameraYSens = 5;
+    private int defaultCameraXSens = 300;
+    private int defaultCameraYSens = 3;
 
     private int _qualityLevel;
     private bool _isFullScreen;
@@ -148,7 +148,7 @@ public class MainMenu : MonoBehaviour
             break;
             case "Gameplay":
                 invertX.isOn = false;
-                invertY.isOn = false;
+                invertY.isOn = true;
                 CameraXSlider.value = defaultCameraXSens;
                 CameraYSlider.value = defaultCameraYSens;
                 CameraXSensText.text = defaultCameraXSens.ToString("0");

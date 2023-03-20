@@ -64,6 +64,7 @@ namespace FasTPS
         public GameObject MenuPanel;
         private CharacterController Controller;
         private PlayerInput PlayerInput;
+        public CinemachineFreeLook Camera;
 
         ///////////////////////////////////////////////////////////
         /////////////////PRIVATE VARIABLES/////////////////////////
@@ -129,6 +130,7 @@ namespace FasTPS
             PlayerInput = GetComponentInParent<PlayerInput>();
             Controller = GetComponent<CharacterController>();
             animator = GetComponent<Animator>();
+            Camera = transform.parent.GetComponentInChildren<CinemachineFreeLook>();
             Controller.skinWidth = 0.001f;
             originalCentre = Controller.center;
             originalHeight = Controller.height;
@@ -228,6 +230,16 @@ namespace FasTPS
                     }
                 }
             }
+            float zoom = -PlayerInput.Zoom * 0.1f + Camera.m_Orbits[0].m_Radius;
+            zoom = Mathf.Clamp(zoom, 2.0f, 3.0f);
+            Camera.m_Orbits[0].m_Radius = zoom;
+            zoom = -PlayerInput.Zoom * 0.1f + Camera.m_Orbits[1].m_Radius;
+            zoom = Mathf.Clamp(zoom, 2.5f, 3.5f);
+            Camera.m_Orbits[1].m_Radius = zoom;
+            zoom = -PlayerInput.Zoom * 0.1f + Camera.m_Orbits[2].m_Radius;
+            zoom = Mathf.Clamp(zoom, 2.25f, 3.25f);
+            Camera.m_Orbits[2].m_Radius = zoom;
+            
         }
         #endregion
         #region MenuManager
@@ -815,6 +827,10 @@ namespace FasTPS
 
                 }
             }
+        }
+
+        public void setDirectionToZero(){
+            MoveDirection = Vector3.zero;
         }
         #endregion
     }

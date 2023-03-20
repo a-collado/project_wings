@@ -24,6 +24,8 @@ namespace FasTPS
         public bool Interact;
         [HideInInspector]
         public bool Power;
+        [HideInInspector]
+        public float Zoom;
 
         bool disabled;
         bool enabled;
@@ -114,6 +116,7 @@ namespace FasTPS
                 Power = false;
             };
 
+
         }
 
         private void LookForClimbSpot()
@@ -122,12 +125,16 @@ namespace FasTPS
         }
         private void Update()
         {
+
+            Zoom = Controls.Mouse.Zoom.ReadValue<float>();
+
             if (disableMovement && disabled)
             {
                 enabled = true;
                 disabled = false;
                 CIK.enabled = true;
                 IK.enabled = false;
+                controller.setDirectionToZero();
                 controller.enabled = false;
             }
             else if(!disableMovement && enabled)

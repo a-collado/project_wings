@@ -13,6 +13,8 @@ namespace FasTPS
         [HideInInspector]
         public bool waitToStartClimb;
         bool dropOnLedge = false;
+        public float maxDistance = 20.0f;    // Por defecto es 20
+        public float maxDistanceToPoint = 1.0f;  // Por defecto es 5
 
         Animator anim;
         ClimbIK ik;
@@ -136,8 +138,6 @@ namespace FasTPS
 
             RaycastHit hit;
 
-            float maxDistance = 20;
-
             if(Physics.Raycast(ray, out hit, maxDistance, ~8))
             {
                 if (hit.transform.GetComponentInParent<Manager>())
@@ -148,7 +148,7 @@ namespace FasTPS
 
                     float distanceToPoint = Vector3.Distance(transform.position, closestPoint.transform.parent.position);
 
-                    if(distanceToPoint < 5)
+                    if(distanceToPoint < maxDistanceToPoint)
                     {
                         curManager = tm;
                         targetPoint = closestPoint;
@@ -769,6 +769,7 @@ namespace FasTPS
         {
             if (rootReached)
             {
+                //movement.MoveDirection = Vector3.zero;
                 climbing = false;
                 initTransit = false;
                 PI.disableMovement = false;
@@ -1097,7 +1098,7 @@ namespace FasTPS
                 if (inputDirection != Vector3.zero)
                 {
                     switch (climbState)
-                    {
+                    {// TODO Creo que el error esta por aqui
                         case ClimbStates.onPoint:
                             OnPoint(inputDirection);
                             break;
