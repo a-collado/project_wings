@@ -338,10 +338,10 @@ namespace FasTPS
             {
                 return false;
             }
-            Vector3 alignment = new Vector3(0, 0.3f, 0);
+            Vector3 alignment = new Vector3(0, 0.1f, 0);
             RaycastHit hit = new RaycastHit();
 
-            if (Physics.Raycast(transform.position + alignment, transform.forward, out hit, 0.5f, GroundMask))
+            if (Physics.Raycast(transform.position + alignment, transform.forward, out hit, 1.0f, GroundMask) || Physics.Raycast(transform.position + alignment, -transform.forward, out hit, 1.0f, GroundMask))
             {
                 Debug.DrawLine(transform.position + alignment, hit.point, Color.blue);
                 return true;
@@ -468,6 +468,7 @@ namespace FasTPS
             IsSliding = Sliding && (IsCrouching && IsSprinting && PlayerInput.MoveInput.y > 0 || Analog && (vertical || horizontal) && IsSprinting && PlayerInput.Crouch || IsSliding && IsCrouching);
             if (SlideTime != 0.5f) { IsSliding = true; }
             SteepSlope = SlideAngle > 0 && DirectionSlopeUp() && (PlayerInput.MoveInput.y != 0 || PlayerInput.MoveInput.x != 0);
+            Debug.Log(DirectionSlopeUp());
         }
         private void HandleRotation()
         {
