@@ -26,9 +26,9 @@ public class LoadPreferences : MonoBehaviour
     [SerializeField]
     private Slider CameraYSlider;
     [SerializeField]
-    private float DefaultCameraXSens = 25;
+    private float DefaultCameraXSens = 300;
     [SerializeField]
-    private float DefaultCameraYSens = 5;
+    private float DefaultCameraYSens = 3;
 
     [Header("Invert Setting")]
     [SerializeField]

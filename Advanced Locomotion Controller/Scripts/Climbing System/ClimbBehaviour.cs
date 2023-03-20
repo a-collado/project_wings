@@ -13,6 +13,8 @@ namespace FasTPS
         [HideInInspector]
         public bool waitToStartClimb;
         bool dropOnLedge = false;
+        public float maxDistance = 20.0f;    // Por defecto es 20
+        public float maxDistanceToPoint = 1.0f;  // Por defecto es 5
 
         Animator anim;
         ClimbIK ik;
@@ -136,8 +138,6 @@ namespace FasTPS
 
             RaycastHit hit;
 
-            float maxDistance = 20;
-
             if(Physics.Raycast(ray, out hit, maxDistance, ~8))
             {
                 if (hit.transform.GetComponentInParent<Manager>())
@@ -148,7 +148,7 @@ namespace FasTPS
 
                     float distanceToPoint = Vector3.Distance(transform.position, closestPoint.transform.parent.position);
 
-                    if(distanceToPoint < 5)
+                    if(distanceToPoint < maxDistanceToPoint)
                     {
                         curManager = tm;
                         targetPoint = closestPoint;
@@ -272,10 +272,8 @@ namespace FasTPS
         void OnPoint(Vector3 inpD)
         {
             neighbour = null;
-
             neighbour = curManager.ReturnNeighbour(inpD, curPoint);
-
-            if(neighbour != null)
+            if(neighbour != null && neighbour.target != null)
             { 
                 targetPoint = neighbour.target;
                 prevPoint = curPoint;
@@ -299,10 +297,8 @@ namespace FasTPS
         {
             Vector3 desiredPos = Vector3.zero;
             curConnection = n.cType;
-
             Vector3 direction = targetPoint.transform.position - curPoint.transform.position;
             direction.Normalize();
-
             switch (n.cType)
             {
                 case ConnectionType.inBetween:
@@ -769,6 +765,7 @@ namespace FasTPS
         {
             if (rootReached)
             {
+                //movement.MoveDirection = Vector3.zero;
                 climbing = false;
                 initTransit = false;
                 PI.disableMovement = false;
@@ -1092,12 +1089,13 @@ namespace FasTPS
                 float h = Controls.Keyboard.MovementVector.ReadValue<Vector2>().x;
                 float v = Controls.Keyboard.MovementVector.ReadValue<Vector2>().y;
 
-                inputDirection = ConvertToInputDirection(h, v, shift, jump);
-
+                inputDirection = ConvertToInputDirection(h, v, false, jump);
                 if (inputDirection != Vector3.zero)
                 {
+                    
+
                     switch (climbState)
-                    {
+                    {// TODO Creo que el error esta por aqui
                         case ClimbStates.onPoint:
                             OnPoint(inputDirection);
                             break;

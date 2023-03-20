@@ -447,7 +447,7 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                     ""type"": ""Value"",
                     ""id"": ""7c379310-36da-44b9-a403-b65dbf7ca03d"",
                     ""expectedControlType"": ""Axis"",
-                    ""processors"": """",
+                    ""processors"": ""Normalize(min=-50,max=50)"",
                     ""interactions"": """",
                     ""initialStateCheck"": true
                 },
