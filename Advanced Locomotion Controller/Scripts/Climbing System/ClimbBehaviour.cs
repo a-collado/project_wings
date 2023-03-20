@@ -272,10 +272,8 @@ namespace FasTPS
         void OnPoint(Vector3 inpD)
         {
             neighbour = null;
-
             neighbour = curManager.ReturnNeighbour(inpD, curPoint);
-
-            if(neighbour != null)
+            if(neighbour != null && neighbour.target != null)
             { 
                 targetPoint = neighbour.target;
                 prevPoint = curPoint;
@@ -299,10 +297,8 @@ namespace FasTPS
         {
             Vector3 desiredPos = Vector3.zero;
             curConnection = n.cType;
-
             Vector3 direction = targetPoint.transform.position - curPoint.transform.position;
             direction.Normalize();
-
             switch (n.cType)
             {
                 case ConnectionType.inBetween:
@@ -1093,10 +1089,11 @@ namespace FasTPS
                 float h = Controls.Keyboard.MovementVector.ReadValue<Vector2>().x;
                 float v = Controls.Keyboard.MovementVector.ReadValue<Vector2>().y;
 
-                inputDirection = ConvertToInputDirection(h, v, shift, jump);
-
+                inputDirection = ConvertToInputDirection(h, v, false, jump);
                 if (inputDirection != Vector3.zero)
                 {
+                    
+
                     switch (climbState)
                     {// TODO Creo que el error esta por aqui
                         case ClimbStates.onPoint:
