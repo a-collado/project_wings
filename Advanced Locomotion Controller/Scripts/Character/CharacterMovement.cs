@@ -217,6 +217,7 @@ namespace FasTPS
                 Vector3 origin = transform.position;
                 origin += Vector3.up * 0.5f;
                 IsClear(origin, transform.forward, distanceToCheckForward, ref obstacleForward);
+                Debug.Log(obstacleForward);
                 if (!obstacleForward && !IsVaulting)
                 {
                     origin += transform.forward * 0.6f;
@@ -468,7 +469,6 @@ namespace FasTPS
             IsSliding = Sliding && (IsCrouching && IsSprinting && PlayerInput.MoveInput.y > 0 || Analog && (vertical || horizontal) && IsSprinting && PlayerInput.Crouch || IsSliding && IsCrouching);
             if (SlideTime != 0.5f) { IsSliding = true; }
             SteepSlope = SlideAngle > 0 && DirectionSlopeUp() && (PlayerInput.MoveInput.y != 0 || PlayerInput.MoveInput.x != 0);
-            Debug.Log(DirectionSlopeUp());
         }
         private void HandleRotation()
         {
