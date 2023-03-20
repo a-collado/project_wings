@@ -828,10 +828,6 @@ namespace FasTPS
                 }
             }
         }
-
-        public void setDirectionToZero(){
-            MoveDirection = Vector3.zero;
-        }
         #endregion
     }
 }

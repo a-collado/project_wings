@@ -134,7 +134,7 @@ namespace FasTPS
                 disabled = false;
                 CIK.enabled = true;
                 IK.enabled = false;
-                controller.setDirectionToZero();
+                MoveInput = Vector2.zero;
                 controller.enabled = false;
             }
             else if(!disableMovement && enabled)
@@ -144,6 +144,7 @@ namespace FasTPS
                 CIK.enabled = false;
                 IK.enabled = true;
                 controller.enabled = true;
+                MoveInput = Vector2.zero;
             }
         }
     }
