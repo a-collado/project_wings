@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class appearDisapearLightTime : MonoBehaviour
 {
-    [SerializeField] float switchTime;
+    [SerializeField] float timeActive;
+    [SerializeField] float timeInactive;
     [SerializeField] bool startActive;
+    [SerializeField] float startAt;
     MeshCollider trigCollider;
     MeshRenderer trigMesh;
     Light luz;
@@ -16,7 +18,7 @@ public class appearDisapearLightTime : MonoBehaviour
     void Awake()
     {
         active = startActive;
-        time = 0;
+        time = startAt;
         luz = this.GetComponentInParent<Light>();
         trigCollider = this.GetComponent<MeshCollider>();
         trigMesh = GetComponent<MeshRenderer>();
@@ -26,26 +28,24 @@ public class appearDisapearLightTime : MonoBehaviour
     void Update()
     {
         time += Time.deltaTime;
-        if(time >= switchTime)
-        {
-            time = 0;
-            if (active)
-            {
+        if(active){
+            if(time >= timeActive){
                 active = false;
                 luz.enabled = false;
                 trigCollider.enabled = false;
                 trigMesh.enabled = false;
+                time = 0;
             }
-            else
-            {
+        }else{
+            if(time>=timeInactive){
                 active = true;
                 luz.enabled = true;
                 trigCollider.enabled = true;
                 trigMesh.enabled = true;
-
+                time=0;
             }
-
         }
+        
         
     }
 }
