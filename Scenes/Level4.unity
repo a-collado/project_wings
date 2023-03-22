@@ -6549,8 +6549,8 @@ GameObject:
   - component: {fileID: 116086651}
   - component: {fileID: 116086650}
   - component: {fileID: 116086649}
-  - component: {fileID: 116086648}
   - component: {fileID: 116086647}
+  - component: {fileID: 116086652}
   m_Layer: 0
   m_Name: spotlightTrigger
   m_TagString: Untagged
@@ -6589,19 +6589,6 @@ MonoBehaviour:
   timeInactive: 4
   startActive: 0
   startAt: 0
---- !u!114 &116086648
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 116086645}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2da031a5a2bcd3f4592e77877b065891, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  respawn: {fileID: 1787530686}
 --- !u!64 &116086649
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -6666,6 +6653,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 116086645}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &116086652
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 116086645}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2da031a5a2bcd3f4592e77877b065891, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  respawn: {fileID: 1787530686}
 --- !u!1 &116436978
 GameObject:
   m_ObjectHideFlags: 0
@@ -13769,7 +13769,7 @@ GameObject:
   - component: {fileID: 226725107}
   - component: {fileID: 226725106}
   - component: {fileID: 226725105}
-  - component: {fileID: 226725104}
+  - component: {fileID: 226725108}
   m_Layer: 0
   m_Name: spotlightTrigger
   m_TagString: Untagged
@@ -13792,19 +13792,6 @@ Transform:
   m_Father: {fileID: 1675189462}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &226725104
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 226725102}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2da031a5a2bcd3f4592e77877b065891, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  respawn: {fileID: 1787530686}
 --- !u!64 &226725105
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -13869,6 +13856,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 226725102}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &226725108
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 226725102}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2da031a5a2bcd3f4592e77877b065891, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  respawn: {fileID: 1787530686}
 --- !u!1 &226944558
 GameObject:
   m_ObjectHideFlags: 0
@@ -18427,8 +18427,8 @@ GameObject:
   - component: {fileID: 328786329}
   - component: {fileID: 328786328}
   - component: {fileID: 328786327}
-  - component: {fileID: 328786326}
   - component: {fileID: 328786330}
+  - component: {fileID: 328786331}
   m_Layer: 0
   m_Name: spotlightTrigger
   m_TagString: Untagged
@@ -18451,19 +18451,6 @@ Transform:
   m_Father: {fileID: 2140648707}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &328786326
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 328786324}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2da031a5a2bcd3f4592e77877b065891, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  respawn: {fileID: 1787530686}
 --- !u!64 &328786327
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -18544,6 +18531,19 @@ MonoBehaviour:
   timeInactive: 4
   startActive: 0
   startAt: 0
+--- !u!114 &328786331
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 328786324}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2da031a5a2bcd3f4592e77877b065891, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  respawn: {fileID: 1787530686}
 --- !u!1 &330164685
 GameObject:
   m_ObjectHideFlags: 0
@@ -21012,8 +21012,8 @@ GameObject:
   - component: {fileID: 367670837}
   - component: {fileID: 367670836}
   - component: {fileID: 367670835}
-  - component: {fileID: 367670834}
   - component: {fileID: 367670838}
+  - component: {fileID: 367670839}
   m_Layer: 0
   m_Name: spotlightTrigger
   m_TagString: Untagged
@@ -21036,19 +21036,6 @@ Transform:
   m_Father: {fileID: 1977477307}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &367670834
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 367670832}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2da031a5a2bcd3f4592e77877b065891, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  respawn: {fileID: 1787530686}
 --- !u!64 &367670835
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -21129,6 +21116,19 @@ MonoBehaviour:
   timeInactive: 4
   startActive: 0
   startAt: 2
+--- !u!114 &367670839
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 367670832}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2da031a5a2bcd3f4592e77877b065891, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  respawn: {fileID: 1787530686}
 --- !u!1 &369147182
 GameObject:
   m_ObjectHideFlags: 0
@@ -31313,8 +31313,8 @@ GameObject:
   - component: {fileID: 537482192}
   - component: {fileID: 537482191}
   - component: {fileID: 537482190}
-  - component: {fileID: 537482189}
   - component: {fileID: 537482193}
+  - component: {fileID: 537482194}
   m_Layer: 0
   m_Name: spotlightTrigger
   m_TagString: Untagged
@@ -31337,19 +31337,6 @@ Transform:
   m_Father: {fileID: 395242301}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &537482189
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 537482187}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2da031a5a2bcd3f4592e77877b065891, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  respawn: {fileID: 1787530686}
 --- !u!64 &537482190
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -31430,6 +31417,19 @@ MonoBehaviour:
   timeInactive: 4
   startActive: 1
   startAt: 0
+--- !u!114 &537482194
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 537482187}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2da031a5a2bcd3f4592e77877b065891, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  respawn: {fileID: 1787530686}
 --- !u!1 &538306751
 GameObject:
   m_ObjectHideFlags: 0
@@ -32236,7 +32236,7 @@ GameObject:
   - component: {fileID: 555557849}
   - component: {fileID: 555557848}
   - component: {fileID: 555557847}
-  - component: {fileID: 555557846}
+  - component: {fileID: 555557850}
   m_Layer: 0
   m_Name: spotlightTrigger
   m_TagString: Untagged
@@ -32259,19 +32259,6 @@ Transform:
   m_Father: {fileID: 1667280209}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &555557846
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 555557844}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2da031a5a2bcd3f4592e77877b065891, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  respawn: {fileID: 1787530686}
 --- !u!64 &555557847
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -32336,6 +32323,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 555557844}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &555557850
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 555557844}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2da031a5a2bcd3f4592e77877b065891, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  respawn: {fileID: 1787530686}
 --- !u!1 &556519201
 GameObject:
   m_ObjectHideFlags: 0
@@ -33894,7 +33894,7 @@ GameObject:
   - component: {fileID: 582006997}
   - component: {fileID: 582006996}
   m_Layer: 0
-  m_Name: trigger-puente
+  m_Name: triggerPuente
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -34949,8 +34949,8 @@ GameObject:
   - component: {fileID: 602982323}
   - component: {fileID: 602982322}
   - component: {fileID: 602982321}
-  - component: {fileID: 602982320}
   - component: {fileID: 602982319}
+  - component: {fileID: 602982324}
   m_Layer: 0
   m_Name: spotlightTrigger
   m_TagString: Untagged
@@ -34989,19 +34989,6 @@ MonoBehaviour:
   timeInactive: 4
   startActive: 1
   startAt: 0
---- !u!114 &602982320
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 602982317}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2da031a5a2bcd3f4592e77877b065891, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  respawn: {fileID: 1787530686}
 --- !u!64 &602982321
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -35066,6 +35053,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 602982317}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &602982324
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 602982317}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2da031a5a2bcd3f4592e77877b065891, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  respawn: {fileID: 1787530686}
 --- !u!1 &603246731
 GameObject:
   m_ObjectHideFlags: 0
@@ -56102,7 +56102,7 @@ GameObject:
   - component: {fileID: 964383910}
   - component: {fileID: 964383909}
   - component: {fileID: 964383908}
-  - component: {fileID: 964383907}
+  - component: {fileID: 964383911}
   m_Layer: 0
   m_Name: spotlightTrigger
   m_TagString: Untagged
@@ -56125,19 +56125,6 @@ Transform:
   m_Father: {fileID: 849053183}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &964383907
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 964383905}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2da031a5a2bcd3f4592e77877b065891, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  respawn: {fileID: 1787530686}
 --- !u!64 &964383908
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -56202,6 +56189,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 964383905}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &964383911
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 964383905}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2da031a5a2bcd3f4592e77877b065891, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  respawn: {fileID: 1787530686}
 --- !u!1 &965835793
 GameObject:
   m_ObjectHideFlags: 0
@@ -67048,7 +67048,7 @@ GameObject:
   - component: {fileID: 1156565827}
   - component: {fileID: 1156565826}
   - component: {fileID: 1156565825}
-  - component: {fileID: 1156565824}
+  - component: {fileID: 1156565828}
   m_Layer: 0
   m_Name: spotlightTrigger
   m_TagString: Untagged
@@ -67071,19 +67071,6 @@ Transform:
   m_Father: {fileID: 498415879}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1156565824
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1156565822}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2da031a5a2bcd3f4592e77877b065891, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  respawn: {fileID: 1787530686}
 --- !u!64 &1156565825
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -67148,6 +67135,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1156565822}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1156565828
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1156565822}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2da031a5a2bcd3f4592e77877b065891, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  respawn: {fileID: 1787530686}
 --- !u!1 &1156947843
 GameObject:
   m_ObjectHideFlags: 0
@@ -69545,7 +69545,7 @@ GameObject:
   - component: {fileID: 1205767920}
   - component: {fileID: 1205767919}
   - component: {fileID: 1205767918}
-  - component: {fileID: 1205767917}
+  - component: {fileID: 1205767921}
   m_Layer: 0
   m_Name: spotlightTrigger
   m_TagString: Untagged
@@ -69568,19 +69568,6 @@ Transform:
   m_Father: {fileID: 894278109}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1205767917
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1205767915}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2da031a5a2bcd3f4592e77877b065891, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  respawn: {fileID: 1787530686}
 --- !u!64 &1205767918
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -69645,6 +69632,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1205767915}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1205767921
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1205767915}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2da031a5a2bcd3f4592e77877b065891, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  respawn: {fileID: 1787530686}
 --- !u!1 &1207913584
 GameObject:
   m_ObjectHideFlags: 0
@@ -73621,7 +73621,7 @@ GameObject:
   - component: {fileID: 1250372360}
   - component: {fileID: 1250372359}
   - component: {fileID: 1250372358}
-  - component: {fileID: 1250372357}
+  - component: {fileID: 1250372361}
   m_Layer: 0
   m_Name: spotlightTrigger
   m_TagString: Untagged
@@ -73644,19 +73644,6 @@ Transform:
   m_Father: {fileID: 1857946565}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1250372357
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1250372355}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2da031a5a2bcd3f4592e77877b065891, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  respawn: {fileID: 1787530686}
 --- !u!64 &1250372358
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -73721,6 +73708,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1250372355}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1250372361
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1250372355}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2da031a5a2bcd3f4592e77877b065891, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  respawn: {fileID: 1787530686}
 --- !u!1 &1251515490
 GameObject:
   m_ObjectHideFlags: 0
@@ -79441,7 +79441,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1342945328}
   m_Layer: 0
-  m_Name: respawn-puente
+  m_Name: respawnPuente
   m_TagString: Untagged
   m_Icon: {fileID: 7250588514170254948, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -110268,7 +110268,7 @@ GameObject:
   - component: {fileID: 1866743213}
   - component: {fileID: 1866743212}
   - component: {fileID: 1866743211}
-  - component: {fileID: 1866743210}
+  - component: {fileID: 1866743214}
   m_Layer: 0
   m_Name: spotlightTrigger
   m_TagString: Untagged
@@ -110291,19 +110291,6 @@ Transform:
   m_Father: {fileID: 1427435187}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1866743210
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1866743208}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2da031a5a2bcd3f4592e77877b065891, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  respawn: {fileID: 1787530686}
 --- !u!64 &1866743211
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -110368,6 +110355,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1866743208}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1866743214
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1866743208}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2da031a5a2bcd3f4592e77877b065891, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  respawn: {fileID: 1787530686}
 --- !u!1 &1866949350
 GameObject:
   m_ObjectHideFlags: 0
@@ -112322,7 +112322,7 @@ GameObject:
   - component: {fileID: 1895961991}
   - component: {fileID: 1895961990}
   - component: {fileID: 1895961989}
-  - component: {fileID: 1895961988}
+  - component: {fileID: 1895961992}
   m_Layer: 0
   m_Name: spotlightTrigger
   m_TagString: Untagged
@@ -112345,19 +112345,6 @@ Transform:
   m_Father: {fileID: 1927687569}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1895961988
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1895961986}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2da031a5a2bcd3f4592e77877b065891, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  respawn: {fileID: 1787530686}
 --- !u!64 &1895961989
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -112422,6 +112409,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1895961986}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1895961992
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1895961986}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2da031a5a2bcd3f4592e77877b065891, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  respawn: {fileID: 1787530686}
 --- !u!1 &1896951839
 GameObject:
   m_ObjectHideFlags: 0
@@ -119780,8 +119780,8 @@ GameObject:
   - component: {fileID: 2020575932}
   - component: {fileID: 2020575931}
   - component: {fileID: 2020575930}
-  - component: {fileID: 2020575929}
   - component: {fileID: 2020575933}
+  - component: {fileID: 2020575934}
   m_Layer: 0
   m_Name: spotlightTrigger
   m_TagString: Untagged
@@ -119804,19 +119804,6 @@ Transform:
   m_Father: {fileID: 465381194}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2020575929
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2020575927}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2da031a5a2bcd3f4592e77877b065891, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  respawn: {fileID: 1787530686}
 --- !u!64 &2020575930
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -119897,6 +119884,19 @@ MonoBehaviour:
   timeInactive: 4
   startActive: 0
   startAt: 2
+--- !u!114 &2020575934
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2020575927}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2da031a5a2bcd3f4592e77877b065891, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  respawn: {fileID: 1787530686}
 --- !u!1 &2021292576
 GameObject:
   m_ObjectHideFlags: 0
