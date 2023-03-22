@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class respawn_trigger : MonoBehaviour
+public class respawnTrigger : MonoBehaviour
 {
 
     // Start is called before the first frame update
