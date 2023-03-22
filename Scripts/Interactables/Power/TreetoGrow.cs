@@ -48,7 +48,7 @@ public class TreetoGrow : MonoBehaviour, IInteractable
     }
 
     public bool isCompleted()
-        {
-            return isActive();
-        }
+    {
+        return isActive();
+    }
 }
