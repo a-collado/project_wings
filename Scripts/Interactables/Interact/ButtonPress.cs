@@ -9,7 +9,7 @@ public class ButtonPress : MonoBehaviour, IInteractable
     private Animator buttonAnimation;
 
     [SerializeField]
-    private Toggleable objectToToggle;
+    private Toggleable[] objectsToToggle;
     
     //[SerializeField] private Camera puzzleCam;
     private System.Diagnostics.Stopwatch stopWatch;
@@ -39,7 +39,11 @@ public class ButtonPress : MonoBehaviour, IInteractable
         //puzzleCam.enabled = true;
         Debug.Log("Press");
         buttonAnimation.SetTrigger("press");
-        objectToToggle.toggle();
+        foreach (var objectToToggle in objectsToToggle)
+        {
+            objectToToggle.toggle();
+
+        }
         activate(false);
 
         //Podriamos bloquear el boton para que no se vuelva a hacer toggle
