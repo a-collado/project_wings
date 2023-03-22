@@ -10413,6 +10413,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 0}
+  climbingStation: {fileID: 0}
 --- !u!65 &782703801
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -40718,22 +40719,6 @@ PrefabInstance:
     - target: {fileID: 4466905272033095776, guid: 57e1e0b56e7e3214ca337da81f381b98, type: 3}
       propertyPath: m_LocalRotation.z
       value: -0.0000000032538565
-      objectReference: {fileID: 0}
-    - target: {fileID: 4466905272238536408, guid: 57e1e0b56e7e3214ca337da81f381b98, type: 3}
-      propertyPath: AutoStep
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4466905272238536414, guid: 57e1e0b56e7e3214ca337da81f381b98, type: 3}
-      propertyPath: EnableFootIK
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4466905272238536414, guid: 57e1e0b56e7e3214ca337da81f381b98, type: 3}
-      propertyPath: showSolverDebug
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4466905272238536414, guid: 57e1e0b56e7e3214ca337da81f381b98, type: 3}
-      propertyPath: EnableProIKFeature
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4466905272300848229, guid: 57e1e0b56e7e3214ca337da81f381b98, type: 3}
       propertyPath: m_LocalRotation.y

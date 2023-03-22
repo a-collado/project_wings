@@ -16,7 +16,7 @@ public class changePositions : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
 
         Vector3 destination = waypoints[currentWP].transform.position;
@@ -31,4 +31,5 @@ public class changePositions : MonoBehaviour
 
         
     }
+
 }

@@ -127,7 +127,7 @@ namespace FasTPS
             {
                 Debug.DrawLine(fromSkyPosition, fromSkyPosition + Vector3.down * (RaycastDownDistance + HeightRaycast), Color.red);
             }
-            if (Physics.Raycast(fromSkyPosition, Vector3.down, out feetOutHit, RaycastDownDistance + HeightRaycast, enviromentLayer))
+            if (Physics.Raycast(fromSkyPosition, Vector3.down, out feetOutHit, RaycastDownDistance + HeightRaycast, enviromentLayer) && !feetOutHit.collider.isTrigger)
             {
                 feetIKPosition = fromSkyPosition;
                 feetIKPosition.y = feetOutHit.point.y + pelvisOffset;

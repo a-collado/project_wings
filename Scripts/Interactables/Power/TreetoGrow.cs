@@ -31,7 +31,6 @@ public class TreetoGrow : MonoBehaviour, IInteractable
 
     public void Power()
     {
-        
         activateTree();
     }
 
