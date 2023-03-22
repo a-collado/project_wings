@@ -607,6 +607,7 @@ namespace FasTPS
                 }
                 if (velocity.y < -(LedgeHeightFallRoll) && LandingRoll)
                 {
+                    //Debug.Log(LandingRoll);
                     RollFromJump = true;
                 }
             }
@@ -620,6 +621,10 @@ namespace FasTPS
                 velocity.y = Mathf.Sqrt(jumpHeight * -2f * Gravity);
                 IsJumping = true;
             }
+        }
+
+        public void setYVelocityToZero(){
+            velocity.y = 0;
         }
         #endregion
         #region VaultAndClimbLogic
