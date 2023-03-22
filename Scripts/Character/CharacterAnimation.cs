@@ -13,6 +13,7 @@ public class CharacterAnimation : MonoBehaviour
     private Animator playerAnimator;
     
     private FasTPS.PlayerInput input;
+    private FasTPS.CharacterMovement movement;
 
     private bool objectPicked;
 
@@ -20,6 +21,8 @@ public class CharacterAnimation : MonoBehaviour
 
     private Vector2 velocity;
     private Vector2 smoothDeltaPosition;
+
+    private int LAYER_Carrying_OneHand = 2;
 
 /*
     private void OnEnable() {
@@ -36,6 +39,7 @@ public class CharacterAnimation : MonoBehaviour
         playerAnimator = gameObject.GetComponent<Animator>();
         //playerAnimator.applyRootMotion = true;
         input = GetComponentInParent<FasTPS.PlayerInput>();
+        movement = GetComponent<FasTPS.CharacterMovement>();
     }
 
     private void Start() 
@@ -73,9 +77,12 @@ public class CharacterAnimation : MonoBehaviour
         
         switch(animation){
             case AnimationsEnum.NONE: break;
-            case AnimationsEnum.GRAB_LOW: playerAnimator.SetTrigger("grabLow");; break; 
+            case AnimationsEnum.GRAB_LOW: 
+            playerAnimator.SetTrigger("grabLow");
+            playerAnimator.SetLayerWeight(LAYER_Carrying_OneHand, 1.0f);
+            break; 
             case AnimationsEnum.PRESS_BTN: playerAnimator.SetTrigger("press"); break;
-            case AnimationsEnum.GRAB_TORCH: playerAnimator.SetBool("torchPicked",true); break;
+            case AnimationsEnum.GRAB_TORCH: playerAnimator.SetTrigger("pickTorch"); break;
         }
     }
 
