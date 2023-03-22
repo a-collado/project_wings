@@ -16,6 +16,8 @@ public class StartFromHere : EditorWindow
     private static string newPositionName = "Default1";
     private static GenericMenu menu;
 
+    private static bool enableGUI = true;
+
     private static GameObject locationPointer;
 
     [MenuItem("Window/Start From Here")]
@@ -31,10 +33,10 @@ public class StartFromHere : EditorWindow
         RaycastHit hit;
         if (Physics.Raycast(ray, out hit))
         {
-            if (locationPointer == null)
+            if (locationPointer == null  && EditorApplication.isPlaying == false && enableGUI)
             {
-                if (GameObject.Find("LocationPointer") != null)
-                    locationPointer = GameObject.Find("LocationPointer");
+                if (GameObject.Find("LocationPointer(Clone)") != null)
+                    locationPointer = GameObject.Find("LocationPointer(Clone)");
                 else
                     locationPointer = (GameObject)GameObject.Instantiate(Resources.Load("LocationPointer"), hit.point, Quaternion.identity);
             }
@@ -48,21 +50,23 @@ public class StartFromHere : EditorWindow
     void Update()
     {
         
+        if (enableGUI){
         
-        Ray ray = SceneView.lastActiveSceneView.camera.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0));
-        RaycastHit hit;
-        if (Physics.Raycast(ray, out hit))
-        {
-            if (locationPointer == null)
+            Ray ray = SceneView.lastActiveSceneView.camera.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0));
+            RaycastHit hit;
+            if (Physics.Raycast(ray, out hit))
             {
-                if (GameObject.Find("LocationPointer") != null)
-                    locationPointer = GameObject.Find("LocationPointer");
-                else
-                    locationPointer = (GameObject)GameObject.Instantiate(Resources.Load("LocationPointer"), hit.point, Quaternion.identity);
+                if (locationPointer == null && EditorApplication.isPlaying == false)
+                {
+                    if (GameObject.Find("LocationPointer(Clone)") != null)
+                        locationPointer = GameObject.Find("LocationPointer(Clone)");
+                    else
+                        locationPointer = (GameObject)GameObject.Instantiate(Resources.Load("LocationPointer"), hit.point, Quaternion.identity);
+                }
+                locationPointer.SetActive(true);
+                locationPointer.transform.position = hit.point;
+                locationPointer.transform.rotation = Quaternion.LookRotation(hit.normal);
             }
-            locationPointer.SetActive(true);
-            locationPointer.transform.position = hit.point;
-            locationPointer.transform.rotation = Quaternion.LookRotation(hit.normal);
         }
     }
 
@@ -101,18 +105,29 @@ public class StartFromHere : EditorWindow
         if (GUILayout.Button("Start Here"))
             startHere();
 
+        if (GUILayout.Button("Toggle Gismos"))
+            toggleGUI();
 
         GUILayout.Space(40);
         if (GUILayout.Button("Reset Positions"))
             resetLocations();
     }
 
+    void toggleGUI()
+    {
+        enableGUI = !enableGUI;
+        if (!enableGUI){
+            GameObject.DestroyImmediate(locationPointer);
+            GameObject.DestroyImmediate(GameObject.Find("LocationPointer(Clone)"));
+        }
+        Debug.Log("Gismos set to " + enableGUI);
+    }
     
     void OnDisable()
     {
         savePlayerPositionHistory();
         GameObject.DestroyImmediate(locationPointer);
-        GameObject.DestroyImmediate(GameObject.Find("LocationPointer"));
+        GameObject.DestroyImmediate(GameObject.Find("LocationPointer(Clone)"));
         Debug.Log("[Start From Here: Disabled]");
         
 
@@ -122,6 +137,7 @@ public class StartFromHere : EditorWindow
        
         GameObject.FindWithTag("Player").transform.position = selectedPositionPoint;
         savePlayerPositionHistory();
+        GameObject.DestroyImmediate(GameObject.Find("LocationPointer(Clone)"));
         GameObject.DestroyImmediate(locationPointer);
         //Switch from Editor to Game
         EditorApplication.ExecuteMenuItem("Edit/Play");

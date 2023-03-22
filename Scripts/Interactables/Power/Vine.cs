@@ -8,6 +8,7 @@ public class Vine : MonoBehaviour, IInteractable
 {
 
     [SerializeField] private Animator animator;
+    [SerializeField] private GameObject climbingStation;
     ////private OffMeshLink meshLink;
 
     private System.Diagnostics.Stopwatch stopWatch; // delay to prevent key spam
@@ -35,6 +36,9 @@ public class Vine : MonoBehaviour, IInteractable
     public void activateWine(){
         ////meshLink.activated = true;
         animator.SetBool("isGrown", true);
+        activate(false);
+        this.gameObject.GetComponent<Collider>().enabled = false;
+        climbingStation.SetActive(true);
 
     }
 
