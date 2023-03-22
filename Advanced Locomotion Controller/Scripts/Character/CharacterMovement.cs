@@ -217,7 +217,7 @@ namespace FasTPS
                 Vector3 origin = transform.position;
                 origin += Vector3.up * 0.5f;
                 IsClear(origin, transform.forward, distanceToCheckForward, ref obstacleForward);
-                Debug.Log(obstacleForward);
+                //Debug.Log(obstacleForward);
                 if (!obstacleForward && !IsVaulting)
                 {
                     origin += transform.forward * 0.6f;

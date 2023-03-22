@@ -314,7 +314,6 @@ GameObject:
   m_Component:
   - component: {fileID: 8005059826899150666}
   - component: {fileID: 7538205551799167184}
-  - component: {fileID: 7538205551799167187}
   - component: {fileID: 7538205551799167198}
   m_Layer: 3
   m_Name: Vine
@@ -332,7 +331,7 @@ Transform:
   m_GameObject: {fileID: 7231795647586942448}
   m_LocalRotation: {x: 0, y: 0.8351362, z: -0, w: -0.55004334}
   m_LocalPosition: {x: 21.899963, y: 50.232, z: 161.4386}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 2.9026265, z: 2.13}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7538205551572767226}
@@ -354,23 +353,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.38, y: 1.71, z: 0.37}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!191 &7538205551799167187
-OffMeshLink:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7231795647586942448}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_AreaIndex: 3
-  m_AgentTypeID: 0
-  m_Start: {fileID: 7538205551572767226}
-  m_End: {fileID: 7538205552120156642}
-  m_CostOverride: 5
-  m_BiDirectional: 1
-  m_Activated: 0
-  m_AutoUpdatePositions: 1
 --- !u!114 &7538205551799167198
 MonoBehaviour:
   m_ObjectHideFlags: 0

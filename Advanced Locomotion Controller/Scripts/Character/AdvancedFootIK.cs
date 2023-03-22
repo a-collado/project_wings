@@ -39,7 +39,7 @@ namespace FasTPS
 
         private void FixedUpdate()
         {
-            Debug.Log(controller.SteepSlope);
+            //Debug.Log(controller.SteepSlope);
             if (controller.IsClimbUp || controller.IsJumping || controller.IsVaulting || controller.IsSliding || controller.SteepSlope) { EnableFootIK = false; } else { if (!EnableFootIK) { Delay(); } }
             if (animator == null) { return; }
 
