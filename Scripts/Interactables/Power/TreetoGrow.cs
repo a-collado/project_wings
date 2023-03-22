@@ -9,8 +9,6 @@ using UnityEditor;
 public class TreetoGrow : MonoBehaviour, IInteractable
 {
 
-
-
     [Header("animator (Nullable)")]
     [SerializeField] Animator animator;
 
