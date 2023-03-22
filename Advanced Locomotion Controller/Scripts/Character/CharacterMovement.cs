@@ -87,6 +87,8 @@ namespace FasTPS
         public bool MenuOpen;
         [HideInInspector]
         public bool IsCovering;
+        [HideInInspector]
+        public bool IsCarrying;
         bool IsCrouching;
         bool IsWalkUp;
         bool initVault = false;
@@ -151,7 +153,7 @@ namespace FasTPS
             HandleStates();
             SlopeSliding();
             if (MenuOpen) { return; }
-            HandleMovement();
+            if (HandleInteractionAnimations()) {HandleMovement();}
             HandleGravity();
             HandleCovering();
             if (impact.magnitude > 0.2f)
@@ -217,7 +219,6 @@ namespace FasTPS
                 Vector3 origin = transform.position;
                 origin += Vector3.up * 0.5f;
                 IsClear(origin, transform.forward, distanceToCheckForward, ref obstacleForward);
-                Debug.Log(obstacleForward);
                 if (!obstacleForward && !IsVaulting)
                 {
                     origin += transform.forward * 0.6f;
@@ -477,6 +478,12 @@ namespace FasTPS
                 float yawCamera = Cam.transform.rotation.eulerAngles.y;
                 transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.Euler(0, yawCamera, 0), turnSpeed * Time.fixedDeltaTime);
             }
+        }
+        private bool HandleInteractionAnimations(){
+            if (animator.GetCurrentAnimatorStateInfo(0).IsName("Pick Torch")){
+                return false;
+            }
+            return true;
         }
         private void HandleMovement()
         {
