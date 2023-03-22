@@ -9,6 +9,8 @@ using UnityEditor;
 public class TreetoGrow : MonoBehaviour, IInteractable
 {
 
+
+
     [Header("animator (Nullable)")]
     [SerializeField] Animator animator;
 
@@ -29,6 +31,7 @@ public class TreetoGrow : MonoBehaviour, IInteractable
 
     public void Power()
     {
+        
         activateTree();
     }
 
@@ -48,7 +51,7 @@ public class TreetoGrow : MonoBehaviour, IInteractable
     }
 
     public bool isCompleted()
-    {
-        return isActive();
-    }
+        {
+            return isActive();
+        }
 }

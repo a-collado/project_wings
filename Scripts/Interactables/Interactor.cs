@@ -11,7 +11,6 @@ public class Interactor : MonoBehaviour
     [SerializeField] private InteractablePrompt prompt;
     private CharacterAnimation animator;
     private FasTPS.PlayerInput input;
-    private FasTPS.CharacterMovement movement;
 
     private int _numFound;
     private int _numFoundT;
@@ -23,7 +22,6 @@ public class Interactor : MonoBehaviour
     private void Awake() {
         animator = GetComponent<CharacterAnimation>();
         input = GetComponentInParent<FasTPS.PlayerInput>();
-        movement = GetComponent<FasTPS.CharacterMovement>();
     }
 
     private void Update() 
@@ -59,8 +57,8 @@ public class Interactor : MonoBehaviour
 
             if (indexInteractable != -1){
                 var interactable = _colliders[indexInteractable].GetComponent<IInteractable>(); // Comprobas si es un objeto interactuable
-                if(!movement.IsJumping && !movement.IsCovering && !movement.IsClimbUp && !movement.IsSliding && movement.IsGrounded){
-                    if (interactable != null && interactable.isActive()){
+                
+                if (interactable != null && interactable.isActive()){
                     //Debug.Log("[Interactor] setPrompt: interactable = " + interactable + " is = " + interactable.isActive() + " as ray collided with: " + _colliders[0]);
                     setPrompt(_colliders[indexInteractable].transform);
                 
@@ -72,9 +70,7 @@ public class Interactor : MonoBehaviour
                     if (input.Power){
                         interactable.Power();
                     }
-                    }
                 }
-                
             }
             
         }

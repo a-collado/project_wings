@@ -8,10 +8,10 @@ public class nextLevel : MonoBehaviour
     private void OnTriggerEnter(Collider other) {
 
         // Esto hay que quitarlo
-        /*if(SceneManager.GetActiveScene().buildIndex == 3){
+        if(SceneManager.GetActiveScene().buildIndex == 3){
             SceneManager.LoadScene(0);
             return;
-        }*/
+        }
 
 
         loadNextLevel();

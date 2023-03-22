@@ -20,6 +20,7 @@ public class ActivateMoveByTrigger : MonoBehaviour
             if (animator.GetBool("activate") && !this.animator.GetBool("triggerActivate"))
             {
                 animator.SetBool("triggerActivate", true);
+                Debug.Log("TriggerActivated");
 
                 this.enabled = false;
             }

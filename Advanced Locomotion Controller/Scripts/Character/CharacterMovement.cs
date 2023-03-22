@@ -87,8 +87,6 @@ namespace FasTPS
         public bool MenuOpen;
         [HideInInspector]
         public bool IsCovering;
-        [HideInInspector]
-        public bool IsCarrying;
         bool IsCrouching;
         bool IsWalkUp;
         bool initVault = false;
@@ -153,7 +151,7 @@ namespace FasTPS
             HandleStates();
             SlopeSliding();
             if (MenuOpen) { return; }
-            if (HandleInteractionAnimations()) {HandleMovement();}
+            HandleMovement();
             HandleGravity();
             HandleCovering();
             if (impact.magnitude > 0.2f)
@@ -219,6 +217,7 @@ namespace FasTPS
                 Vector3 origin = transform.position;
                 origin += Vector3.up * 0.5f;
                 IsClear(origin, transform.forward, distanceToCheckForward, ref obstacleForward);
+                Debug.Log(obstacleForward);
                 if (!obstacleForward && !IsVaulting)
                 {
                     origin += transform.forward * 0.6f;
@@ -479,12 +478,6 @@ namespace FasTPS
                 transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.Euler(0, yawCamera, 0), turnSpeed * Time.fixedDeltaTime);
             }
         }
-        private bool HandleInteractionAnimations(){
-            if (animator.GetCurrentAnimatorStateInfo(0).IsName("Pick Torch")){
-                return false;
-            }
-            return true;
-        }
         private void HandleMovement()
         {
             if (!IsSliding && SlideTime != 0.5f)
@@ -607,7 +600,6 @@ namespace FasTPS
                 }
                 if (velocity.y < -(LedgeHeightFallRoll) && LandingRoll)
                 {
-                    //Debug.Log(LandingRoll);
                     RollFromJump = true;
                 }
             }
@@ -621,10 +613,6 @@ namespace FasTPS
                 velocity.y = Mathf.Sqrt(jumpHeight * -2f * Gravity);
                 IsJumping = true;
             }
-        }
-
-        public void setYVelocityToZero(){
-            velocity.y = 0;
         }
         #endregion
         #region VaultAndClimbLogic

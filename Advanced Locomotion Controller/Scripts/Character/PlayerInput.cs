@@ -28,7 +28,7 @@ namespace FasTPS
         public float Zoom;
 
         bool disabled;
-        bool _enabled;
+        bool enabled;
 
         PlayerControls Controls;
         CinemachineFreeLook FL;
@@ -45,7 +45,7 @@ namespace FasTPS
             FL = GetComponentInChildren<CinemachineFreeLook>();
             Controls = InputManager.inputActions;
             Controls.Enable();
-            _enabled = true;
+            enabled = true;
             disabled = false;
 
             Controls.Keyboard.MovementVector.performed += ctx =>
@@ -126,20 +126,20 @@ namespace FasTPS
         private void Update()
         {
 
-            //Zoom = Controls.Mouse.Zoom.ReadValue<float>();
+            Zoom = Controls.Mouse.Zoom.ReadValue<float>();
 
             if (disableMovement && disabled)
             {
-                _enabled = true;
+                enabled = true;
                 disabled = false;
                 CIK.enabled = true;
                 IK.enabled = false;
                 MoveInput = Vector2.zero;
                 controller.enabled = false;
             }
-            else if(!disableMovement && _enabled)
+            else if(!disableMovement && enabled)
             {
-                _enabled = false;
+                enabled = false;
                 disabled = true;
                 CIK.enabled = false;
                 IK.enabled = true;

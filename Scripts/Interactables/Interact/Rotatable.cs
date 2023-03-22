@@ -48,7 +48,7 @@ public class Rotatable : MonoBehaviour, IInteractable
         return (Vector3.Distance(angle, lockRotAngle) < margin);
     }
     public void activate(bool flag){
-        this.RotEnabled = flag;
+        this.RotEnabled = true;
         this.enabled = flag;      
        if (flag){
             this.gameObject.layer = LayerMask.NameToLayer (LayerMask.LayerToName(3));
@@ -63,7 +63,7 @@ public class Rotatable : MonoBehaviour, IInteractable
 
     public bool isCompleted()
     {
-        return (isActive() || RotEnabled);
+        return isActive();
     }
 
 }

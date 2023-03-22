@@ -8,14 +8,12 @@ public class InstantRotatable : MonoBehaviour, IInteractable
     private bool RotEnabled = true; //To set if this is enabled or not
     [SerializeField] private GameObject toRotate;//GameObject to be rotated (if null, it will be the object itself)
     [SerializeField] private bool isBidirectional; //Means it has 2 correct angles
-
-    [SerializeField] private Vector3 currentForwardOrientation;
     [SerializeField] private Vector3 correctForwardOrientation; //Correct angle (calculated from the forward vector)
     [SerializeField] private Vector3 rotationAxis; //Axis to rotate (for ex: ( 0 0 1))
     // Start is called before the first frame update
     
     public void Update(){
-        currentForwardOrientation = this.gameObject.transform.forward;
+        
     }
     public AnimationsEnum Interact(){
         if (toRotate == null) toRotate = this.gameObject;

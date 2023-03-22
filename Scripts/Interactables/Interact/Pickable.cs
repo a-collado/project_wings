@@ -55,7 +55,6 @@ public class Pickable : MonoBehaviour, IInteractable
             }  
 
             playerInventory.addBlock(this.gameObject);
-            gameObject.transform.rotation = Quaternion.identity;
             gameObject.transform.SetParent(player.transform);
             gameObject.transform.localPosition = new Vector3(0.07f,0.87f,0.64f);
             activate(false);

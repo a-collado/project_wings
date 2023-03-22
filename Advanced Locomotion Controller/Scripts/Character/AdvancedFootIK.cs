@@ -39,6 +39,7 @@ namespace FasTPS
 
         private void FixedUpdate()
         {
+            Debug.Log(controller.SteepSlope);
             if (controller.IsClimbUp || controller.IsJumping || controller.IsVaulting || controller.IsSliding || controller.SteepSlope) { EnableFootIK = false; } else { if (!EnableFootIK) { Delay(); } }
             if (animator == null) { return; }
 
@@ -127,7 +128,7 @@ namespace FasTPS
             {
                 Debug.DrawLine(fromSkyPosition, fromSkyPosition + Vector3.down * (RaycastDownDistance + HeightRaycast), Color.red);
             }
-            if (Physics.Raycast(fromSkyPosition, Vector3.down, out feetOutHit, RaycastDownDistance + HeightRaycast, enviromentLayer) && !feetOutHit.collider.isTrigger)
+            if (Physics.Raycast(fromSkyPosition, Vector3.down, out feetOutHit, RaycastDownDistance + HeightRaycast, enviromentLayer))
             {
                 feetIKPosition = fromSkyPosition;
                 feetIKPosition.y = feetOutHit.point.y + pelvisOffset;
