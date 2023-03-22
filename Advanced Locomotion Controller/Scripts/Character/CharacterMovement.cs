@@ -89,7 +89,7 @@ namespace FasTPS
         public bool IsCovering;
         [HideInInspector]
         public bool IsCarrying;
-        bool IsCrouching;
+        public bool IsCrouching;
         bool IsWalkUp;
         bool initVault = false;
         bool obstacleForward;
