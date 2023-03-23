@@ -2,14 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class respawnTrigger : MonoBehaviour
+public class RespawnTrigger : MonoBehaviour
 {
 
     // Start is called before the first frame update
-    [SerializeField] GameObject respawn;
+    [SerializeField] RespawnManager respawn;
+    private CharacterController playerController;
 
     void Awake()
     {
+        playerController = GameObject.FindGameObjectsWithTag("Player")[0].GetComponent<CharacterController>();
+
     }
 
     // Update is called once per frame
@@ -22,14 +25,8 @@ public class respawnTrigger : MonoBehaviour
     {
         if(other.tag == "Player"){
             //Debug.Log("Trigger entered");
-            //other.GetComponent<FasTPS.CharacterMovement>().LandingRoll = false;
-            CharacterController playerController = playerController = other.GetComponent<CharacterController>();
-            playerController.enabled = false;
-            playerController.transform.position = respawn.transform.position;
-            //player.transform.position = respawn.transform.position;
-            playerController.enabled = true;
-            //other.GetComponent<FasTPS.CharacterMovement>().LandingRoll = true;
-
+            
+            respawn.Respawn();
         }
 
     }

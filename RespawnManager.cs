@@ -15,16 +15,19 @@ public class RespawnManager : MonoBehaviour
     // Start is called before the first frame update
     void Update()
     {
-                    //Debug.Log(playerMovement.GetVelocity().y);
+        //Debug.Log(playerMovement.GetVelocity().y);
+        bool hitDeath = false;
+        
 
-        if (playerMovement.GetVelocity().y < -maxSpeed && fallDamage && !playerMovement.IsOnGround())
+        if ((playerMovement.GetVelocity().y < -maxSpeed && fallDamage && !playerMovement.IsOnGround()) || hitDeath)
         {
-            Vector3 playerPosition = playerMovement.gameObject.transform.position;
-            Respawn(playerPosition);
+            Respawn();
         }
     }
 
-    public void Respawn(Vector3 playerPosition){
+    public void Respawn(){
+        
+        Vector3 playerPosition = playerMovement.gameObject.transform.position;
 
         //Look for the closest respawn point
         GameObject closestRespawnPoint = respawnPoints[0];
@@ -45,6 +48,5 @@ public class RespawnManager : MonoBehaviour
         playerMovement.enabled = true;
         playerMovement.ResetVelocity();
        
-
     }
 }
