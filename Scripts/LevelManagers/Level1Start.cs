@@ -13,8 +13,8 @@ public class Level1Start : MonoBehaviour
 
     private void Awake() {
         if(SceneManager.GetActiveScene().buildIndex == 1){
-        playerAnimator = player.GetComponent<Animator>();
-        playerAnimator.SetTrigger("getUp");
+        //playerAnimator = player.GetComponent<Animator>();
+        //playerAnimator.SetTrigger("getUp");
         }
     }
 
