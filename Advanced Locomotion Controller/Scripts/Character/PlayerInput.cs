@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Cinemachine;
+using UnityEngine.InputSystem;
 using FasTPS;
 
 namespace FasTPS
@@ -26,6 +27,7 @@ namespace FasTPS
         public bool Power;
         [HideInInspector]
         public float Zoom;
+        static public bool isKeyboardAndMouse = true;
 
         bool disabled;
         bool _enabled;
@@ -36,6 +38,8 @@ namespace FasTPS
         CharacterMovement controller;
         ClimbBehaviour CB;
         ClimbIK CIK;
+        InputAction lastAction;
+         
         private void Start()
         {
             CIK = GetComponentInChildren<ClimbIK>();
@@ -52,31 +56,38 @@ namespace FasTPS
             {
                 if(!disableMovement)
                     MoveInput = ctx.ReadValue<Vector2>();
+                    lastAction =  Controls.Keyboard.MovementVector;
             };
             Controls.Keyboard.MovementVector.canceled += ctx =>
             {
                 if (!disableMovement)
                     MoveInput = ctx.ReadValue<Vector2>();
+                    lastAction =  Controls.Keyboard.MovementVector;
             };
             Controls.Keyboard.Escape.performed += ctx =>
             {
                 controller.OpenMenu();
+                lastAction =  Controls.Keyboard.Escape;
             };
             Controls.Keyboard.Sprint.performed += ctx =>
             {
                 Sprint = true;
+                lastAction =  Controls.Keyboard.Sprint;
             };
             Controls.Keyboard.Sprint.canceled += ctx =>
             {
                 Sprint = false;
+                lastAction =  Controls.Keyboard.Sprint;
             };
             Controls.Keyboard.Crouch.performed += ctx =>
             {
                 if(!CB.climbing)
                 Crouch = !Crouch;
+                lastAction =  Controls.Keyboard.Crouch;
             };
             Controls.Keyboard.Jump.performed += ctx =>
             {
+                lastAction =  Controls.Keyboard.Jump;
                 DropLedge = true;
                 Jump = true;
                 if (!Crouch && !controller.MenuOpen && !disableMovement && controller.isGroundForward)
@@ -94,6 +105,7 @@ namespace FasTPS
             };
             Controls.Keyboard.FallOff.performed += ctx =>
             {
+                lastAction =  Controls.Keyboard.FallOff;
                 if(CB.climbing && !CB.waitToStartClimb)
                 {
                     CB.InitiateFallOff();
@@ -101,6 +113,7 @@ namespace FasTPS
             };
             Controls.Keyboard.Interact.performed += ctx =>
             {
+                lastAction =  Controls.Keyboard.Interact;
                 Interact = true;
             };
             Controls.Keyboard.Interact.canceled += ctx =>
@@ -109,6 +122,7 @@ namespace FasTPS
             };
             Controls.Mouse.Power.performed += ctx =>
             {
+                lastAction =  Controls.Mouse.Power;
                 Power = true;
             };
             Controls.Mouse.Power.canceled += ctx =>
@@ -125,8 +139,12 @@ namespace FasTPS
         }
         private void Update()
         {
+    
+            if (lastAction != null && lastAction.activeControl != null) {
+                isKeyboardAndMouse = lastAction.activeControl.device.description.deviceClass.Equals("Keyboard") || lastAction.activeControl.device.description.deviceClass.Equals("Mouse");
+            }
 
-            //Zoom = Controls.Mouse.Zoom.ReadValue<float>();
+            Zoom = Controls.Mouse.Zoom.ReadValue<float>();
 
             if (disableMovement && disabled)
             {
