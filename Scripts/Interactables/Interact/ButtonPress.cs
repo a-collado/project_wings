@@ -13,6 +13,7 @@ public class ButtonPress : MonoBehaviour, IInteractable
     
     //[SerializeField] private Camera puzzleCam;
     private System.Diagnostics.Stopwatch stopWatch;
+    private bool toggled = false;
 
 
     void Awake() {
@@ -44,6 +45,7 @@ public class ButtonPress : MonoBehaviour, IInteractable
             objectToToggle.toggle();
 
         }
+        toggled = !toggled;
         activate(false);
 
         //Podriamos bloquear el boton para que no se vuelva a hacer toggle
@@ -64,11 +66,11 @@ public class ButtonPress : MonoBehaviour, IInteractable
 
     public bool isCompleted()
     {
-        return true;
+        return !toggled;
     }
     public void activate(bool flag)
     {
-        this.enabled = false;
+        //this.enabled = flag;
         if (flag){
             this.gameObject.layer = LayerMask.NameToLayer (LayerMask.LayerToName(3));
         }else{

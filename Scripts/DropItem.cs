@@ -12,6 +12,7 @@ public class DropItem : MonoBehaviour
     
 
     private void dropItem() {
+        Debug.Log("Drop item");
         itemToDrop.SetTrigger("drop");
     }
 }
