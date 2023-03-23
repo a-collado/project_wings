@@ -70,6 +70,7 @@ public class ItemDropMultiple : MonoBehaviour, IInteractable
                     next.SetActive(true);
                     complete();
                 }
+                complete();
             }
 
 
