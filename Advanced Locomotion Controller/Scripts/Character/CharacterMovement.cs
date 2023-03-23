@@ -89,7 +89,7 @@ namespace FasTPS
         public bool IsCovering;
         [HideInInspector]
         public bool IsCarrying;
-        bool IsCrouching;
+        public bool IsCrouching;
         bool IsWalkUp;
         bool initVault = false;
         bool obstacleForward;
@@ -613,7 +613,7 @@ namespace FasTPS
                 {
                     animator.SetBool("IsFalling", true);
                 }
-                if (velocity.y < -(LedgeHeightFallRoll) && LandingRoll)
+                if (velocity.y < -(LedgeHeightFallRoll) && LandingRoll && !IsCarrying)
                 {
                     //Debug.Log(LandingRoll);
                     RollFromJump = true;
