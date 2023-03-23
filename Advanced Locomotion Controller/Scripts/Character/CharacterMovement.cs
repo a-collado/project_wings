@@ -605,7 +605,7 @@ namespace FasTPS
                 {
                     animator.SetBool("IsFalling", true);
                 }
-                if (velocity.y < -(LedgeHeightFallRoll) && LandingRoll)
+                if (velocity.y < -(LedgeHeightFallRoll) && LandingRoll && !IsCarrying)
                 {
                     //Debug.Log(LandingRoll);
                     RollFromJump = true;

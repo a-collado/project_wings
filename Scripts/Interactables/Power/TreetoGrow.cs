@@ -16,7 +16,10 @@ public class TreetoGrow : MonoBehaviour, IInteractable
 
     void Awake() { // Load and initialize stuff
         stopWatch = new System.Diagnostics.Stopwatch();
-        animator = GetComponent<Animator>();
+        if(animator == null)
+        {
+            animator = GetComponent<Animator>();
+        }
         stopWatch.Start();
     }
     public void Update() {

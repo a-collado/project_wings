@@ -13,6 +13,8 @@ public class ItemDropMultiple : MonoBehaviour, IInteractable
     private GameObject player; //player GameObject
     private Inventory playerInventory; //player Inventory
     private bool isComplete; // true when this part is done
+    [SerializeField]
+    private GameObject next;
 
     private System.Diagnostics.Stopwatch stopWatch; // delay to prevent key spam
 
@@ -64,6 +66,10 @@ public class ItemDropMultiple : MonoBehaviour, IInteractable
                 playerInventory.dropBlock();
                 block.transform.parent = gameObject.transform;
                 block.transform.position = transform.position;
+                if(next != null){
+                    next.SetActive(true);
+                    complete();
+                }
             }
 
 
