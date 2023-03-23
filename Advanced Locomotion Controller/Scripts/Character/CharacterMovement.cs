@@ -576,6 +576,7 @@ namespace FasTPS
             }
 
             //Slide Altercations
+            /*
             if ((SlideAngle > 0) && !IsJumping)
             {
                 velocity.y += Gravity * 500 * Time.deltaTime;
@@ -583,7 +584,14 @@ namespace FasTPS
             else
             {
                 velocity.y += Gravity * Time.deltaTime;
+            }*/
+            if (!IsGrounded){
+                velocity.y += Gravity * Time.deltaTime;
             }
+            
+            
+
+
             if (Controller.enabled == false) { return; }
             Controller.Move(velocity * Time.deltaTime);
 
@@ -840,6 +848,19 @@ namespace FasTPS
 
                 }
             }
+        }
+
+        public Vector3 GetVelocity()
+        {
+            return velocity;
+        }
+        public bool IsOnGround()
+        {
+            return IsGrounded;
+        }
+        public void ResetVelocity()
+        {
+            velocity.y = -2f;
         }
         #endregion
     }

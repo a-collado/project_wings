@@ -77,4 +77,8 @@ public class CharacterMovement : MonoBehaviour
         player.SetDestination(hitPoint.point);              // El jugador se mueve hacia el esta posicion.
     }
 
+    internal Vector3 GetVelocity()
+    {
+        throw new NotImplementedException();
+    }
 }
