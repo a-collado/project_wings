@@ -623,7 +623,7 @@ namespace FasTPS
         public void Jump()
         {
             //Note: Called from Player Input Script
-            if (IsGrounded && !animator.GetCurrentAnimatorStateInfo(0).IsName("Falling To Roll"))
+            if (IsGrounded && !animator.GetCurrentAnimatorStateInfo(0).IsName("Falling To Roll") && !IsCarrying)
             {
                 animator.SetBool("IsJumping", true);
                 velocity.y = Mathf.Sqrt(jumpHeight * -2f * Gravity);

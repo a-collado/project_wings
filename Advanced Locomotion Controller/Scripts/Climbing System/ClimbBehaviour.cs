@@ -106,26 +106,28 @@ namespace FasTPS
 
         private void FixedUpdate()
         {
-            if (climbing)
-            {
-                if (!waitToStartClimb)
+            if (!movement.IsCarrying) {          
+                if (climbing)
                 {
-                    HandleClimbing();
+                    if (!waitToStartClimb)
+                    {
+                        HandleClimbing();
+                    }
+                    else
+                    {
+                        InitClimbing();
+                        HandleMount();
+                    }
                 }
                 else
                 {
-                    InitClimbing();
-                    HandleMount();
+                    if (initClimb)
+                    {
+                        transform.parent = null;
+                        initClimb = false;
+                    }
+                    CharacterOnEdge();
                 }
-            }
-            else
-            {
-                if (initClimb)
-                {
-                    transform.parent = null;
-                    initClimb = false;
-                }
-                CharacterOnEdge();
             }
         }
 
