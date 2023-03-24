@@ -32745,7 +32745,7 @@ MonoBehaviour:
   - {fileID: 953796244}
   - {fileID: 365620510}
   fallDamage: 1
-  maxSpeed: 10
+  maxSpeed: 100
 --- !u!82 &544947257
 AudioSource:
   m_ObjectHideFlags: 0
@@ -72309,7 +72309,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   correctObjectTag: coin
   numItems: 3
-  ouputText1: gold coins uou must give me if you want to cross
+  ouputText1: gold coins you must give me if you want to cross
   ouputText2: Get on the boat boy
   textMesh: {fileID: 242499560}
 --- !u!136 &1228929654
@@ -72723,7 +72723,8 @@ GameObject:
   - component: {fileID: 1238140483}
   - component: {fileID: 1238140485}
   - component: {fileID: 1238140484}
-  m_Layer: 0
+  - component: {fileID: 1238140486}
+  m_Layer: 9
   m_Name: fuente
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -72794,6 +72795,20 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1238140482}
+  m_Mesh: {fileID: 87725936435303105, guid: 06ef5deff2c7a65418feaab9c47d1b18, type: 3}
+--- !u!64 &1238140486
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1238140482}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
   m_Mesh: {fileID: 87725936435303105, guid: 06ef5deff2c7a65418feaab9c47d1b18, type: 3}
 --- !u!1 &1238362696
 GameObject:
@@ -73749,11 +73764,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4466905272300848229, guid: 57e1e0b56e7e3214ca337da81f381b98, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.000000018987238
+      value: -0.000000018987242
       objectReference: {fileID: 0}
     - target: {fileID: 4466905272300848229, guid: 57e1e0b56e7e3214ca337da81f381b98, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.000000003091778
+      value: 0.0000000030917784
       objectReference: {fileID: 0}
     - target: {fileID: 4466905272306969259, guid: 57e1e0b56e7e3214ca337da81f381b98, type: 3}
       propertyPath: m_LocalPosition.x
@@ -73901,7 +73916,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4466905272475294433, guid: 57e1e0b56e7e3214ca337da81f381b98, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -3040.2
+      value: -2767.02
       objectReference: {fileID: 0}
     - target: {fileID: 4466905272475294433, guid: 57e1e0b56e7e3214ca337da81f381b98, type: 3}
       propertyPath: m_LocalPosition.y
@@ -73909,7 +73924,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4466905272475294433, guid: 57e1e0b56e7e3214ca337da81f381b98, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 176.8
+      value: 93.1
       objectReference: {fileID: 0}
     - target: {fileID: 4466905272475294433, guid: 57e1e0b56e7e3214ca337da81f381b98, type: 3}
       propertyPath: m_LocalRotation.w
@@ -73997,11 +74012,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4466905272533489287, guid: 57e1e0b56e7e3214ca337da81f381b98, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.000000035010743
+      value: -0.000000035010743
       objectReference: {fileID: 0}
     - target: {fileID: 4466905272533489287, guid: 57e1e0b56e7e3214ca337da81f381b98, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.000000005700957
+      value: 0.000000005700957
       objectReference: {fileID: 0}
     - target: {fileID: 4466905272558695344, guid: 57e1e0b56e7e3214ca337da81f381b98, type: 3}
       propertyPath: m_LocalPosition.x
@@ -74205,7 +74220,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4466905272864898776, guid: 57e1e0b56e7e3214ca337da81f381b98, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 5.4900055
+      value: 5.489998
       objectReference: {fileID: 0}
     - target: {fileID: 4466905272887111798, guid: 57e1e0b56e7e3214ca337da81f381b98, type: 3}
       propertyPath: m_LocalPosition.x
@@ -134736,7 +134751,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6132002394240394038}
   m_LocalRotation: {x: -0.50000006, y: 0.49999997, z: -0.49999997, w: 0.50000006}
-  m_LocalPosition: {x: -1939.4084, y: 909.3647, z: -329.6717}
+  m_LocalPosition: {x: -1996.25, y: 874.22, z: -329.6717}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
