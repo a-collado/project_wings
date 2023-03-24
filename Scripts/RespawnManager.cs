@@ -12,14 +12,19 @@ public class RespawnManager : MonoBehaviour
 
     [SerializeField] private float maxSpeed = 10.0f;
 
+    private CharacterController playerController;
+
+
+    void Awake(){
+        playerController = GameObject.FindGameObjectsWithTag("Player")[0].GetComponent<CharacterController>();
+    }
+
     // Start is called before the first frame update
     void Update()
     {
-        //Debug.Log(playerMovement.GetVelocity().y);
-        bool hitDeath = false;
-        
+    
 
-        if ((playerMovement.GetVelocity().y < -maxSpeed && fallDamage && !playerMovement.IsOnGround()) || hitDeath)
+        if ((playerMovement.GetVelocity().y < -maxSpeed && fallDamage && !playerMovement.IsOnGround()))
         {
             Respawn();
         }
@@ -27,6 +32,7 @@ public class RespawnManager : MonoBehaviour
 
     public void Respawn(){
         
+        Debug.Log("Loading respawn");
         Vector3 playerPosition = playerMovement.gameObject.transform.position;
 
         //Look for the closest respawn point
@@ -37,15 +43,18 @@ public class RespawnManager : MonoBehaviour
             float distance = Vector3.Distance(playerPosition, respawnPoint.transform.position);
             if (distance < closestDistance)
             {
+                
                 closestRespawnPoint = respawnPoint;
                 closestDistance = distance;
-            }
+            } 
         }
 
+        Debug.Log("playerDeathPos = " + playerPosition +  " from: " + playerMovement + " respawning to closest: " + closestRespawnPoint + " at :" + closestDistance);
+
         //Move the player to the closest respawn point
-        playerMovement.enabled = false;
-        playerMovement.gameObject.transform.position = closestRespawnPoint.transform.position;
-        playerMovement.enabled = true;
+        playerController.enabled = false;
+        playerController.transform.position = closestRespawnPoint.transform.position;
+        playerController.enabled = true;
         playerMovement.ResetVelocity();
        
     }

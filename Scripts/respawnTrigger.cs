@@ -24,7 +24,7 @@ public class RespawnTrigger : MonoBehaviour
      private void OnTriggerEnter(Collider other)
     {
         if(other.tag == "Player"){
-            //Debug.Log("Trigger entered");
+            Debug.Log("Trigger entered, send event to : " + respawn);
             
             respawn.Respawn();
         }
