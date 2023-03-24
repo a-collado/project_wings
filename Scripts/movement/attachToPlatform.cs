@@ -6,10 +6,13 @@ public class attachToPlatform : MonoBehaviour
 {
     
     private void OnTriggerEnter(Collider other) {
+        other.transform.GetComponent<FasTPS.CharacterMovement>().SteepSlope = true;
         other.transform.SetParent(transform.parent.transform);
     }
 
     private void OnTriggerExit(Collider other) {
+        other.transform.GetComponent<FasTPS.CharacterMovement>().SteepSlope = false;
         other.transform.SetParent(null);
+        
     }
 }
