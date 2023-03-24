@@ -19,7 +19,8 @@ public class InspectorVision : MonoBehaviour
 
         //Activate gameObject
         if(audio != null) { audio.Play(); }
-        vision.SetActive(true);
+        if(vision != null){ vision.SetActive(true);}
+        
         GetComponent<Animator>().SetBool("pressed", true);
 
         //Deactivate gameObject after x seconds
@@ -28,7 +29,7 @@ public class InspectorVision : MonoBehaviour
 
     void DeactivateVision()
     {
-        vision.SetActive(false);
+        if(vision != null){vision.SetActive(false);}
     }
 
     void OnTriggerExit(Collider other)
