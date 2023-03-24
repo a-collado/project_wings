@@ -88,7 +88,7 @@ public class MainMenu : MonoBehaviour
 
 
     private int newGameLevel;
-    private string levelToLoad;
+    private int levelToLoad;
 
     private void Awake() {
         Time.timeScale = 1;
@@ -105,9 +105,9 @@ public class MainMenu : MonoBehaviour
 
           yield return new WaitForSeconds(transitionTime); 
 
-          if (PlayerPrefs.HasKey("SavedLevel"))
+          if (PlayerPrefs.HasKey("SavedLevel") && PlayerPrefs.GetInt("SavedLevel") != 0)
         {
-            levelToLoad = PlayerPrefs.GetString("SavedLevel");
+            levelToLoad = PlayerPrefs.GetInt("SavedLevel");
             SceneManager.LoadScene(levelToLoad);
         } else 
         {
@@ -222,5 +222,9 @@ public class MainMenu : MonoBehaviour
         Screen.fullScreen = _isFullScreen;
 
         StartCoroutine(confirmationBox());
+    }
+
+    public void setLevel(int level){
+        PlayerPrefs.SetInt("SavedLevel", level);
     }
 }
