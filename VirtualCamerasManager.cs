@@ -53,4 +53,8 @@ public class VirtualCamerasManager : MonoBehaviour
             virtualCamera.Priority = 0;
         }
     }
+
+    public void resetCamera(){
+        StartCoroutine(ResetMainCamera(0.1f));
+    }
 }
