@@ -10,7 +10,6 @@ public class ActivateByTrigger : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other) {
         Complete();
-        Debug.Log("[PressurePlate]: Pressed");    
     }
 
     private void OnTriggerStay(Collider other) {
