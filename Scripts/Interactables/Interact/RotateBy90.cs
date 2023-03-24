@@ -13,7 +13,7 @@ public class RotateBy90 : MonoBehaviour, IInteractable
     public int currentPosition = 0;
 
     private void Awake() {
-        targetRotation = transform.rotation;
+        targetRotation = transform.localRotation;
         stopWatch = new System.Diagnostics.Stopwatch();
         stopWatch.Start();
     }
@@ -30,7 +30,7 @@ public class RotateBy90 : MonoBehaviour, IInteractable
         if(time > 0.2)
         {
             stopWatch.Restart();
-            targetRotation =  transform.rotation * Quaternion.Euler(90, 0, 0);
+            targetRotation =  transform.localRotation * Quaternion.Euler(90, 0, 0);
             currentPosition++;
             if(currentPosition == 4) currentPosition = 0;
             return AnimationsEnum.NONE;
