@@ -8,6 +8,7 @@ public class Pickable : MonoBehaviour, IInteractable
 
     //public UnityEvent interacted;
     private GameObject player;
+    [SerializeField] private GameObject playerHand;
     private Inventory playerInventory;
     private System.Diagnostics.Stopwatch stopWatch;
     
@@ -56,8 +57,9 @@ public class Pickable : MonoBehaviour, IInteractable
 
             playerInventory.addBlock(this.gameObject);
             gameObject.transform.rotation = Quaternion.identity;
-            gameObject.transform.SetParent(player.transform);
-            gameObject.transform.localPosition = new Vector3(0.07f,0.87f,0.64f);
+            gameObject.transform.SetParent(playerHand.transform);
+            gameObject.transform.localPosition = Vector3.zero;
+            //gameObject.transform.localPosition = new Vector3(0.07f,0.87f,0.64f);
             activate(false);
             this.gameObject.layer = LayerMask.NameToLayer("Default");
             Debug.Log("["+ this.gameObject + "]: attachToPlayer()");

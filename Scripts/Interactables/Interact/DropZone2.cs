@@ -8,6 +8,7 @@ public class DropZone2 : MonoBehaviour, IInteractable
     
     [SerializeField] private List<Pickable> correctObjects; //Correct object for this DropZone
     private GameObject player; //player GameObject
+    [SerializeField] private GameObject playerHand; //player Hand
     private Inventory playerInventory; //player Inventory
     private bool isComplete; // true when this part is done
 
@@ -70,8 +71,11 @@ public class DropZone2 : MonoBehaviour, IInteractable
                 GameObject children = gameObject.GetComponentInChildren<Pickable>().gameObject;
                 playerInventory.addBlock(children);
                 Debug.Log("[DropZone]: children: " + children);
-                children.transform.SetParent(player.transform);
-                children.transform.localPosition = new Vector3(0.07f,0.87f,0.64f);
+                
+                children.transform.SetParent(playerHand.transform);
+
+                //children.transform.SetParent(player.transform);
+                children.transform.localPosition = Vector3.zero;
             }
         }
     }

@@ -17087,6 +17087,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e9f5427aaa902841880eea20dafaf6a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerHand: {fileID: 1248343881}
 --- !u!64 &300974732
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -73492,15 +73493,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4466905272033095776, guid: 57e1e0b56e7e3214ca337da81f381b98, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.18910766
+      value: 0.18910763
       objectReference: {fileID: 0}
     - target: {fileID: 4466905272033095776, guid: 57e1e0b56e7e3214ca337da81f381b98, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.000000029465275
+      value: 0.0000000034331495
       objectReference: {fileID: 0}
     - target: {fileID: 4466905272033095776, guid: 57e1e0b56e7e3214ca337da81f381b98, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.0000000056744978
+      value: -6.611644e-10
       objectReference: {fileID: 0}
     - target: {fileID: 4466905272034078885, guid: 57e1e0b56e7e3214ca337da81f381b98, type: 3}
       propertyPath: m_LocalPosition.x
@@ -74727,6 +74728,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6077a6edb3e094446ab8d89b2613a09b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1248343881 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6319613595424492495, guid: 57e1e0b56e7e3214ca337da81f381b98, type: 3}
+  m_PrefabInstance: {fileID: 1248343879}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1248946097
 GameObject:
   m_ObjectHideFlags: 0
@@ -122176,6 +122182,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   correctObjects:
   - {fileID: 300974731}
+  playerHand: {fileID: 1248343881}
 --- !u!23 &2029612569
 MeshRenderer:
   m_ObjectHideFlags: 0

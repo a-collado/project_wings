@@ -5,7 +5,7 @@ using UnityEngine;
 public class Inventory : MonoBehaviour
 {
 
-    private GameObject block; //Objeto que tiene que llevar a mano
+    [SerializeField] private GameObject block; //Objeto que tiene que llevar a mano
     [SerializeField] private List<GameObject> items; //Item que se guarda en el bolsillo
     private FasTPS.CharacterMovement movement;
     // Start is called before the first frame update
