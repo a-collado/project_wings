@@ -45,12 +45,14 @@ public class CharacterAnimation : MonoBehaviour
     private void Start() 
     {     
         objectPicked = false;
-        powerAnim.SetActive(true);
+        //powerAnim.SetActive(true);
     }
 
     void Update()
     {
-        powerAnim.SetActive(input.Power);
+        if (!movement.MenuOpen) {
+            powerAnim.SetActive(input.Power);
+        }
     }
 
     public void Interact()
