@@ -117,16 +117,16 @@ public class LoadPreferences : MonoBehaviour
             {
                 float localInvertX = PlayerPrefs.GetFloat("masterInvertX");
 
-                if(localInvertX == 1) invertX.isOn = true;
-                else invertX.isOn = false;
+                if(localInvertX == 1) invertX.isOn = false;
+                else invertX.isOn = true;
 
             }
             if(PlayerPrefs.HasKey("masterInvertY"))
             {
                 float localInvertY = PlayerPrefs.GetFloat("masterInvertY");
 
-                if(localInvertY == 1) invertY.isOn = true;
-                else invertY.isOn = false;
+                if(localInvertY == 1) invertY.isOn = false;
+                else invertY.isOn = true;
 
             }
 
