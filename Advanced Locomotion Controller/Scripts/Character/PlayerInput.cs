@@ -165,5 +165,9 @@ namespace FasTPS
                 MoveInput = Vector2.zero;
             }
         }
+
+        public void disableIK(bool state){
+            IK.enabled = state;
+        }
     }
 }
