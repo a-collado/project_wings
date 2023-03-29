@@ -29,6 +29,10 @@ public class LoadPreferences : MonoBehaviour
     private float DefaultCameraXSens = 300;
     [SerializeField]
     private float DefaultCameraYSens = 3;
+    private float minX = 50.0f;
+    private float maxX = 400.0f;
+    private float minY = 1.0f;
+    private float maxY = 5.0f;
 
     [Header("Invert Setting")]
     [SerializeField]
@@ -92,10 +96,10 @@ public class LoadPreferences : MonoBehaviour
             if(PlayerPrefs.HasKey("masterSenX"))
             {
                 float localSensitivityX = PlayerPrefs.GetFloat("masterSenX");
-                
-                CameraXSensText.text = localSensitivityX.ToString("0");
-                CameraXSlider.value = localSensitivityX;
-                menuController.setCameraXSen(localSensitivityX);
+                float newSensitvityX = 10 * (localSensitivityX - minX) / (maxX - minX);
+                CameraXSensText.text = newSensitvityX.ToString("0");
+                CameraXSlider.value = newSensitvityX;
+                menuController.setCameraXSen(newSensitvityX);
             }else {
                 CameraXSensText.text = DefaultCameraXSens.ToString("0");
                 CameraXSlider.value = DefaultCameraXSens;
@@ -104,10 +108,10 @@ public class LoadPreferences : MonoBehaviour
             if(PlayerPrefs.HasKey("masterSenY"))
             {
                 float localSensitivityY = PlayerPrefs.GetFloat("masterSenY");
-                
-                CameraYSensText.text = localSensitivityY.ToString("0");
-                CameraYSlider.value = localSensitivityY;
-                menuController.setCameraYSen(localSensitivityY);
+                float newSensitvityY = 10 * (localSensitivityY - minY) / (maxY - minY);
+                CameraYSensText.text = newSensitvityY.ToString("0");
+                CameraYSlider.value = newSensitvityY;
+                menuController.setCameraYSen(newSensitvityY);
             }else{
                 CameraYSensText.text = DefaultCameraYSens.ToString("0");
                 CameraYSlider.value = DefaultCameraYSens;
@@ -116,7 +120,7 @@ public class LoadPreferences : MonoBehaviour
             if(PlayerPrefs.HasKey("masterInvertX"))
             {
                 float localInvertX = PlayerPrefs.GetFloat("masterInvertX");
-
+                
                 if(localInvertX == 1) invertX.isOn = false;
                 else invertX.isOn = true;
 

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using System;
 using TMPro;
 
 public class MainMenu : MonoBehaviour
@@ -37,8 +38,12 @@ public class MainMenu : MonoBehaviour
     private int CameraXSens;
     private int CameraYSens;
 
-    private int defaultCameraXSens = 300;
-    private int defaultCameraYSens = 3;
+    private float minX = 50.0f;
+    private float maxX = 400.0f;
+    private float minY = 1.0f;
+    private float maxY = 5.0f;
+    private float defaultCameraXSens = 300.0f;  // De 50 a 400. Esta el 300 marcado
+    private float defaultCameraYSens = 3.0f;    // De 1 a 5. Esta el 3 marcado
 
     private int _qualityLevel;
     private bool _isFullScreen;
@@ -149,10 +154,12 @@ public class MainMenu : MonoBehaviour
             case "Gameplay":
                 invertX.isOn = false;
                 invertY.isOn = true;
-                CameraXSlider.value = defaultCameraXSens;
-                CameraYSlider.value = defaultCameraYSens;
-                CameraXSensText.text = defaultCameraXSens.ToString("0");
-                CameraYSensText.text = defaultCameraYSens.ToString("0");
+                float masterSenX = 10 * (defaultCameraXSens - minX)/(maxX-minX);
+                float masterSenY = 10 * (defaultCameraYSens - minY)/(maxY-minY);
+                CameraXSlider.value = masterSenX;
+                CameraYSlider.value = masterSenY;
+                CameraXSensText.text = masterSenX.ToString("0");
+                CameraYSensText.text = masterSenY.ToString("0");
                 gamePlayApply();
             break;
             case "Graphics":
@@ -192,14 +199,17 @@ public class MainMenu : MonoBehaviour
             PlayerPrefs.SetFloat("masterInvertX", 1f);
         }
 
-        PlayerPrefs.SetFloat("masterSenX", CameraXSens);
-        PlayerPrefs.SetFloat("masterSenY", CameraYSens);
+        float masterSenX = CameraXSens * (maxX - minX)/10 + minX;
+        float masterSenY = CameraYSens * (maxY - minY)/10 + minY;
+
+        PlayerPrefs.SetFloat("masterSenX", masterSenX);
+        PlayerPrefs.SetFloat("masterSenY", masterSenY);
         StartCoroutine(confirmationBox());
 
     }
 
     public void setCameraYSen(float sensitivity){
-
+        
         CameraYSens = Mathf.RoundToInt(sensitivity);
         CameraYSensText.text = CameraYSens.ToString("0");
 
