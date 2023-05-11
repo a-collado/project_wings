@@ -1,7 +1,10 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.PlayerLoop;
 
 public class Interactor : MonoBehaviour
 {
@@ -9,9 +12,9 @@ public class Interactor : MonoBehaviour
     [SerializeField] private LayerMask _interactableMask, _triggerMask;
     [SerializeField] private Camera cam;
     [SerializeField] private InteractablePrompt prompt;
-    private CharacterAnimation animator;
-    private FasTPS.PlayerInput input;
-    private FasTPS.CharacterMovement movement;
+    [SerializeField] private CharacterAnimation animator;
+    [SerializeField] private FasTPS.PlayerInput input;
+    [SerializeField] private FasTPS.CharacterMovement movement;
 
     private int _numFound;
     private int _numFoundT;
@@ -21,16 +24,22 @@ public class Interactor : MonoBehaviour
 
 
     private void Awake() {
-        animator = GetComponent<CharacterAnimation>();
+        /*
+         animator = GetComponent<CharacterAnimation>();
         input = GetComponentInParent<FasTPS.PlayerInput>();
         movement = GetComponent<FasTPS.CharacterMovement>();
+        */
     }
 
+    private void EarlyUpdate()
+    {
+        
+    }
     private void Update() 
     {
         prompt.lookAtCamera(cam);
-        prompt.gameObject.GetComponent<MeshRenderer>().enabled = false;
 
+        /*
         _numFound = Physics.OverlapSphereNonAlloc(gameObject.transform.position, 
         _interactionPointRadius, _colliders, _interactableMask);            // Detecta todos los objetos en un radio dado alrededor del personaje.
 
@@ -78,7 +87,42 @@ public class Interactor : MonoBehaviour
             }
             
         }
+        */
 
+    }
+
+    private void OnTriggerStay(Collider other)
+    {
+        if (other.gameObject.layer == LayerMask.NameToLayer("Interactuable"))
+        {
+            var interactable = other.GetComponent<IInteractable>(); // Comprobas si es un objeto interactuable
+            if(!movement.IsJumping && !movement.IsCovering && !movement.IsClimbUp && !movement.IsSliding && movement.IsGrounded){
+                if (interactable != null && interactable.isActive()){
+                    //Debug.Log("[Interactor] setPrompt: interactable = " + interactable + " is = " + interactable.isActive() + " as ray collided with: " + _colliders[0]);
+                    setPrompt(other.transform);
+                    
+                    if (InteractorClicked(interactable))    // Detectamos si lo estamos pulsando con el raton
+                    {
+                        animator.playAnimation(interactable.Interact());                           // Interactuamos con el objeto
+                    }
+                    if (input.Power){
+                        interactable.Power();
+                    }
+                }
+            }
+        }
+        else
+        {
+            prompt.gameObject.GetComponent<MeshRenderer>().enabled = false;
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.layer == LayerMask.NameToLayer("Interactuable"))
+        {
+            prompt.gameObject.GetComponent<MeshRenderer>().enabled = false;
+        }
     }
 
 
@@ -101,7 +145,6 @@ public class Interactor : MonoBehaviour
     }
 
     private bool InteractorClicked(IInteractable target){
-
         return input.Interact;
     }
 

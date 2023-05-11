@@ -32,7 +32,8 @@ namespace FasTPS
         public enum ClimbStates
         {
             onPoint,
-            betweenPoints,
+            betweenPoints,            
+
             inTransit
         }
 
