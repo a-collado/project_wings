@@ -6,3 +6,4 @@ Para que todo funcione bien hay que importar los paquetes:
   - Universal Render Pipeline
   - Post Processing
   - alembic
+  - Animation Rigging
