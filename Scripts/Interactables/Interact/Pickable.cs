@@ -7,17 +7,16 @@ public class Pickable : MonoBehaviour, IInteractable
 {
 
     //public UnityEvent interacted;
-    private GameObject player;
-    [SerializeField] private GameObject playerHand;
-    private Inventory playerInventory;
-    private System.Diagnostics.Stopwatch stopWatch;
+
+    private Inventory _playerInventory;
+    private System.Diagnostics.Stopwatch _stopWatch;
     
 
     void Awake() {
-        player = GameObject.FindGameObjectsWithTag("Player")[0];
-        playerInventory = player.GetComponent<Inventory>();
-        stopWatch = new System.Diagnostics.Stopwatch();
-        stopWatch.Start();
+        GameObject player = GameObject.FindGameObjectsWithTag("Player")[0];
+        _playerInventory = player.GetComponent<Inventory>();
+        _stopWatch = new System.Diagnostics.Stopwatch();
+        _stopWatch.Start();
     }
 
     public void Update() {
@@ -26,14 +25,14 @@ public class Pickable : MonoBehaviour, IInteractable
 
     public AnimationsEnum Interact()
     {
-        double time = stopWatch.Elapsed.TotalMilliseconds/1000;
+        double time = _stopWatch.Elapsed.TotalMilliseconds/1000;
         if(time > 0.2)
         {
-            stopWatch.Restart();
+            _stopWatch.Restart();
             AnimationsEnum animation = pick();
             return animation;
         }
-        stopWatch.Restart();
+        _stopWatch.Restart();
         return AnimationsEnum.NONE;
     }
 
@@ -43,50 +42,25 @@ public class Pickable : MonoBehaviour, IInteractable
     }
 
     public AnimationsEnum pick(){
-        if(playerInventory.getBlock() == null){
+        
+        if (_playerInventory.getBlock() != null) return AnimationsEnum.NONE;
 
-            AnimationsEnum animation;
-            switch(transform.tag){
-                case "Torch": animation = AnimationsEnum.GRAB_TORCH;
-                break;
-                case "Orb": animation = AnimationsEnum.PICK_TWO_LOW;
-                break;
-                default: animation = AnimationsEnum.PICK_TWO_LOW;
-                break;
-            }  
+        AnimationsEnum animation = transform.tag switch
+        {
+            "Torch" => AnimationsEnum.GRAB_TORCH,
+            "Orb" => AnimationsEnum.PICK_TWO_LOW,
+            _ => AnimationsEnum.PICK_TWO_LOW
+        };
 
-            playerInventory.addBlock(this.gameObject);
-            gameObject.transform.rotation = Quaternion.identity;
-            gameObject.transform.SetParent(playerHand.transform);
-            gameObject.transform.localPosition = Vector3.zero;
-            //gameObject.transform.localPosition = new Vector3(0.07f,0.87f,0.64f);
-            activate(false);
-            this.gameObject.layer = LayerMask.NameToLayer("Default");
-            Debug.Log("["+ this.gameObject + "]: attachToPlayer()");
-            return animation;
-
-        }
-
-        return AnimationsEnum.NONE;
-    
-
+        _playerInventory.addBlock(gameObject);
+        return animation;
     }
-
-   /*  public void rotateObjectXN90(GameObject o)
-    {
-        o.transform.Rotate(new Vector3(-90,0,0));
-
-    } */
+    
 
     public void activate(bool flag){
        
-        this.enabled = flag;      
-       if (flag){
-            this.gameObject.layer = LayerMask.NameToLayer (LayerMask.LayerToName(3));
-        }else{
-            this.gameObject.layer = LayerMask.NameToLayer("Default");
-        }
-    
+        this.enabled = flag;
+        this.gameObject.layer = flag ? 3 : 0;
     }
 
      public bool isActive() {
@@ -98,6 +72,10 @@ public class Pickable : MonoBehaviour, IInteractable
         return isActive();
     }
 
+    public GameObject getGameObject()
+    {
+        return this.transform.gameObject;
+    }
 }
 
 

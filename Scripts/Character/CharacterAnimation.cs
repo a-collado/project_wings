@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Animations.Rigging;
 using UnityEngine.AI;
 using UnityEngine.InputSystem;
 
@@ -23,6 +24,14 @@ public class CharacterAnimation : MonoBehaviour
     private Vector2 smoothDeltaPosition;
 
     private int LAYER_Carrying_OneHand = 2;
+    
+    public TwoBoneIKConstraint leftHand, rightHand;
+    public Transform leftHandTarget, leftHandPicker, rightHandTarget, rightHandPicker;
+    [Range(0f, 1f)]
+    public float leftHandWeight, rightHandWeight;
+
+    private bool _toZero = false;
+    private bool _toOne = false;
 
 /*
     private void OnEnable() {
@@ -40,6 +49,8 @@ public class CharacterAnimation : MonoBehaviour
         //playerAnimator.applyRootMotion = true;
         input = GetComponentInParent<FasTPS.PlayerInput>();
         movement = GetComponent<FasTPS.CharacterMovement>();
+        leftHandWeight = 0f;
+        rightHandWeight = 0f;
     }
 
     private void Start() 
@@ -53,6 +64,8 @@ public class CharacterAnimation : MonoBehaviour
         if (!movement.MenuOpen) {
             powerAnim.SetActive(input.Power);
         }
+
+        leftHand.weight = leftHandWeight;
     }
 
     public void Interact()
@@ -79,10 +92,7 @@ public class CharacterAnimation : MonoBehaviour
         
         switch(animation){
             case AnimationsEnum.NONE: break;
-            case AnimationsEnum.GRAB_LOW: 
-            playerAnimator.SetTrigger("grabLow");
-            playerAnimator.SetLayerWeight(LAYER_Carrying_OneHand, 1.0f);
-            break; 
+            case AnimationsEnum.GRAB_LOW: playerAnimator.SetTrigger("grabLow"); break; 
             case AnimationsEnum.PRESS_BTN: playerAnimator.SetTrigger("press"); break;
             case AnimationsEnum.GRAB_TORCH: playerAnimator.SetTrigger("pickTorch"); break;
         }
@@ -91,8 +101,14 @@ public class CharacterAnimation : MonoBehaviour
     private void pickObject(bool b){
         objectPicked = b;
         playerAnimator.SetBool("objectPicked", b);
-        Debug.Log(playerAnimator.GetBool("objectPicked"));
     }
+
+    public void setLeftHandWeight(float weight)
+    {
+        leftHandWeight = weight;
+    }
+
+
 
 
 }

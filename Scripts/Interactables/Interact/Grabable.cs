@@ -71,6 +71,10 @@ public class Grabable : MonoBehaviour, IInteractable
         return isActive();
     }
 
+    public GameObject getGameObject()
+    {
+        return this.transform.gameObject;
+    }
 }
 
 

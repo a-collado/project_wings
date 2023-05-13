@@ -65,5 +65,10 @@ public class Rotatable : MonoBehaviour, IInteractable
     {
         return (isActive() || RotEnabled);
     }
+    
+    public GameObject getGameObject()
+    {
+        return this.transform.gameObject;
+    }
 
 }

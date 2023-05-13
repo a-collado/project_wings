@@ -104,6 +104,11 @@ public class ItemDropZone : MonoBehaviour, IInteractable
     {
         return isActive();
     }
+    
+    public GameObject getGameObject()
+    {
+        return this.transform.gameObject;
+    }
 }
 
 

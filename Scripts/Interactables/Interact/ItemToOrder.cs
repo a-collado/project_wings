@@ -52,4 +52,9 @@ public class ItemToOrder : MonoBehaviour, IInteractable
     public bool isActive() { return this.enabled; }
 
     public bool isCompleted() { return false; }
+    
+    public GameObject getGameObject()
+    {
+        return this.transform.gameObject;
+    }
 }

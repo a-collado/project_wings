@@ -80,6 +80,9 @@ public class ItemsInOrder : MonoBehaviour, IInteractable
 
     public bool isCompleted() { return !isComplete; }
 
-
+    public GameObject getGameObject()
+    {
+        return this.transform.gameObject;
+    }
 
 }

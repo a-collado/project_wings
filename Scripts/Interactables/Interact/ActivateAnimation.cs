@@ -47,4 +47,9 @@ public class ActivateAnimation : MonoBehaviour, IInteractable
     void IInteractable.Update()
     {
     }
+    
+    public GameObject getGameObject()
+    {
+        return this.transform.gameObject;
+    }
 }

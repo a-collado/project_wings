@@ -105,4 +105,9 @@ public class ItemDropMultiple : MonoBehaviour, IInteractable
     {
         return isActive();
     }
+    
+    public GameObject getGameObject()
+    {
+        return this.transform.gameObject;
+    }
 }

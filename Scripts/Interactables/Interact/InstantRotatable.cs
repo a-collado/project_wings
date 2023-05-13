@@ -74,4 +74,9 @@ public class InstantRotatable : MonoBehaviour, IInteractable
     public bool isCompleted() {
         return orientationIsCorrect();
     }
+    
+    public GameObject getGameObject()
+    {
+        return this.transform.gameObject;
+    }
 }

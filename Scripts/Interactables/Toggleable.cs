@@ -59,4 +59,9 @@ public class Toggleable : MonoBehaviour, IInteractable
     {
         return !this.toggled;
     }
+    
+    public GameObject getGameObject()
+    {
+        return this.transform.gameObject;
+    }
 }
