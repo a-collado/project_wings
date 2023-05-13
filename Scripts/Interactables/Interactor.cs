@@ -51,12 +51,24 @@ public class Interactor : MonoBehaviour
     public void Attach()
     {
         var o = _interactable.getGameObject();
-        o.transform.rotation = Quaternion.identity;
         o.transform.SetParent(animator.leftHandPicker.transform);
+        //o.transform.rotation = Quaternion.Euler(0, 90, 0);
         o.transform.localPosition = Vector3.zero;
         _interactable.activate(false);
         o.layer = LayerMask.NameToLayer("Default");
         _interactable = null;
     }
-    
+
+    public void moveLeftHandToInteractor()
+    {
+        animator.leftHandTarget.transform.position = _interactable.getGameObject().transform.position;
+    }
+
+    public void moveLeftHandToNormal()
+    {
+        animator.leftHandTarget.transform.position =
+            new Vector3(-9.031305313110352f, 2.4028048515319826f, -3.8057708740234377f);
+        animator.leftHandTarget.transform.rotation = new Quaternion(0.5757373571395874f, 0.6823533177375794f,
+            0.2746851146221161f, 0.35702750086784365f);
+    }
 }
