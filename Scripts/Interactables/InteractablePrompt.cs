@@ -14,4 +14,9 @@ public class InteractablePrompt : MonoBehaviour
     {
         gameObject.transform.position = intObject.position;
     }
+
+    public void show(bool flag)
+    {
+        gameObject.GetComponent<MeshRenderer>().enabled = flag;
+    }
 }

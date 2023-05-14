@@ -77,4 +77,9 @@ public class ButtonPress : MonoBehaviour, IInteractable
             this.gameObject.layer = LayerMask.NameToLayer("Default");
         }
     }
+    
+    public GameObject getGameObject()
+    {
+        return this.transform.gameObject;
+    }
 }

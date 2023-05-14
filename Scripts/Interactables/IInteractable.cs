@@ -17,5 +17,7 @@ public interface IInteractable
 
    public bool isCompleted();
 
-    
+   public GameObject getGameObject();
+
+
 }

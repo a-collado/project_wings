@@ -63,4 +63,9 @@ public class RotateBy90 : MonoBehaviour, IInteractable
     {
         throw new System.NotImplementedException();
     }
+    
+    public GameObject getGameObject()
+    {
+        return this.transform.gameObject;
+    }
 }

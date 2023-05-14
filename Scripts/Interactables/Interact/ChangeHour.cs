@@ -68,4 +68,9 @@ public class ChangeHour : MonoBehaviour, IInteractable
     {
         
     }
+    
+    public GameObject getGameObject()
+    {
+        return this.transform.gameObject;
+    }
 }
