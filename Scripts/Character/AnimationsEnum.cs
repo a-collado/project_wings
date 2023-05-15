@@ -10,6 +10,7 @@ public enum AnimationsEnum
    GRAB_LOW,
    GRAB_TORCH,
    PRESS_BTN,
-   CLIMB
+   CLIMB,
+   GRAB_HIGH,
 
 }

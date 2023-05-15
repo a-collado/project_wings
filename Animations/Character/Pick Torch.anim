@@ -77549,7 +77549,7 @@ AnimationClip:
     intParameter: 0
     messageOptions: 0
   - time: 0.93333334
-    functionName: setLeftHandWeight
+    functionName: changeWeight
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 1
@@ -77557,6 +77557,13 @@ AnimationClip:
     messageOptions: 0
   - time: 1.6666666
     functionName: Attach
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 1.7
+    functionName: changeWeight
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
@@ -77576,8 +77583,8 @@ AnimationClip:
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
-  - time: 3.5
-    functionName: setLeftHandWeight
+  - time: 2.5
+    functionName: changeWeight
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 1

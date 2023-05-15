@@ -15,6 +15,7 @@ public class Pickable : MonoBehaviour, IInteractable
     void Awake() {
         GameObject player = GameObject.FindGameObjectsWithTag("Player")[0];
         _playerInventory = player.GetComponent<Inventory>();
+        
         _stopWatch = new System.Diagnostics.Stopwatch();
         _stopWatch.Start();
     }

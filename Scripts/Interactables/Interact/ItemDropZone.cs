@@ -88,12 +88,8 @@ public class ItemDropZone : MonoBehaviour, IInteractable
 
 
     public void activate(bool flag){
-        this.enabled = flag;      
-        if (flag){
-            this.gameObject.layer = LayerMask.NameToLayer (LayerMask.LayerToName(3));
-        }else{
-            this.gameObject.layer = LayerMask.NameToLayer("Default");
-        }
+        this.enabled = flag;
+        this.gameObject.layer = LayerMask.NameToLayer(flag ? LayerMask.LayerToName(3) : "Default");
     }
 
      public bool isActive() {

@@ -479,11 +479,11 @@ namespace FasTPS
                 transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.Euler(0, yawCamera, 0), turnSpeed * Time.fixedDeltaTime);
             }
         }
-        private bool HandleInteractionAnimations(){
-            if (animator.GetCurrentAnimatorStateInfo(0).IsName("Pick Torch")){
-                return false;
-            }
-            return true;
+        private bool HandleInteractionAnimations()
+        {
+            return !animator.GetCurrentAnimatorStateInfo(0).IsName("Pick Torch") 
+                   && !animator.GetCurrentAnimatorStateInfo(0).IsName("Drop Torch High")
+                   && !animator.GetCurrentAnimatorStateInfo(0).IsName("Pick Torch High");
         }
         private void HandleMovement()
         {

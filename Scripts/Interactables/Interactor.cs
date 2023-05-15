@@ -12,6 +12,7 @@ public class Interactor : MonoBehaviour
     [SerializeField] private Camera cam;
     [SerializeField] private InteractablePrompt prompt;
     [SerializeField] private CharacterAnimation animator;
+    [SerializeField] private Inventory inventory;
     [SerializeField] private FasTPS.PlayerInput input;
     [SerializeField] private FasTPS.CharacterMovement movement;
     
@@ -59,6 +60,14 @@ public class Interactor : MonoBehaviour
         _interactable = null;
     }
 
+    public void Detach()
+    {
+        inventory.getBlock().transform.SetParent(_interactable.getGameObject().transform);
+        inventory.getBlock().transform.localPosition = new Vector3(0f,0f,0f);
+        inventory.getBlock().transform.localRotation = Quaternion.Euler(270,0,0);
+        inventory.dropBlock();
+    }
+
     public void moveLeftHandToInteractor()
     {
         animator.leftHandTarget.transform.position = _interactable.getGameObject().transform.position;
@@ -67,7 +76,16 @@ public class Interactor : MonoBehaviour
     public void moveLeftHandToNormal()
     {
         animator.leftHandTarget.transform.localPosition =
-            new Vector3(-0.07177436f, -0.396999f, 0.45f);
+            new Vector3(-0.07177436f, -0.396999f, 0.40f);
         animator.leftHandTarget.transform.localRotation = Quaternion.Euler(-9.639f, -120f, -89.795f);
+    }
+
+    public void AttachFromInventory()
+    {
+        var o = inventory.getBlock();
+        o.transform.SetParent(animator.leftHandPicker.transform);
+        //o.transform.rotation = Quaternion.Euler(0, 90, 0);
+        o.transform.localPosition = Vector3.zero;
+        o.layer = LayerMask.NameToLayer("Default");
     }
 }

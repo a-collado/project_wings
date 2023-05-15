@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -30,8 +31,7 @@ public class CharacterAnimation : MonoBehaviour
     [Range(0f, 1f)]
     public float leftHandWeight, rightHandWeight;
 
-    private bool _toZero = false;
-    private bool _toOne = false;
+    [SerializeField] private bool _toOne = false;
 
 /*
     private void OnEnable() {
@@ -66,6 +66,10 @@ public class CharacterAnimation : MonoBehaviour
         }
 
         leftHand.weight = leftHandWeight;
+
+        if (_toOne && leftHandWeight <= 1) leftHandWeight += (Time.deltaTime);
+        else if (leftHandWeight >= 0) leftHandWeight -= (Time.deltaTime);
+
     }
 
     public void Interact()
@@ -95,6 +99,10 @@ public class CharacterAnimation : MonoBehaviour
             case AnimationsEnum.GRAB_LOW: playerAnimator.SetTrigger("grabLow"); break; 
             case AnimationsEnum.PRESS_BTN: playerAnimator.SetTrigger("press"); break;
             case AnimationsEnum.GRAB_TORCH: playerAnimator.SetTrigger("pickTorch"); break;
+            case AnimationsEnum.DROP_ONE_MID: playerAnimator.SetTrigger("dropTorch"); break;
+            case AnimationsEnum.GRAB_HIGH: playerAnimator.SetTrigger("pickHigh"); break;
+            default:
+                throw new ArgumentOutOfRangeException(nameof(animation), animation, null);
         }
     }
 
@@ -106,6 +114,11 @@ public class CharacterAnimation : MonoBehaviour
     public void setLeftHandWeight(float weight)
     {
         leftHandWeight = weight;
+    }
+
+    public void changeWeight()
+    {
+        _toOne = !_toOne;
     }
 
 
