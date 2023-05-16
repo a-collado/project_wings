@@ -53,8 +53,18 @@ public class Interactor : MonoBehaviour
     {
         var o = _interactable.getGameObject();
         o.transform.SetParent(animator.leftHandPicker.transform);
-        //o.transform.rotation = Quaternion.Euler(0, 90, 0);
         o.transform.localPosition = Vector3.zero;
+        
+        Pickable item;
+        if (o.TryGetComponent<Pickable>(out item))
+        {
+            if (item.localPos)
+            {
+                o.transform.localPosition = item.localPosition;
+                o.transform.localRotation = item.localRotation;
+            }
+        }
+
         _interactable.activate(false);
         o.layer = LayerMask.NameToLayer("Default");
         _interactable = null;
@@ -75,9 +85,47 @@ public class Interactor : MonoBehaviour
 
     public void moveLeftHandToNormal()
     {
+        Pickable item;
+        if (inventory.getBlock().TryGetComponent<Pickable>(out item))
+        {
+            if (item.leftHand)
+            {
+                animator.leftHandTarget.transform.localPosition = item.leftHandRestPosition;
+                animator.leftHandTarget.transform.localRotation = item.leftHandRestRotation;
+                return;
+            }
+        }
+            
+        // DEFAULT HAND POSITION
         animator.leftHandTarget.transform.localPosition =
             new Vector3(-0.07177436f, -0.396999f, 0.40f);
         animator.leftHandTarget.transform.localRotation = Quaternion.Euler(-9.639f, -120f, -89.795f);
+    }
+    
+    public void moveRightHandToInteractor()
+    {
+        animator.rightHandTarget.transform.position = _interactable.getGameObject().transform.position;
+    }
+    
+    public void moveRightHandToNormal()
+    {
+        Pickable item;
+        if (inventory.getBlock().TryGetComponent<Pickable>(out item))
+        {
+            if (item.rightHand)
+            {
+                Debug.Log("1");
+                animator.rightHandTarget.transform.localPosition = item.rightHandRestPosition;
+                animator.rightHandTarget.transform.localRotation = item.rightHandRestRotation;
+                return;
+                Debug.Log("2");
+            }
+        }
+        
+        // DEFAULT HAND POSITION
+        animator.rightHandTarget.transform.localPosition =
+            new Vector3(-0.297f, -0.359f, 0.392f);
+        animator.rightHandTarget.transform.localRotation = Quaternion.Euler(16.977f, 141.297f, -260.161f);
     }
 
     public void AttachFromInventory()

@@ -87,7 +87,7 @@ public class DropZone2 : MonoBehaviour, IInteractable
             isComplete = true;
         }
 
-        return AnimationsEnum.DROP_ONE_MID;
+        return pick.dropAnimation;
     }
 
     public void activate(bool flag){

@@ -12,5 +12,6 @@ public enum AnimationsEnum
    PRESS_BTN,
    CLIMB,
    GRAB_HIGH,
+   DROP_TWO_HIGH
 
 }
