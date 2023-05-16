@@ -32,7 +32,6 @@ public class RotateBy90 : MonoBehaviour, IInteractable
         {
             stopWatch.Restart();
             targetRotation =  transform.localRotation * Quaternion.Euler(90, 0, 0);
-            Debug.Log(transform.localRotation.eulerAngles);
             currentPosition++;
             if(currentPosition == 4) currentPosition = 0;
             return AnimationsEnum.NONE;

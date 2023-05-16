@@ -483,7 +483,9 @@ namespace FasTPS
         {
             return !animator.GetCurrentAnimatorStateInfo(0).IsName("Pick Torch") 
                    && !animator.GetCurrentAnimatorStateInfo(0).IsName("Drop Torch High")
-                   && !animator.GetCurrentAnimatorStateInfo(0).IsName("Pick Torch High");
+                   && !animator.GetCurrentAnimatorStateInfo(0).IsName("Pick Torch High")
+                   && !animator.GetCurrentAnimatorStateInfo(0).IsName("Pick Low Two")
+                   && !animator.GetCurrentAnimatorStateInfo(0).IsName("Drop Orb High");;
         }
         private void HandleMovement()
         {
