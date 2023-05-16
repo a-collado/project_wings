@@ -86,7 +86,7 @@ public class Interactor : MonoBehaviour
     public void moveLeftHandToNormal()
     {
         Pickable item;
-        if (inventory.getBlock().TryGetComponent<Pickable>(out item))
+        if (inventory.getBlock() != null && inventory.getBlock().TryGetComponent<Pickable>(out item))
         {
             if (item.leftHand)
             {
@@ -110,11 +110,10 @@ public class Interactor : MonoBehaviour
     public void moveRightHandToNormal()
     {
         Pickable item;
-        if (inventory.getBlock().TryGetComponent<Pickable>(out item))
+        if (inventory.getBlock() != null && inventory.getBlock().TryGetComponent<Pickable>(out item))
         {
             if (item.rightHand)
             {
-                Debug.Log("1");
                 animator.rightHandTarget.transform.localPosition = item.rightHandRestPosition;
                 animator.rightHandTarget.transform.localRotation = item.rightHandRestRotation;
                 return;
