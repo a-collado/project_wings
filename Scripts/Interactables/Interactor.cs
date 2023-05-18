@@ -76,7 +76,7 @@ public class Interactor : MonoBehaviour
         if (inventory.getBlock() == null || _interactable == null) return;
         inventory.getBlock().transform.SetParent(_interactable.getGameObject().transform);
         inventory.getBlock().transform.localPosition = new Vector3(0f,0f,0f);
-        inventory.getBlock().transform.localRotation = Quaternion.Euler(270,0,0);
+        inventory.getBlock().transform.localRotation = Quaternion.Euler(0,0,-30f);
         inventory.dropBlock();
     }
 
