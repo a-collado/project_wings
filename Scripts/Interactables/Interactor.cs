@@ -72,6 +72,7 @@ public class Interactor : MonoBehaviour
 
     public void Detach()
     {
+        if (inventory.getBlock() == null || _interactable == null) return;
         inventory.getBlock().transform.SetParent(_interactable.getGameObject().transform);
         inventory.getBlock().transform.localPosition = new Vector3(0f,0f,0f);
         inventory.getBlock().transform.localRotation = Quaternion.Euler(270,0,0);
@@ -80,6 +81,7 @@ public class Interactor : MonoBehaviour
 
     public void moveLeftHandToInteractor()
     {
+        if (_interactable == null) return;
         animator.leftHandTarget.transform.position = _interactable.getGameObject().transform.position;
     }
 
@@ -104,6 +106,7 @@ public class Interactor : MonoBehaviour
     
     public void moveRightHandToInteractor()
     {
+        if (_interactable == null) return;
         animator.rightHandTarget.transform.position = _interactable.getGameObject().transform.position;
     }
     
@@ -130,6 +133,7 @@ public class Interactor : MonoBehaviour
     public void AttachFromInventory()
     {
         var o = inventory.getBlock();
+        if (o == null) return;
         o.transform.SetParent(animator.leftHandPicker.transform);
         //o.transform.rotation = Quaternion.Euler(0, 90, 0);
         o.transform.localPosition = Vector3.zero;
