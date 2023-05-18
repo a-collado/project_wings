@@ -74,6 +74,7 @@ public class Pickable : MonoBehaviour, IInteractable
         {
             "Torch" => AnimationsEnum.GRAB_TORCH,
             "Orb" => AnimationsEnum.PICK_TWO_LOW,
+            "Toy" => AnimationsEnum.PICK_HIGH_TWO,
             _ => AnimationsEnum.GRAB_TORCH
         };
 

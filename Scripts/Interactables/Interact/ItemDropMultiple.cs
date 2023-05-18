@@ -35,9 +35,9 @@ public class ItemDropMultiple : MonoBehaviour, IInteractable
         double time = stopWatch.Elapsed.TotalMilliseconds/1000;
         if(time > 0.2)
         {
-            drop();
+            AnimationsEnum anim = drop();
             stopWatch.Restart();
-            return AnimationsEnum.DROP_TWO_LOW;
+            return anim;
         }
         stopWatch.Restart();
         return AnimationsEnum.NONE;
@@ -49,7 +49,7 @@ public class ItemDropMultiple : MonoBehaviour, IInteractable
         //Nothing implemented here
     }
 
-    public void drop(){
+    public AnimationsEnum drop(){
  
         if (!isComplete && playerInventory.getBlock() != null){
 
@@ -71,11 +71,12 @@ public class ItemDropMultiple : MonoBehaviour, IInteractable
                     complete();
                 }
                 complete();
+                return AnimationsEnum.DROP_TWO_LOW;
             }
 
-
+            
         }        
-
+        return AnimationsEnum.NONE;
         
     }
 

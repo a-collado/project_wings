@@ -52,6 +52,7 @@ public class Interactor : MonoBehaviour
     
     public void Attach()
     {
+        //Debug.Log("VAR");
         var o = _interactable.getGameObject();
         o.transform.SetParent(animator.leftHandPicker.transform);
         o.transform.localPosition = Vector3.zero;
@@ -65,7 +66,6 @@ public class Interactor : MonoBehaviour
                 o.transform.localRotation = item.localRotation;
             }
         }
-
         _interactable.activate(false);
         o.layer = LayerMask.NameToLayer("Default");
         _interactable = null;
