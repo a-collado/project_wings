@@ -102,7 +102,7 @@ public class CharacterAnimation : MonoBehaviour
         
         switch(animation){
             case AnimationsEnum.NONE: break;
-            case AnimationsEnum.GRAB_LOW: playerAnimator.SetTrigger("grabLow"); break; 
+            case AnimationsEnum.GRAB_LOW: playerAnimator.SetTrigger("pickFeather"); break; 
             case AnimationsEnum.PRESS_BTN: playerAnimator.SetTrigger("press"); break;
             case AnimationsEnum.GRAB_TORCH: playerAnimator.SetTrigger("pickTorch"); break;
             case AnimationsEnum.DROP_ONE_MID: playerAnimator.SetTrigger("dropTorch"); break;

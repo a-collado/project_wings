@@ -60,4 +60,9 @@ public class Inventory : MonoBehaviour
 
     }
 
+    public List<GameObject> getItems()
+    {
+        return items;
+    }
+
 }

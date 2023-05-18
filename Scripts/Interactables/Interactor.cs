@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -139,4 +140,37 @@ public class Interactor : MonoBehaviour
         o.transform.localPosition = Vector3.zero;
         o.layer = LayerMask.NameToLayer("Default");
     }
+
+    public void attachLastPickedObject()
+    {
+        var o = inventory.getItems();
+        if (o.Count <= 0) return;
+        var item = o.Last();
+        item.transform.SetParent(animator.leftHandPicker.transform);
+        item.transform.localPosition = Vector3.zero;
+    }
+    
+    public void moveLeftHandToGrabbable()
+    {
+        var o = inventory.getItems();
+        if (o.Count <= 0) return;
+        var item = o.Last();
+        animator.leftHandTarget.transform.position = item.transform.position;
+    }
+
+    public void moveLeftHandSave()
+    {
+        animator.leftHandTarget.transform.localPosition = new Vector3(-0.0513999984f, -0.138500005f, 0.0317000002f);
+        animator.leftHandTarget.transform.localRotation = Quaternion.Euler(350.360992f, 240f, 321.971527f);
+    }
+
+    public void deactivateItem()
+    {        
+        var o = inventory.getItems();
+        if (o.Count <= 0) return;
+        var item = o.Last();
+        item.SetActive(false);
+    }
+    
+    //this.gameObject.SetActive(false);
 }
