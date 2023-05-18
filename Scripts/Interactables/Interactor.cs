@@ -25,7 +25,7 @@ public class Interactor : MonoBehaviour
         prompt.lookAtCamera(cam);
         prompt.show(false);
 
-        if (!trigger.isCollider)
+        if (!trigger.isCollider || movement.MenuOpen)
             return;
         
         _interactable = trigger.collider;

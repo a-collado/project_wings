@@ -11,7 +11,8 @@ public class CharacterAnimation : MonoBehaviour
 {
 
     [SerializeField] private GameObject powerAnim;
-    
+    private MeshCollider powerCollider;
+
     private Animator playerAnimator;
     
     private FasTPS.PlayerInput input;
@@ -34,6 +35,9 @@ public class CharacterAnimation : MonoBehaviour
     [SerializeField] private bool _toOne = false;
     [SerializeField] private bool _toOneRight = false;
 
+    [Header("Power Particles")] [SerializeField]
+    private ParticleSystem powerParticles;
+
 
 /*
     private void OnEnable() {
@@ -51,6 +55,7 @@ public class CharacterAnimation : MonoBehaviour
         //playerAnimator.applyRootMotion = true;
         input = GetComponentInParent<FasTPS.PlayerInput>();
         movement = GetComponent<FasTPS.CharacterMovement>();
+        powerCollider = powerAnim.GetComponent<MeshCollider>();
         leftHandWeight = 0f;
         rightHandWeight = 0f;
     }
@@ -65,6 +70,8 @@ public class CharacterAnimation : MonoBehaviour
     {
         if (!movement.MenuOpen) {
             powerAnim.SetActive(input.Power);
+            if(input.Power && !powerParticles.IsAlive(true)) powerParticles.Play(true);
+            if(!input.Power && powerParticles.IsAlive(true)) powerParticles.Stop(true, ParticleSystemStopBehavior.StopEmittingAndClear);
         }
 
         leftHand.weight = leftHandWeight;
