@@ -43,9 +43,9 @@ public class ItemDropZone2 : MonoBehaviour, IInteractable
         double time = stopWatch.Elapsed.TotalMilliseconds/1000;
         if(time > 0.2)
         {
-            drop();
+            AnimationsEnum anim = drop();
             stopWatch.Restart();
-            return AnimationsEnum.DROP_TWO_LOW;
+            return anim;
         }
         stopWatch.Restart();
         return AnimationsEnum.NONE;
@@ -58,9 +58,9 @@ public class ItemDropZone2 : MonoBehaviour, IInteractable
         throw new System.NotImplementedException();
     }
 
-    public void drop()
+    public AnimationsEnum drop()
     {
-        if (isComplete) return;
+        if (isComplete) return AnimationsEnum.NONE;
         numItems = playerInventory.dropItems(numItems, correctObjectTag);
 
         if (text){
@@ -71,6 +71,8 @@ public class ItemDropZone2 : MonoBehaviour, IInteractable
         if (numItems <= 0){
             complete();
         }
+        
+        return AnimationsEnum.NONE;
 
 
     }

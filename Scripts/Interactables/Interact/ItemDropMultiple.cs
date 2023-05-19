@@ -51,14 +51,16 @@ public class ItemDropMultiple : MonoBehaviour, IInteractable
 
     public AnimationsEnum drop(){
  
-        if (!isComplete && playerInventory.getBlock() != null){
-
+        if (!isComplete && playerInventory.getBlock() != null)
+        {
+            AnimationsEnum anim = AnimationsEnum.NONE;
             GameObject block = playerInventory.getBlock();
             bool correctObj = false;
             foreach (string tag in correctObjectTags)
             {
                 if (block.tag == tag){
                     correctObj = true;
+                    if (tag == "Toy") anim = AnimationsEnum.DROP_TWO_LOW;
                 }
             }
             
@@ -71,7 +73,7 @@ public class ItemDropMultiple : MonoBehaviour, IInteractable
                     complete();
                 }
                 complete();
-                return AnimationsEnum.DROP_TWO_LOW;
+                return anim;
             }
 
             
