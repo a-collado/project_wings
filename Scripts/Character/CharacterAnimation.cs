@@ -11,7 +11,8 @@ public class CharacterAnimation : MonoBehaviour
 {
 
     [SerializeField] private GameObject powerAnim;
-    
+    private MeshCollider powerCollider;
+
     private Animator playerAnimator;
     
     private FasTPS.PlayerInput input;
@@ -34,6 +35,9 @@ public class CharacterAnimation : MonoBehaviour
     [SerializeField] private bool _toOne = false;
     [SerializeField] private bool _toOneRight = false;
 
+    [Header("Power Particles")] [SerializeField]
+    private ParticleSystem powerParticles;
+
 
 /*
     private void OnEnable() {
@@ -51,6 +55,7 @@ public class CharacterAnimation : MonoBehaviour
         //playerAnimator.applyRootMotion = true;
         input = GetComponentInParent<FasTPS.PlayerInput>();
         movement = GetComponent<FasTPS.CharacterMovement>();
+        powerCollider = powerAnim.GetComponent<MeshCollider>();
         leftHandWeight = 0f;
         rightHandWeight = 0f;
     }
@@ -65,6 +70,8 @@ public class CharacterAnimation : MonoBehaviour
     {
         if (!movement.MenuOpen) {
             powerAnim.SetActive(input.Power);
+            if(input.Power && !powerParticles.IsAlive(true)) powerParticles.Play(true);
+            if(!input.Power && powerParticles.IsAlive(true)) powerParticles.Stop(true, ParticleSystemStopBehavior.StopEmittingAndClear);
         }
 
         leftHand.weight = leftHandWeight;
@@ -102,14 +109,15 @@ public class CharacterAnimation : MonoBehaviour
         
         switch(animation){
             case AnimationsEnum.NONE: break;
-            case AnimationsEnum.GRAB_LOW: playerAnimator.SetTrigger("grabLow"); break; 
+            case AnimationsEnum.GRAB_LOW: playerAnimator.SetTrigger("pickFeather"); break; 
             case AnimationsEnum.PRESS_BTN: playerAnimator.SetTrigger("press"); break;
             case AnimationsEnum.GRAB_TORCH: playerAnimator.SetTrigger("pickTorch"); break;
             case AnimationsEnum.DROP_ONE_MID: playerAnimator.SetTrigger("dropTorch"); break;
             case AnimationsEnum.GRAB_HIGH: playerAnimator.SetTrigger("pickHigh"); break;
             case AnimationsEnum.PICK_TWO_LOW: playerAnimator.SetTrigger("pickLow"); break;
             case AnimationsEnum.DROP_TWO_HIGH: playerAnimator.SetTrigger("dropOrb"); break;
-
+            case AnimationsEnum.PICK_HIGH_TWO: playerAnimator.SetTrigger("pickBear"); break;
+            case AnimationsEnum.DROP_TWO_LOW: playerAnimator.SetTrigger("dropBear"); break;
             default:
                 throw new ArgumentOutOfRangeException(nameof(animation), animation, null);
         }

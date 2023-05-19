@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -24,7 +25,7 @@ public class Interactor : MonoBehaviour
         prompt.lookAtCamera(cam);
         prompt.show(false);
 
-        if (!trigger.isCollider)
+        if (!trigger.isCollider || movement.MenuOpen)
             return;
         
         _interactable = trigger.collider;
@@ -51,6 +52,7 @@ public class Interactor : MonoBehaviour
     
     public void Attach()
     {
+        //Debug.Log("VAR");
         var o = _interactable.getGameObject();
         o.transform.SetParent(animator.leftHandPicker.transform);
         o.transform.localPosition = Vector3.zero;
@@ -64,7 +66,6 @@ public class Interactor : MonoBehaviour
                 o.transform.localRotation = item.localRotation;
             }
         }
-
         _interactable.activate(false);
         o.layer = LayerMask.NameToLayer("Default");
         _interactable = null;
@@ -72,14 +73,16 @@ public class Interactor : MonoBehaviour
 
     public void Detach()
     {
+        if (inventory.getBlock() == null || _interactable == null) return;
         inventory.getBlock().transform.SetParent(_interactable.getGameObject().transform);
         inventory.getBlock().transform.localPosition = new Vector3(0f,0f,0f);
-        inventory.getBlock().transform.localRotation = Quaternion.Euler(270,0,0);
+        inventory.getBlock().transform.localRotation = Quaternion.Euler(0,0,-30f);
         inventory.dropBlock();
     }
 
     public void moveLeftHandToInteractor()
     {
+        if (_interactable == null) return;
         animator.leftHandTarget.transform.position = _interactable.getGameObject().transform.position;
     }
 
@@ -104,6 +107,7 @@ public class Interactor : MonoBehaviour
     
     public void moveRightHandToInteractor()
     {
+        if (_interactable == null) return;
         animator.rightHandTarget.transform.position = _interactable.getGameObject().transform.position;
     }
     
@@ -130,9 +134,43 @@ public class Interactor : MonoBehaviour
     public void AttachFromInventory()
     {
         var o = inventory.getBlock();
+        if (o == null) return;
         o.transform.SetParent(animator.leftHandPicker.transform);
         //o.transform.rotation = Quaternion.Euler(0, 90, 0);
         o.transform.localPosition = Vector3.zero;
         o.layer = LayerMask.NameToLayer("Default");
     }
+
+    public void attachLastPickedObject()
+    {
+        var o = inventory.getItems();
+        if (o.Count <= 0) return;
+        var item = o.Last();
+        item.transform.SetParent(animator.leftHandPicker.transform);
+        item.transform.localPosition = Vector3.zero;
+    }
+    
+    public void moveLeftHandToGrabbable()
+    {
+        var o = inventory.getItems();
+        if (o.Count <= 0) return;
+        var item = o.Last();
+        animator.leftHandTarget.transform.position = item.transform.position;
+    }
+
+    public void moveLeftHandSave()
+    {
+        animator.leftHandTarget.transform.localPosition = new Vector3(-0.0513999984f, -0.138500005f, 0.0317000002f);
+        animator.leftHandTarget.transform.localRotation = Quaternion.Euler(350.360992f, 240f, 321.971527f);
+    }
+
+    public void deactivateItem()
+    {        
+        var o = inventory.getItems();
+        if (o.Count <= 0) return;
+        var item = o.Last();
+        item.SetActive(false);
+    }
+    
+    //this.gameObject.SetActive(false);
 }
