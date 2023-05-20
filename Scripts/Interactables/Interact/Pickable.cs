@@ -121,7 +121,7 @@ public class Pickable : MonoBehaviour, IInteractable
                 rightHandRestPosition = new Vector3(-0.284199923f, -0.122600317f, 0.235597655f);
                 rightHandRestRotation = Quaternion.Euler(19.105f, 123.288f, -265.782f);
                 rightHand = true;
-                localPosition = new Vector3(0.0329999998f, 0.0160000008f, 0.0939999968f);
+                localPosition = new Vector3(-0.00730000017f, 0.00579999993f, 0.0241999999f);
                 localRotation = Quaternion.Euler(6.552f, 108.014f, -120.524f);
                 localPos = true;
                 dropAnimation = AnimationsEnum.DROP_TWO_HIGH;

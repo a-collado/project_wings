@@ -76,12 +76,20 @@ public class CharacterAnimation : MonoBehaviour
 
         leftHand.weight = leftHandWeight;
         rightHand.weight = rightHandWeight;
+        
+        if (leftHandWeight >= 0.98) leftHandWeight = 1.0f;
 
         if (_toOne && leftHandWeight <= 1) leftHandWeight += (Time.deltaTime);
         else if (leftHandWeight >= 0) leftHandWeight -= (Time.deltaTime);
+
+        
+        
+        if (rightHandWeight >= 0.98) rightHandWeight = 1.0f;
         
         if (_toOneRight && rightHandWeight <= 1) rightHandWeight += (Time.deltaTime);
         else if (rightHandWeight >= 0) rightHandWeight -= (Time.deltaTime);
+        
+        
 
     }
 
