@@ -110,6 +110,9 @@ public class Pickable : MonoBehaviour, IInteractable
             case "Torch": 
                 leftHandRestPosition = new Vector3(-0.07177436f, -0.396999f, 0.40f);
                 leftHandRestRotation = Quaternion.Euler(-9.639f, -120f, -89.795f);
+                localPosition = new Vector3(-0.05f, 0.02f, 0.01f);
+                localRotation = Quaternion.Euler(325.672882f, 193.663574f, 97.9599457f);
+                localPos = true;
                 leftHand = true;
                 rightHand = false;
                 dropAnimation = AnimationsEnum.DROP_ONE_MID;
@@ -121,10 +124,19 @@ public class Pickable : MonoBehaviour, IInteractable
                 rightHandRestPosition = new Vector3(-0.284199923f, -0.122600317f, 0.235597655f);
                 rightHandRestRotation = Quaternion.Euler(19.105f, 123.288f, -265.782f);
                 rightHand = true;
-                localPosition = new Vector3(-0.00730000017f, 0.00579999993f, 0.0241999999f);
+                localPosition = new Vector3(-0.00730000017f, 0.00579999993f, 0.035f);
                 localRotation = Quaternion.Euler(6.552f, 108.014f, -120.524f);
                 localPos = true;
                 dropAnimation = AnimationsEnum.DROP_TWO_HIGH;
+                break;
+            case "Wood":
+                leftHandRestPosition = new Vector3(-0.07177436f, -0.396999f, 0.40f);
+                leftHandRestRotation = Quaternion.Euler(-9.639f, -120f, -89.795f);
+                localPosition = new Vector3(-0.0604000017f, 0.0107000005f, -0.00240000011f);
+                localRotation = Quaternion.Euler(50.6836205f, 163.451202f, 335.313965f);
+                localPos = true;
+                leftHand = true;
+                rightHand = false;
                 break;
             default:
                 break;

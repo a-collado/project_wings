@@ -18,29 +18,36 @@ public class Interactor : MonoBehaviour
     [SerializeField] private FasTPS.CharacterMovement movement;
     
     [SerializeField] private InteractorTrigger trigger;
+    [SerializeField] private InteractorTrigger Powertrigger;
     private IInteractable _interactable = null;
     
     private void Update() 
     {
         prompt.lookAtCamera(cam);
         prompt.show(false);
-
-        if (!trigger.isCollider || movement.MenuOpen)
-            return;
         
-        _interactable = trigger.collider;
-        if (movement.IsJumping || movement.IsCovering || movement.IsClimbUp || movement.IsSliding ||
-            !movement.IsGrounded) return;
-        if (_interactable == null || !_interactable.isActive()) return;
-        setPrompt(_interactable.getGameObject().transform);
+        if (Powertrigger.isCollider && !movement.MenuOpen){
+            _interactable = Powertrigger.collider;
 
-        if (input.Interact)    // Detectamos si lo estamos pulsando con el raton
-        {
-            animator.playAnimation(_interactable.Interact());                           // Interactuamos con el objeto
-            prompt.gameObject.GetComponent<MeshRenderer>().enabled = false;
+            if (_interactable != null && _interactable.isActive())
+            {
+                _interactable.Power();
+            };
         }
-        if (input.Power){
-            _interactable.Power();
+
+        if (trigger.isCollider && !movement.MenuOpen)
+        {
+            _interactable = trigger.collider;
+            if (movement.IsJumping || movement.IsCovering || movement.IsClimbUp || movement.IsSliding ||
+                !movement.IsGrounded) return;
+            if (_interactable == null || !_interactable.isActive()) return;
+            setPrompt(_interactable.getGameObject().transform);
+
+            if (input.Interact)    // Detectamos si lo estamos pulsando con el raton
+            {
+                animator.playAnimation(_interactable.Interact());                           // Interactuamos con el objeto
+                prompt.gameObject.GetComponent<MeshRenderer>().enabled = false;
+            }
         }
 
     }
@@ -146,8 +153,15 @@ public class Interactor : MonoBehaviour
         var o = inventory.getItems();
         if (o.Count <= 0) return;
         var item = o.Last();
+        Grabable i;
+        item.TryGetComponent<Grabable>(out i);
         item.transform.SetParent(animator.leftHandPicker.transform);
         item.transform.localPosition = Vector3.zero;
+
+        if (i == null || !i.localPos) return;
+        item.transform.localPosition = i.localPosition;
+        item.transform.localRotation = i.localRotation;
+
     }
     
     public void moveLeftHandToGrabbable()

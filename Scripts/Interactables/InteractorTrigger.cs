@@ -8,7 +8,7 @@ public class InteractorTrigger : MonoBehaviour
 
     [SerializeField] private LayerMask interactableMask;
     public IInteractable collider = null;
-    public bool isCollider = false;
+    [HideInInspector] public bool isCollider = false;
     
     private void OnTriggerEnter(Collider other)
     {
