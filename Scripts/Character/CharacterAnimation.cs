@@ -151,6 +151,11 @@ public class CharacterAnimation : MonoBehaviour
         _toOneRight = !_toOneRight;
     }
 
+    public void setAnimation()
+    {
+        playerAnimator.Play("Sitting Idle");
+    }
+
 
 
 

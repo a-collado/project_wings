@@ -35,7 +35,11 @@ public class Grabable : MonoBehaviour, IInteractable
         {
             grab();
             stopWatch.Restart();
-            return AnimationsEnum.GRAB_LOW;
+            return tag switch
+            {
+               // "coin" => AnimationsEnum.NONE,
+                _ => AnimationsEnum.GRAB_LOW
+            };
         }
         stopWatch.Restart();
         return AnimationsEnum.NONE;

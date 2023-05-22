@@ -66,7 +66,7 @@ public class ItemDropZoneAnim : MonoBehaviour, IInteractable
         numItems = playerInventory.dropItems(numItems, correctObjectTag);
 
         if (text){
-            _animator.SetTrigger("no");
+            if (numItems > 0) _animator.SetTrigger("no");
             notification.setMessage(ouputText1);
             notification.showNotification();
         }

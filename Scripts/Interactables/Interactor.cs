@@ -18,7 +18,7 @@ public class Interactor : MonoBehaviour
     [SerializeField] private FasTPS.CharacterMovement movement;
     
     [SerializeField] private InteractorTrigger trigger;
-    [SerializeField] private InteractorTrigger Powertrigger;
+    [SerializeField] private InteractorTrigger powertrigger;
     private IInteractable _interactable = null;
     
     private void Update() 
@@ -26,13 +26,14 @@ public class Interactor : MonoBehaviour
         prompt.lookAtCamera(cam);
         prompt.show(false);
         
-        if (Powertrigger.isCollider && !movement.MenuOpen){
-            _interactable = Powertrigger.collider;
+        if (powertrigger.isCollider && !movement.MenuOpen){
+            _interactable = powertrigger.collider;
 
-            if (_interactable != null && _interactable.isActive())
+            if (_interactable != null && _interactable.isActive() && powertrigger.gameObject.activeSelf)
             {
                 _interactable.Power();
             };
+            powertrigger.collider = null;
         }
 
         if (trigger.isCollider && !movement.MenuOpen)
