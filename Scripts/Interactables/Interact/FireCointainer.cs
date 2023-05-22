@@ -9,10 +9,12 @@ public class FireCointainer : MonoBehaviour, IInteractable
     private Inventory playerInventory;
     [SerializeField]
     private ParticleSystem particles;
+    private AudioSource audio;
 
     private void Awake() {
         player = GameObject.FindGameObjectsWithTag("Player")[0];
         playerInventory = player.GetComponent<Inventory>();
+        audio = GetComponent<AudioSource>();
     }
 
     public void activate(bool flag)
@@ -20,9 +22,14 @@ public class FireCointainer : MonoBehaviour, IInteractable
         this.enabled = flag;
     }
 
+    public void Update()
+    {
+    }
+
     public AnimationsEnum Interact()
     {
         if(playerInventory.getBlock() != null && playerInventory.getBlock().GetComponent<Pickable>() != null){
+            audio.Play();
             particles.gameObject.SetActive(true);
             activate(false);
         }
@@ -41,10 +48,6 @@ public class FireCointainer : MonoBehaviour, IInteractable
     }
 
     public void Power()
-    {
-    }
-
-    void IInteractable.Update()
     {
     }
     
