@@ -25,6 +25,8 @@ public class Interactor : MonoBehaviour
     {
         prompt.lookAtCamera(cam);
         prompt.show(false);
+
+        if (!movement.HandleInteractionAnimations()) return;
         
         if (powertrigger.isCollider && !movement.MenuOpen){
             _interactable = powertrigger.collider;

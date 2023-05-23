@@ -16,7 +16,6 @@ public class Sit : MonoBehaviour,  IInteractable
 
     public AnimationsEnum Interact()
     {
-        _animator.setAnimation();
         return AnimationsEnum.NONE;
     }
 
