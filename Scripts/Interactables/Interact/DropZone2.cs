@@ -107,6 +107,7 @@ public class DropZone2 : MonoBehaviour, IInteractable
 
     public bool isCompleted()
     {
+        Debug.Log(isActive());
         return isActive();
     }
     
