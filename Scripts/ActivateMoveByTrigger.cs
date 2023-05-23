@@ -10,6 +10,7 @@ public class ActivateMoveByTrigger : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        
         if (animator == null)
         animator = gameObject.GetComponentInParent<Animator>();
     }
