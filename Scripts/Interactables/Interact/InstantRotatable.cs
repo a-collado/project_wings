@@ -64,14 +64,14 @@ public class InstantRotatable : MonoBehaviour, IInteractable
         */
         //Debug.Log("toRotate.transform.localRotation.eulerAngles.y: " + toRotate.transform.localRotation.eulerAngles.y);
         if (toRotate.transform.localRotation.eulerAngles.y % 360 == 0){
-            Debug.Log("Orientation is correct");
-            return true;
+            return false;
         }
         if (toRotate.transform.localRotation.eulerAngles.y % 180 == 0 && this.isBidirectional){
-            Debug.Log("Orientation is correct");
-            return true;
+            //Debug.Log("Orientation is correct");
+            return false;
         }
-        return false;
+        Debug.Log("Orientation of: " + this +  " is not correct");
+        return true;
     }
     public void activate(bool flag){
         this.RotEnabled = true;
