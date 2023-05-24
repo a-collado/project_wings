@@ -87,6 +87,11 @@ public class Interactor : MonoBehaviour
         inventory.getBlock().transform.SetParent(_interactable.getGameObject().transform);
         inventory.getBlock().transform.localPosition = new Vector3(0f,0f,0f);
         inventory.getBlock().transform.localRotation = Quaternion.Euler(0,0,-30f);
+        if (inventory.getBlock().CompareTag("Gravel"))
+        {
+            inventory.getBlock().transform.localPosition = inventory.getBlock().transform.GetComponent<Pickable>().localPosition;
+            inventory.getBlock().transform.localRotation = inventory.getBlock().transform.GetComponent<Pickable>().localRotation;
+        }
         inventory.dropBlock();
     }
 

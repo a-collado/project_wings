@@ -56,6 +56,7 @@ public class DropZone2 : MonoBehaviour, IInteractable
             //Si el objeto es de tipo Interactor
             if (!objectToDrop.transform.GetComponentInParent<Interactor>()) return AnimationsEnum.NONE;
             //drop
+
             //objectToDrop.transform.SetParent(gameObject.transform);
             //objectToDrop.transform.localPosition = new Vector3(0f,0f,0f);
             //objectToDrop.transform.rotation = Quaternion.identity;
