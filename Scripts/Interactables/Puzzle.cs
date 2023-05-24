@@ -39,9 +39,9 @@ public class Puzzle : MonoBehaviour
                 
                 animator.SetBool("activate", true);
                 audioSource.Play();
-                Debug.Log("[Activable]: " + animator + " has been activated");
+                //Debug.Log("[Activable]: " + animator + " has been activated");
             }
-            Debug.Log("Puzzle completed");
+            //Debug.Log("Puzzle completed");
             
             //And then disable
             this.enabled = false;

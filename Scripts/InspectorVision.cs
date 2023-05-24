@@ -18,10 +18,10 @@ public class InspectorVision : MonoBehaviour
         //Activate gameObject during x seconds and then deactivate it
 
         //Activate gameObject
-        if(audio != null) { audio.Play(); }
-        if(vision != null){ vision.SetActive(true);}
+        if(audio != null && !audio.isPlaying) { audio.Play(); GetComponent<Animator>().SetBool("pressed", true);}
+        if(vision != null && !vision.activeSelf) { vision.SetActive(true); GetComponent<Animator>().SetBool("pressed", true);}
         
-        GetComponent<Animator>().SetBool("pressed", true);
+        
 
         //Deactivate gameObject after x seconds
         Invoke("DeactivateVision", timeToDeactivate);
