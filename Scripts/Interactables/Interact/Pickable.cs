@@ -140,8 +140,8 @@ public class Pickable : MonoBehaviour, IInteractable
                 break;
             case "Gravel":
                 dropAnimation = AnimationsEnum.DROP_ONE_MID;
-                localPosition = new Vector3(-0.155000001f, -0.127000004f, -0.342999995f);
-                localRotation = Quaternion.Euler(87.9765778f, 334.300629f, 263.905945f);
+                localPosition = new Vector3(-0.00970000029f, -0.0729999989f, -0.00079999998f);
+                localRotation = Quaternion.Euler(16.4638348f, 276.044708f, 180f);
                 //localPos = true;
                 break;
             default:
