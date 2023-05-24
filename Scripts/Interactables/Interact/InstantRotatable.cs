@@ -21,7 +21,7 @@ public class InstantRotatable : MonoBehaviour, IInteractable
         if (toRotate == null) toRotate = this.gameObject;
         rotate(toRotate);
         
-        return AnimationsEnum.CRANK;
+        return AnimationsEnum.NONE;
     }
 
     public void Power()
@@ -38,9 +38,12 @@ public class InstantRotatable : MonoBehaviour, IInteractable
 
         if (RotEnabled){
             ////Debug.Log("[InstantRotatable: rotate]: " + toRotate.name + " currentAngle: " + toRotate.transform.rotation.eulerAngles + " distance from correctAngle:  " + Vector3.Distance(toRotate.transform.rotation.eulerAngles, correctForwardOrientation) + " forward: " + toRotate.transform.forward);
-            toRotate.transform.rotation *= Quaternion.Euler(90 * rotationAxis);
+            toRotate.transform.rotation *= Quaternion.Euler(90 * new Vector3(0,1,0));
+            //Debug.Log("toRotate.transform.localRotation.eulerAngles.y: " + toRotate.transform.localRotation.eulerAngles.y);
+
             //Disable for 1 sec so it doesn't rotate again
             RotEnabled = false;
+            //Debug.Log("Rotating");
             StartCoroutine(EnableRot());
         }
     }
@@ -50,12 +53,25 @@ public class InstantRotatable : MonoBehaviour, IInteractable
         RotEnabled = true;
     }
     public bool orientationIsCorrect() {
+        
         if (toRotate == null) toRotate = this.gameObject;
+        /*
         Vector3 currentForward = toRotate.transform.forward;
         if (isBidirectional)
             return (Vector3.Distance(currentForward, correctForwardOrientation) == 0 || Vector3.Distance(currentForward, -correctForwardOrientation) == 0);
         else
             return (Vector3.Distance(currentForward, correctForwardOrientation) == 0);
+        */
+        //Debug.Log("toRotate.transform.localRotation.eulerAngles.y: " + toRotate.transform.localRotation.eulerAngles.y);
+        if (toRotate.transform.localRotation.eulerAngles.y % 360 == 0){
+            Debug.Log("Orientation is correct");
+            return true;
+        }
+        if (toRotate.transform.localRotation.eulerAngles.y % 180 == 0 && this.isBidirectional){
+            Debug.Log("Orientation is correct");
+            return true;
+        }
+        return false;
     }
     public void activate(bool flag){
         this.RotEnabled = true;
