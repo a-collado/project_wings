@@ -13,5 +13,6 @@ public enum ActionsEnum
     SPRINT,
     INTERACT,
     POWER,
-    PAUSE
+    PAUSE,
+    FORWARD
 }
