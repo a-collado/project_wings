@@ -1,10 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Events;
-using TMPro;
-using UnityEditor;
-using UnityEditor.UIElements;
 
 public class ItemDropZoneAnim : MonoBehaviour, IInteractable
 {
