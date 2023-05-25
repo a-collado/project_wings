@@ -33,6 +33,7 @@ public class TreetoGrow : MonoBehaviour, IInteractable
     public void Power()
     {
         activateTree();
+        Debug.Log("AC");
     }
 
     public void activateTree(){

@@ -192,6 +192,7 @@ public class Interactor : MonoBehaviour
         if (o.Count <= 0) return;
         var item = o.Last();
         item.SetActive(false);
+        Debug.Log("VAR");
     }
     
     //this.gameObject.SetActive(false);
