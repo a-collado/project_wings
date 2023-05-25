@@ -46,7 +46,9 @@ public class CameraPreferences : MonoBehaviour
             thirdPersonCamera.m_YAxis.m_InvertInput = true;
         }
 
-        thirdPersonCamera.m_XAxis.m_MaxSpeed = sensitivityX;
+        //thirdPersonCamera.m_XAxis.m_MaxSpeed = sensitivityX;
+        thirdPersonCamera.m_XAxis.m_SpeedMode = AxisState.SpeedMode.InputValueGain;
+        thirdPersonCamera.m_XAxis.m_MaxSpeed = 0.5f;
         if(invertX == 1.0f){
             thirdPersonCamera.m_XAxis.m_InvertInput = false;
         } else {

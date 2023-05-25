@@ -14,7 +14,7 @@ namespace FasTPS
         public bool waitToStartClimb;
         bool dropOnLedge = false;
         public float maxDistance = 20.0f;    // Por defecto es 20
-        public float maxDistanceToPoint = 1.5f;  // Por defecto es 5
+        public float maxDistanceToPoint = 5f;  // Por defecto es 5
 
         Animator anim;
         ClimbIK ik;
