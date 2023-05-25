@@ -14,18 +14,19 @@ public class InteractHintCame : MonoBehaviour, IInteractable
     }
     public void activate(bool flag)
     {
-        //Switch to hint camera for x secs
-        if (resolveCameraIndex != -1 && cameraManager != null)
-            cameraManager.SetVirtualCamera(resolveCameraIndex, 5f);
+        
     }
 
     public GameObject getGameObject()
     {
-        throw new System.NotImplementedException();
+        return this.gameObject;
     }
 
     public AnimationsEnum Interact()
     {
+        //Switch to hint camera for x secs
+        if (resolveCameraIndex != -1 && cameraManager != null)
+            cameraManager.SetVirtualCamera(resolveCameraIndex, 5f);
         return AnimationsEnum.NONE;
     }
 
