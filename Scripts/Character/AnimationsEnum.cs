@@ -13,6 +13,6 @@ public enum AnimationsEnum
    CLIMB,
    GRAB_HIGH,
    DROP_TWO_HIGH,
-   PICK_HIGH_TWO
-
+   PICK_HIGH_TWO,
+   DROP_TRAIN
 }

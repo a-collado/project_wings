@@ -126,6 +126,7 @@ public class CharacterAnimation : MonoBehaviour
             case AnimationsEnum.DROP_TWO_HIGH: playerAnimator.SetTrigger("dropOrb"); break;
             case AnimationsEnum.PICK_HIGH_TWO: playerAnimator.SetTrigger("pickBear"); break;
             case AnimationsEnum.DROP_TWO_LOW: playerAnimator.SetTrigger("dropBear"); break;
+            case AnimationsEnum.DROP_TRAIN: playerAnimator.SetTrigger("dropTrain"); break;
             default:
                 throw new ArgumentOutOfRangeException(nameof(animation), animation, null);
         }

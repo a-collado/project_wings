@@ -75,6 +75,7 @@ public class Pickable : MonoBehaviour, IInteractable
             "Torch" => AnimationsEnum.GRAB_TORCH,
             "Orb" => AnimationsEnum.PICK_TWO_LOW,
             "Toy" => AnimationsEnum.PICK_HIGH_TWO,
+            "Train" => AnimationsEnum.PICK_TWO_LOW,
             _ => AnimationsEnum.GRAB_TORCH
         };
 
@@ -143,6 +144,23 @@ public class Pickable : MonoBehaviour, IInteractable
                 localPosition = new Vector3(-0.00970000029f, -0.0729999989f, -0.00079999998f);
                 localRotation = Quaternion.Euler(16.4638348f, 276.044708f, 180f);
                 //localPos = true;
+                break;
+            case "Train":
+                /*leftHandRestPosition = new Vector3(0.0110006537f, -0.17500034f, 0.159000278f);
+                leftHandRestRotation = Quaternion.Euler(333.82489f, 194.881485f, 65.0063629f);
+                leftHand = true;
+                rightHandRestPosition = new Vector3(-0.340999991f, -0.456f, 0.358999997f);
+                rightHandRestRotation = Quaternion.Euler(18.3173771f, 131.787231f, 96.9498291f);
+                rightHand = true;*/
+                localPosition = new Vector3(-0.047f, 0.096f, -0.068f);
+                localRotation = Quaternion.Euler(148.739f, 12.192f, 3.197f);
+                localPos = true;
+                dropAnimation = AnimationsEnum.DROP_TRAIN;
+                break;
+            case "Toy":
+                localPosition = new Vector3(-0.034f, -0.009f, 0.21f);
+                localRotation = Quaternion.Euler(-9.819f, -449.786f, -87.595f);
+                dropAnimation = AnimationsEnum.DROP_TWO_HIGH;
                 break;
             default:
                 break;
