@@ -7,9 +7,9 @@ public class HandCrank : MonoBehaviour, IInteractable
 {
 
     private bool RotEnabled = true; //To set if this is enabled or not
-    [SerializeField] private GameObject toRotate;//GameObject to be rotated
+    [SerializeField] private GameObject[] toRotate;//GameObject to be rotated
     [SerializeField] private Vector3 lockRotAngle; //Angle at which it will stop rotating
-    [SerializeField] private Vector3 rotationAxis; //Axis to rotate (for ex: ( 0 0 1))
+    [SerializeField] private Vector3[] rotationAxis; //Axis to rotate (for ex: ( 0 0 1))
     [SerializeField] private float angularSpeed = 10f;//Rotation Speed
     [SerializeField] private float margin = 0.4f;// Error margin for locking rotation
 
@@ -31,11 +31,17 @@ public class HandCrank : MonoBehaviour, IInteractable
         RotEnabled = enable;
     }
 
-    public void rotate(GameObject toRotate){
+    public void rotate(GameObject[] toRotate){
 
         if (RotEnabled){
-            toRotate.transform.rotation *= Quaternion.Euler(angularSpeed*Time.deltaTime * rotationAxis);
-            transform.Rotate(new Vector3(0,0,1), angularSpeed*Time.deltaTime*3);// *= Quaternion.Euler(angularSpeed*Time.deltaTime*transform.right*3);
+            int i = 0;
+            foreach (GameObject obj in toRotate){
+                obj.transform.rotation *= Quaternion.Euler(angularSpeed*Time.deltaTime * rotationAxis[i]);
+                i++;
+            }
+            transform.Rotate(new Vector3(1,0,0), angularSpeed*Time.deltaTime*3);           
+
+           // *= Quaternion.Euler(angularSpeed*Time.deltaTime*transform.right*3);
             //Debug.Log(toRotate.transform.rotation.eulerAngles);
             if (rotationCompleted()){ 
                 RotEnabled = false;
@@ -44,8 +50,7 @@ public class HandCrank : MonoBehaviour, IInteractable
         }
     }
     public bool rotationCompleted() {
-        Vector3 angle = toRotate.transform.rotation.eulerAngles;
-        return (Vector3.Distance(angle, lockRotAngle) < margin);
+        return false;
     }
     public void activate(bool flag){
         this.RotEnabled = true;
