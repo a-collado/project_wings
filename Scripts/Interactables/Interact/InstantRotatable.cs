@@ -9,13 +9,20 @@ public class InstantRotatable : MonoBehaviour, IInteractable
     [SerializeField] private GameObject toRotate;//GameObject to be rotated (if null, it will be the object itself)
     [SerializeField] private bool isBidirectional; //Means it has 2 correct angles
 
-    [SerializeField] private Vector3 currentForwardOrientation;
+    [SerializeField] private float desiredAngle;
     [SerializeField] private Vector3 correctForwardOrientation; //Correct angle (calculated from the forward vector)
     [SerializeField] private Vector3 rotationAxis; //Axis to rotate (for ex: ( 0 0 1))
+    private AudioSource audioSource;
     // Start is called before the first frame update
     
+    public void Start(){
+        audioSource = GetComponent<AudioSource>();
+    }
     public void Update(){
-        currentForwardOrientation = this.gameObject.transform.forward;
+        if(!RotEnabled){
+            toRotate.transform.rotation = Quaternion.Lerp (toRotate.transform.localRotation, Quaternion.Euler(0, desiredAngle, 0), Time.deltaTime * 2f);
+
+        }
     }
     public AnimationsEnum Interact(){
         if (toRotate == null) toRotate = this.gameObject;
@@ -38,18 +45,22 @@ public class InstantRotatable : MonoBehaviour, IInteractable
 
         if (RotEnabled){
             ////Debug.Log("[InstantRotatable: rotate]: " + toRotate.name + " currentAngle: " + toRotate.transform.rotation.eulerAngles + " distance from correctAngle:  " + Vector3.Distance(toRotate.transform.rotation.eulerAngles, correctForwardOrientation) + " forward: " + toRotate.transform.forward);
-            toRotate.transform.rotation *= Quaternion.Euler(90 * new Vector3(0,1,0));
+            //toRotate.transform.rotation *= Quaternion.Euler(90 * new Vector3(0,1,0));
             //Debug.Log("toRotate.transform.localRotation.eulerAngles.y: " + toRotate.transform.localRotation.eulerAngles.y);
-
+            desiredAngle = toRotate.transform.localRotation.eulerAngles.y + 90;
             //Disable for 1 sec so it doesn't rotate again
             RotEnabled = false;
+            if (audioSource != null){
+                audioSource.Play();
+            }
             //Debug.Log("Rotating");
             StartCoroutine(EnableRot());
         }
     }
 
     IEnumerator EnableRot(){
-        yield return new WaitForSeconds(0.25f);
+        Debug.Log("Waiting 1.75 seconds");
+        yield return new WaitForSeconds(4f);
         RotEnabled = true;
     }
     public bool orientationIsCorrect() {
@@ -70,7 +81,7 @@ public class InstantRotatable : MonoBehaviour, IInteractable
             //Debug.Log("Orientation is correct");
             return false;
         }
-        Debug.Log("Orientation of: " + this +  " is not correct");
+        //Debug.Log("Orientation of: " + this +  " is not correct");
         return true;
     }
     public void activate(bool flag){
