@@ -23,7 +23,9 @@ public class PlayerSoundController : MonoBehaviour
 
    
     void Update(){
-        if (animator.GetBool("isWalking") && !audioSource.isPlaying){
+        //if (animator.GetBool("isWalking") && !audioSource.isPlaying){
+        if ((animator.GetFloat("StandingVelocityX") != 0 || animator.GetFloat("StandingVelocityZ") != 0) && animator.GetBool("IsGrounded") && !audioSource.isPlaying){
+            Debug.Log("VAR");
             currentSound = WALK_SOUND;
             audioSource.clip = walkSound;
             audioSource.Play();
