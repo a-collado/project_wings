@@ -19,7 +19,7 @@ public class nextLevel : MonoBehaviour
 
     public void loadNextLevel(){
         int level = SceneManager.GetActiveScene().buildIndex + 1;
-        if (level == 9) level = 0;
+        if (level == 10) level = 0;
         PlayerPrefs.SetInt("SavedLevel", level);
         SceneManager.LoadScene(level);
     }

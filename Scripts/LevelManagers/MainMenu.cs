@@ -75,7 +75,7 @@ public class MainMenu : MonoBehaviour
             string option =resolutions[i].width + " x " + resolutions[i].height;
             options.Add(option);
 
-            if (resolutions[i].width == Screen.width && resolutions[i].height == Screen.height)
+            if (resolutions[i].width == 1920 && resolutions[i].height == 1080)
             {
                 currentResolutionIndex = i;
             }
