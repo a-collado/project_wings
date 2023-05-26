@@ -31,14 +31,14 @@ public class attachToPlatform1 : MonoBehaviour
     {
         yield return new WaitForSeconds(0.5f);
         input.disableMovement = true;
-        input.Jump = false;
+        input.disableJump = true;
     }
     
     IEnumerator enableMovement(FasTPS.PlayerInput input)
     {
         yield return new WaitForSeconds(4.0f);
         input.disableMovement = false;
-        input.Jump = true;
+        input.disableJump = false;
     }
     
 

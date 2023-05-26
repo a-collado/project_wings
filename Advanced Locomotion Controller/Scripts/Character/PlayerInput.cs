@@ -28,6 +28,8 @@ namespace FasTPS
         [HideInInspector]
         public float Zoom;
         static public bool isKeyboardAndMouse = true;
+        [HideInInspector]
+        public bool disableJump;
 
         bool disabled;
         bool _enabled;
@@ -51,6 +53,7 @@ namespace FasTPS
             Controls.Enable();
             _enabled = true;
             disabled = false;
+            disableJump = false;
 
             Controls.Keyboard.MovementVector.performed += ctx =>
             {
@@ -87,12 +90,15 @@ namespace FasTPS
             };
             Controls.Keyboard.Jump.performed += ctx =>
             {
-                lastAction =  Controls.Keyboard.Jump;
-                DropLedge = true;
-                Jump = true;
-                if (!Crouch && !controller.MenuOpen && !disableMovement && controller.isGroundForward)
-                    Invoke("LookForClimbSpot", 0.5f);
+                if (!disableJump)
+                {
+                    lastAction = Controls.Keyboard.Jump;
+                    DropLedge = true;
+                    Jump = true;
+                    if (!Crouch && !controller.MenuOpen && !disableMovement && controller.isGroundForward)
+                        Invoke("LookForClimbSpot", 0.5f);
                     controller.Jump();
+                }
             };
             Controls.Keyboard.Jump.canceled += ctx =>
             {
