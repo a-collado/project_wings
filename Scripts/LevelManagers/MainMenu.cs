@@ -38,11 +38,11 @@ public class MainMenu : MonoBehaviour
     private int CameraXSens;
     private int CameraYSens;
 
-    private float minX = 50.0f;
-    private float maxX = 400.0f;
+    private float minX = 0.05f;
+    private float maxX = 0.5f;
     private float minY = 1.0f;
     private float maxY = 5.0f;
-    private float defaultCameraXSens = 300.0f;  // De 50 a 400. Esta el 300 marcado
+    private float defaultCameraXSens = 0.1f;  // De 50 a 400. Esta el 300 marcado
     private float defaultCameraYSens = 3.0f;    // De 1 a 5. Esta el 3 marcado
 
     private int _qualityLevel;
