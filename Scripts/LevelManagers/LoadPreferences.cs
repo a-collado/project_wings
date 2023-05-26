@@ -1,4 +1,4 @@
-using System.Collections;
+ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -29,8 +29,8 @@ public class LoadPreferences : MonoBehaviour
     private float DefaultCameraXSens = 300;
     [SerializeField]
     private float DefaultCameraYSens = 3;
-    private float minX = 50.0f;
-    private float maxX = 400.0f;
+    private float minX = 0.05f;
+    private float maxX = 0.5f;
     private float minY = 1.0f;
     private float maxY = 5.0f;
 
