@@ -17,6 +17,7 @@ public class InstantRotatable : MonoBehaviour, IInteractable
     
     public void Start(){
         audioSource = GetComponent<AudioSource>();
+        desiredAngle = (int) toRotate.transform.localRotation.eulerAngles.y;
     }
     public void Update(){
         if(!RotEnabled){
@@ -60,7 +61,7 @@ public class InstantRotatable : MonoBehaviour, IInteractable
 
     IEnumerator EnableRot(){
         Debug.Log("Waiting 1.75 seconds");
-        yield return new WaitForSeconds(4f);
+        yield return new WaitForSeconds(3f);
         RotEnabled = true;
     }
     public bool orientationIsCorrect() {
@@ -74,14 +75,14 @@ public class InstantRotatable : MonoBehaviour, IInteractable
             return (Vector3.Distance(currentForward, correctForwardOrientation) == 0);
         */
         //Debug.Log("toRotate.transform.localRotation.eulerAngles.y: " + toRotate.transform.localRotation.eulerAngles.y);
-        if (toRotate.transform.localRotation.eulerAngles.y % 360 == 0){
+        if (toRotate.transform.localRotation.eulerAngles.y % 360 < 10 || toRotate.transform.localRotation.eulerAngles.y % 360 > 350){
             return false;
         }
-        if (toRotate.transform.localRotation.eulerAngles.y % 180 == 0 && this.isBidirectional){
+        if ( toRotate.transform.localRotation.eulerAngles.y % 180 < 10 ||toRotate.transform.localRotation.eulerAngles.y % 180 > 170 && this.isBidirectional){
             //Debug.Log("Orientation is correct");
             return false;
         }
-        //Debug.Log("Orientation of: " + this +  " is not correct");
+        Debug.Log("Orientation of: " + this +  " is not correct: " + toRotate.transform.localRotation.eulerAngles.y + " % 360 = " + toRotate.transform.localRotation.eulerAngles.y % 360 );
         return true;
     }
     public void activate(bool flag){
