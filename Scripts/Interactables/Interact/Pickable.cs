@@ -76,6 +76,7 @@ public class Pickable : MonoBehaviour, IInteractable
             "Orb" => AnimationsEnum.PICK_TWO_LOW,
             "Toy" => AnimationsEnum.PICK_HIGH_TWO,
             "Train" => AnimationsEnum.PICK_TWO_LOW,
+            "Flower" => AnimationsEnum.GRAB_HIGH,
             _ => AnimationsEnum.GRAB_TORCH
         };
 
@@ -162,7 +163,11 @@ public class Pickable : MonoBehaviour, IInteractable
                 localRotation = Quaternion.Euler(-9.819f, -449.786f, -87.595f);
                 dropAnimation = AnimationsEnum.DROP_TWO_HIGH;
                 break;
+            case "Flower":
+                dropAnimation = AnimationsEnum.DROP_ONE_MID;
+                break;
             default:
+                dropAnimation = AnimationsEnum.DROP_ONE_MID;
                 break;
         }
     }
