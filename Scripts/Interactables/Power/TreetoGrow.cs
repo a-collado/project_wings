@@ -38,6 +38,7 @@ public class TreetoGrow : MonoBehaviour, IInteractable
 
     public void activateTree(){
 
+        Debug.Log("activateTree");
         animator.SetBool("activate", true);
         activate(false);
 
