@@ -1,22 +1,37 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class LightBeamHit : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
+    public bool completed = false;
+    private int triggers = 0;
+
+    public void Complete(){
+        this.completed = true;
+        Debug.Log("Completed");
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        
+        if (triggers == 2)
+        {
+            Complete();
+        }
     }
 
     void onTriggerEnter(Collider other){
         Debug.Log("LightBeamHit");
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        triggers++;
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        triggers--;
     }
 }

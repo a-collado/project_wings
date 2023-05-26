@@ -12,6 +12,7 @@ public class HandCrank : MonoBehaviour, IInteractable
     [SerializeField] private Vector3[] rotationAxis; //Axis to rotate (for ex: ( 0 0 1))
     [SerializeField] private float angularSpeed = 10f;//Rotation Speed
     [SerializeField] private float margin = 0.4f;// Error margin for locking rotation
+    [SerializeField] private LightBeamHit _lightBeamHit;
 
 
     public void Update(){
@@ -19,7 +20,7 @@ public class HandCrank : MonoBehaviour, IInteractable
     }
     public AnimationsEnum Interact(){
         rotate(toRotate);
-        return AnimationsEnum.CRANK;
+        return AnimationsEnum.NONE;
     }
 
     public void Power()
@@ -68,7 +69,7 @@ public class HandCrank : MonoBehaviour, IInteractable
 
     public bool isCompleted()
     {
-        return isActive();
+        return !_lightBeamHit.completed;
     }
     public GameObject getGameObject()
     {
