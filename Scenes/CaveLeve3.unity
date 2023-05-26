@@ -412,7 +412,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: -3.216, y: 86.029, z: -85.847}
 --- !u!95 &21230322
 Animator:
-  serializedVersion: 5
+  serializedVersion: 4
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -429,8 +429,7 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &21230323
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1361,7 +1360,7 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
 --- !u!95 &48443940
 Animator:
-  serializedVersion: 5
+  serializedVersion: 4
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -1378,8 +1377,7 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!4 &48443941 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5627761925932156701, guid: 9a6e310429900e94dae6a52d8575cd19, type: 3}
@@ -2938,12 +2936,12 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
-  m_renderer: {fileID: 106500616}
-  m_maskType: 0
   _SortingLayer: 0
   _SortingLayerID: 0
   _SortingOrder: 0
+  m_hasFontAssetChanged: 0
+  m_renderer: {fileID: 106500616}
+  m_maskType: 0
 --- !u!23 &106500616
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -3110,12 +3108,12 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
-  m_renderer: {fileID: 106649747}
-  m_maskType: 0
   _SortingLayer: 0
   _SortingLayerID: 0
   _SortingOrder: 0
+  m_hasFontAssetChanged: 0
+  m_renderer: {fileID: 106649747}
+  m_maskType: 0
 --- !u!23 &106649747
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -4116,12 +4114,12 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
-  m_renderer: {fileID: 147683658}
-  m_maskType: 0
   _SortingLayer: 0
   _SortingLayerID: 0
   _SortingOrder: 0
+  m_hasFontAssetChanged: 0
+  m_renderer: {fileID: 147683658}
+  m_maskType: 0
 --- !u!23 &147683658
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -5639,12 +5637,12 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
-  m_renderer: {fileID: 216146392}
-  m_maskType: 0
   _SortingLayer: 0
   _SortingLayerID: 0
   _SortingOrder: 0
+  m_hasFontAssetChanged: 0
+  m_renderer: {fileID: 216146392}
+  m_maskType: 0
 --- !u!23 &216146392
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -5969,12 +5967,12 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
-  m_renderer: {fileID: 220340634}
-  m_maskType: 0
   _SortingLayer: 0
   _SortingLayerID: 0
   _SortingOrder: 0
+  m_hasFontAssetChanged: 0
+  m_renderer: {fileID: 220340634}
+  m_maskType: 0
 --- !u!23 &220340634
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -7613,12 +7611,12 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
-  m_renderer: {fileID: 280060784}
-  m_maskType: 0
   _SortingLayer: 0
   _SortingLayerID: 0
   _SortingOrder: 0
+  m_hasFontAssetChanged: 0
+  m_renderer: {fileID: 280060784}
+  m_maskType: 0
 --- !u!23 &280060784
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -8084,12 +8082,12 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
-  m_renderer: {fileID: 287763538}
-  m_maskType: 0
   _SortingLayer: 0
   _SortingLayerID: 0
   _SortingOrder: 0
+  m_hasFontAssetChanged: 0
+  m_renderer: {fileID: 287763538}
+  m_maskType: 0
 --- !u!23 &287763538
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -8358,12 +8356,12 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
-  m_renderer: {fileID: 298874238}
-  m_maskType: 0
   _SortingLayer: 0
   _SortingLayerID: 0
   _SortingOrder: 0
+  m_hasFontAssetChanged: 0
+  m_renderer: {fileID: 298874238}
+  m_maskType: 0
 --- !u!23 &298874238
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -8880,12 +8878,12 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
-  m_renderer: {fileID: 307101486}
-  m_maskType: 0
   _SortingLayer: 0
   _SortingLayerID: 0
   _SortingOrder: 0
+  m_hasFontAssetChanged: 0
+  m_renderer: {fileID: 307101486}
+  m_maskType: 0
 --- !u!23 &307101486
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -10219,12 +10217,12 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
-  m_renderer: {fileID: 357415163}
-  m_maskType: 0
   _SortingLayer: 0
   _SortingLayerID: 0
   _SortingOrder: 0
+  m_hasFontAssetChanged: 0
+  m_renderer: {fileID: 357415163}
+  m_maskType: 0
 --- !u!23 &357415163
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -10601,12 +10599,12 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
-  m_renderer: {fileID: 371926880}
-  m_maskType: 0
   _SortingLayer: 0
   _SortingLayerID: 0
   _SortingOrder: 0
+  m_hasFontAssetChanged: 0
+  m_renderer: {fileID: 371926880}
+  m_maskType: 0
 --- !u!23 &371926880
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -12745,12 +12743,12 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
-  m_renderer: {fileID: 452968992}
-  m_maskType: 0
   _SortingLayer: 0
   _SortingLayerID: 0
   _SortingOrder: 0
+  m_hasFontAssetChanged: 0
+  m_renderer: {fileID: 452968992}
+  m_maskType: 0
 --- !u!23 &452968992
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -13611,12 +13609,12 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
-  m_renderer: {fileID: 477277915}
-  m_maskType: 0
   _SortingLayer: 0
   _SortingLayerID: 0
   _SortingOrder: 0
+  m_hasFontAssetChanged: 0
+  m_renderer: {fileID: 477277915}
+  m_maskType: 0
 --- !u!23 &477277915
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -14384,12 +14382,12 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
-  m_renderer: {fileID: 511033173}
-  m_maskType: 0
   _SortingLayer: 0
   _SortingLayerID: 0
   _SortingOrder: 0
+  m_hasFontAssetChanged: 0
+  m_renderer: {fileID: 511033173}
+  m_maskType: 0
 --- !u!23 &511033173
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -16078,12 +16076,12 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
-  m_renderer: {fileID: 574397394}
-  m_maskType: 0
   _SortingLayer: 0
   _SortingLayerID: 0
   _SortingOrder: 0
+  m_hasFontAssetChanged: 0
+  m_renderer: {fileID: 574397394}
+  m_maskType: 0
 --- !u!23 &574397394
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -16934,12 +16932,12 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
-  m_renderer: {fileID: 619646552}
-  m_maskType: 0
   _SortingLayer: 0
   _SortingLayerID: 0
   _SortingOrder: 0
+  m_hasFontAssetChanged: 0
+  m_renderer: {fileID: 619646552}
+  m_maskType: 0
 --- !u!23 &619646552
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -17178,12 +17176,12 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
-  m_renderer: {fileID: 624915552}
-  m_maskType: 0
   _SortingLayer: 0
   _SortingLayerID: 0
   _SortingOrder: 0
+  m_hasFontAssetChanged: 0
+  m_renderer: {fileID: 624915552}
+  m_maskType: 0
 --- !u!23 &624915552
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -18568,12 +18566,12 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
-  m_renderer: {fileID: 678578782}
-  m_maskType: 0
   _SortingLayer: 0
   _SortingLayerID: 0
   _SortingOrder: 0
+  m_hasFontAssetChanged: 0
+  m_renderer: {fileID: 678578782}
+  m_maskType: 0
 --- !u!23 &678578782
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -19907,12 +19905,12 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
-  m_renderer: {fileID: 714189415}
-  m_maskType: 0
   _SortingLayer: 0
   _SortingLayerID: 0
   _SortingOrder: 0
+  m_hasFontAssetChanged: 0
+  m_renderer: {fileID: 714189415}
+  m_maskType: 0
 --- !u!23 &714189415
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -20430,12 +20428,12 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
-  m_renderer: {fileID: 739035863}
-  m_maskType: 0
   _SortingLayer: 0
   _SortingLayerID: 0
   _SortingOrder: 0
+  m_hasFontAssetChanged: 0
+  m_renderer: {fileID: 739035863}
+  m_maskType: 0
 --- !u!23 &739035863
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -21075,12 +21073,12 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
-  m_renderer: {fileID: 768022261}
-  m_maskType: 0
   _SortingLayer: 0
   _SortingLayerID: 0
   _SortingOrder: 0
+  m_hasFontAssetChanged: 0
+  m_renderer: {fileID: 768022261}
+  m_maskType: 0
 --- !u!23 &768022261
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -22039,7 +22037,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &814855944
 Animator:
-  serializedVersion: 5
+  serializedVersion: 4
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -22056,8 +22054,7 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &815594648
 GameObject:
   m_ObjectHideFlags: 0
@@ -22437,12 +22434,12 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
-  m_renderer: {fileID: 827195824}
-  m_maskType: 0
   _SortingLayer: 0
   _SortingLayerID: 0
   _SortingOrder: 0
+  m_hasFontAssetChanged: 0
+  m_renderer: {fileID: 827195824}
+  m_maskType: 0
 --- !u!23 &827195824
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -22702,12 +22699,12 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
-  m_renderer: {fileID: 832120264}
-  m_maskType: 0
   _SortingLayer: 0
   _SortingLayerID: 0
   _SortingOrder: 0
+  m_hasFontAssetChanged: 0
+  m_renderer: {fileID: 832120264}
+  m_maskType: 0
 --- !u!23 &832120264
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -22905,12 +22902,12 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
-  m_renderer: {fileID: 834220828}
-  m_maskType: 0
   _SortingLayer: 0
   _SortingLayerID: 0
   _SortingOrder: 0
+  m_hasFontAssetChanged: 0
+  m_renderer: {fileID: 834220828}
+  m_maskType: 0
 --- !u!23 &834220828
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -23000,7 +22997,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
 --- !u!95 &837928411
 Animator:
-  serializedVersion: 5
+  serializedVersion: 4
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -23017,8 +23014,7 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!65 &837928412
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -24718,7 +24714,7 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
 --- !u!95 &913564868
 Animator:
-  serializedVersion: 5
+  serializedVersion: 4
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -24735,8 +24731,7 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &919307795
 GameObject:
   m_ObjectHideFlags: 0
@@ -25381,12 +25376,12 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
-  m_renderer: {fileID: 930537175}
-  m_maskType: 0
   _SortingLayer: 0
   _SortingLayerID: 0
   _SortingOrder: 0
+  m_hasFontAssetChanged: 0
+  m_renderer: {fileID: 930537175}
+  m_maskType: 0
 --- !u!23 &930537175
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -25431,7 +25426,7 @@ MeshRenderer:
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!95 &930537176
 Animator:
-  serializedVersion: 5
+  serializedVersion: 4
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -25448,8 +25443,7 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &932313327
 GameObject:
   m_ObjectHideFlags: 0
@@ -25605,12 +25599,12 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
-  m_renderer: {fileID: 935161398}
-  m_maskType: 0
   _SortingLayer: 0
   _SortingLayerID: 0
   _SortingOrder: 0
+  m_hasFontAssetChanged: 0
+  m_renderer: {fileID: 935161398}
+  m_maskType: 0
 --- !u!23 &935161398
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -26243,12 +26237,12 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
-  m_renderer: {fileID: 954052041}
-  m_maskType: 0
   _SortingLayer: 0
   _SortingLayerID: 0
   _SortingOrder: 0
+  m_hasFontAssetChanged: 0
+  m_renderer: {fileID: 954052041}
+  m_maskType: 0
 --- !u!23 &954052041
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -26787,12 +26781,12 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
-  m_renderer: {fileID: 964133678}
-  m_maskType: 0
   _SortingLayer: 0
   _SortingLayerID: 0
   _SortingOrder: 0
+  m_hasFontAssetChanged: 0
+  m_renderer: {fileID: 964133678}
+  m_maskType: 0
 --- !u!23 &964133678
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -27507,12 +27501,12 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
-  m_renderer: {fileID: 978691057}
-  m_maskType: 0
   _SortingLayer: 0
   _SortingLayerID: 0
   _SortingOrder: 0
+  m_hasFontAssetChanged: 0
+  m_renderer: {fileID: 978691057}
+  m_maskType: 0
 --- !u!23 &978691057
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -27745,12 +27739,12 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
-  m_renderer: {fileID: 981460913}
-  m_maskType: 0
   _SortingLayer: 0
   _SortingLayerID: 0
   _SortingOrder: 0
+  m_hasFontAssetChanged: 0
+  m_renderer: {fileID: 981460913}
+  m_maskType: 0
 --- !u!23 &981460913
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -31578,12 +31572,12 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
-  m_renderer: {fileID: 1138531685}
-  m_maskType: 0
   _SortingLayer: 0
   _SortingLayerID: 0
   _SortingOrder: 0
+  m_hasFontAssetChanged: 0
+  m_renderer: {fileID: 1138531685}
+  m_maskType: 0
 --- !u!23 &1138531685
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -33012,7 +33006,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &1197132760
 Animator:
-  serializedVersion: 5
+  serializedVersion: 4
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -33029,8 +33023,7 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!65 &1197132761
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -35377,12 +35370,12 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
-  m_renderer: {fileID: 1340718006}
-  m_maskType: 0
   _SortingLayer: 0
   _SortingLayerID: 0
   _SortingOrder: 0
+  m_hasFontAssetChanged: 0
+  m_renderer: {fileID: 1340718006}
+  m_maskType: 0
 --- !u!23 &1340718006
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -36711,12 +36704,12 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
-  m_renderer: {fileID: 1381526547}
-  m_maskType: 0
   _SortingLayer: 0
   _SortingLayerID: 0
   _SortingOrder: 0
+  m_hasFontAssetChanged: 0
+  m_renderer: {fileID: 1381526547}
+  m_maskType: 0
 --- !u!23 &1381526547
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -37248,7 +37241,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &1400954716
 Animator:
-  serializedVersion: 5
+  serializedVersion: 4
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -37265,8 +37258,7 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1401265474
 GameObject:
   m_ObjectHideFlags: 0
@@ -37424,12 +37416,12 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
-  m_renderer: {fileID: 1402659670}
-  m_maskType: 0
   _SortingLayer: 0
   _SortingLayerID: 0
   _SortingOrder: 0
+  m_hasFontAssetChanged: 0
+  m_renderer: {fileID: 1402659670}
+  m_maskType: 0
 --- !u!23 &1402659670
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -37843,12 +37835,12 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
-  m_renderer: {fileID: 1404481014}
-  m_maskType: 0
   _SortingLayer: 0
   _SortingLayerID: 0
   _SortingOrder: 0
+  m_hasFontAssetChanged: 0
+  m_renderer: {fileID: 1404481014}
+  m_maskType: 0
 --- !u!23 &1404481014
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -38552,12 +38544,12 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
-  m_renderer: {fileID: 1424739077}
-  m_maskType: 0
   _SortingLayer: 0
   _SortingLayerID: 0
   _SortingOrder: 0
+  m_hasFontAssetChanged: 0
+  m_renderer: {fileID: 1424739077}
+  m_maskType: 0
 --- !u!23 &1424739077
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -40670,12 +40662,12 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
-  m_renderer: {fileID: 1500588732}
-  m_maskType: 0
   _SortingLayer: 0
   _SortingLayerID: 0
   _SortingOrder: 0
+  m_hasFontAssetChanged: 0
+  m_renderer: {fileID: 1500588732}
+  m_maskType: 0
 --- !u!23 &1500588732
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -41175,7 +41167,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4766006786567632602, guid: 99b16e873426cb94798d5180f53ab75d, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 261.80478
+      value: 261.89
       objectReference: {fileID: 0}
     - target: {fileID: 4766006786567632602, guid: 99b16e873426cb94798d5180f53ab75d, type: 3}
       propertyPath: m_LocalPosition.z
@@ -41212,6 +41204,10 @@ PrefabInstance:
     - target: {fileID: 5291607822868851808, guid: 99b16e873426cb94798d5180f53ab75d, type: 3}
       propertyPath: m_Name
       value: Bronze_Vassel_01 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5291607822868851808, guid: 99b16e873426cb94798d5180f53ab75d, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 99b16e873426cb94798d5180f53ab75d, type: 3}
@@ -41549,7 +41545,7 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
 --- !u!95 &1540675137
 Animator:
-  serializedVersion: 5
+  serializedVersion: 4
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -41566,8 +41562,7 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1542193068
 GameObject:
   m_ObjectHideFlags: 0
@@ -42225,12 +42220,12 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
-  m_renderer: {fileID: 1567013403}
-  m_maskType: 0
   _SortingLayer: 0
   _SortingLayerID: 0
   _SortingOrder: 0
+  m_hasFontAssetChanged: 0
+  m_renderer: {fileID: 1567013403}
+  m_maskType: 0
 --- !u!23 &1567013403
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -42687,12 +42682,12 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
-  m_renderer: {fileID: 1584937237}
-  m_maskType: 0
   _SortingLayer: 0
   _SortingLayerID: 0
   _SortingOrder: 0
+  m_hasFontAssetChanged: 0
+  m_renderer: {fileID: 1584937237}
+  m_maskType: 0
 --- !u!23 &1584937237
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -43867,12 +43862,12 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
-  m_renderer: {fileID: 1614754681}
-  m_maskType: 0
   _SortingLayer: 0
   _SortingLayerID: 0
   _SortingOrder: 0
+  m_hasFontAssetChanged: 0
+  m_renderer: {fileID: 1614754681}
+  m_maskType: 0
 --- !u!23 &1614754681
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -44947,12 +44942,12 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
-  m_renderer: {fileID: 1660030541}
-  m_maskType: 0
   _SortingLayer: 0
   _SortingLayerID: 0
   _SortingOrder: 0
+  m_hasFontAssetChanged: 0
+  m_renderer: {fileID: 1660030541}
+  m_maskType: 0
 --- !u!23 &1660030541
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -45410,12 +45405,12 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
-  m_renderer: {fileID: 1678664849}
-  m_maskType: 0
   _SortingLayer: 0
   _SortingLayerID: 0
   _SortingOrder: 0
+  m_hasFontAssetChanged: 0
+  m_renderer: {fileID: 1678664849}
+  m_maskType: 0
 --- !u!23 &1678664849
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -45963,7 +45958,7 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
 --- !u!95 &1688574785
 Animator:
-  serializedVersion: 5
+  serializedVersion: 4
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -45980,8 +45975,7 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!4 &1688574786 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -5254071132347693833, guid: 554011437029a5046b6a35311bbecc24, type: 3}
@@ -47321,12 +47315,12 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
-  m_renderer: {fileID: 1720140037}
-  m_maskType: 0
   _SortingLayer: 0
   _SortingLayerID: 0
   _SortingOrder: 0
+  m_hasFontAssetChanged: 0
+  m_renderer: {fileID: 1720140037}
+  m_maskType: 0
 --- !u!23 &1720140037
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -47892,12 +47886,12 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
-  m_renderer: {fileID: 1736459163}
-  m_maskType: 0
   _SortingLayer: 0
   _SortingLayerID: 0
   _SortingOrder: 0
+  m_hasFontAssetChanged: 0
+  m_renderer: {fileID: 1736459163}
+  m_maskType: 0
 --- !u!23 &1736459163
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -49512,6 +49506,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Maceta
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: d6314acad4202a4498f71b8ae74abfbc, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 4431670454091400558, guid: d6314acad4202a4498f71b8ae74abfbc, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -49677,12 +49675,12 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
-  m_renderer: {fileID: 1799150171}
-  m_maskType: 0
   _SortingLayer: 0
   _SortingLayerID: 0
   _SortingOrder: 0
+  m_hasFontAssetChanged: 0
+  m_renderer: {fileID: 1799150171}
+  m_maskType: 0
 --- !u!23 &1799150171
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -50417,12 +50415,12 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
-  m_renderer: {fileID: 1821765581}
-  m_maskType: 0
   _SortingLayer: 0
   _SortingLayerID: 0
   _SortingOrder: 0
+  m_hasFontAssetChanged: 0
+  m_renderer: {fileID: 1821765581}
+  m_maskType: 0
 --- !u!23 &1821765581
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -51634,12 +51632,12 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
-  m_renderer: {fileID: 1872347870}
-  m_maskType: 0
   _SortingLayer: 0
   _SortingLayerID: 0
   _SortingOrder: 0
+  m_hasFontAssetChanged: 0
+  m_renderer: {fileID: 1872347870}
+  m_maskType: 0
 --- !u!23 &1872347870
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -53083,7 +53081,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &1935957474
 Animator:
-  serializedVersion: 5
+  serializedVersion: 4
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -53100,8 +53098,7 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1938016220
 GameObject:
   m_ObjectHideFlags: 0
@@ -53604,12 +53601,12 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
-  m_renderer: {fileID: 1962020214}
-  m_maskType: 0
   _SortingLayer: 0
   _SortingLayerID: 0
   _SortingOrder: 0
+  m_hasFontAssetChanged: 0
+  m_renderer: {fileID: 1962020214}
+  m_maskType: 0
 --- !u!23 &1962020214
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -54698,49 +54695,53 @@ PrefabInstance:
       propertyPath: m_Name
       value: Bronze_Vassel_02
       objectReference: {fileID: 0}
+    - target: {fileID: 7453712940624022322, guid: be287cbd1d6b5334383515ebf8c7b8ea, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 7798889581454086536, guid: be287cbd1d6b5334383515ebf8c7b8ea, type: 3}
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7798889581454086536, guid: be287cbd1d6b5334383515ebf8c7b8ea, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -303.33
+      value: -303.35
       objectReference: {fileID: 0}
     - target: {fileID: 7798889581454086536, guid: be287cbd1d6b5334383515ebf8c7b8ea, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 262.69
+      value: 262.855
       objectReference: {fileID: 0}
     - target: {fileID: 7798889581454086536, guid: be287cbd1d6b5334383515ebf8c7b8ea, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -360.69
+      value: -360.694
       objectReference: {fileID: 0}
     - target: {fileID: 7798889581454086536, guid: be287cbd1d6b5334383515ebf8c7b8ea, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.8025906
+      value: 0.78551877
       objectReference: {fileID: 0}
     - target: {fileID: 7798889581454086536, guid: be287cbd1d6b5334383515ebf8c7b8ea, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: -0.16442564
       objectReference: {fileID: 0}
     - target: {fileID: 7798889581454086536, guid: be287cbd1d6b5334383515ebf8c7b8ea, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.59653026
+      value: 0.587752
       objectReference: {fileID: 0}
     - target: {fileID: 7798889581454086536, guid: be287cbd1d6b5334383515ebf8c7b8ea, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0.10233321
       objectReference: {fileID: 0}
     - target: {fileID: 7798889581454086536, guid: be287cbd1d6b5334383515ebf8c7b8ea, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
+      value: -22.248
       objectReference: {fileID: 0}
     - target: {fileID: 7798889581454086536, guid: be287cbd1d6b5334383515ebf8c7b8ea, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
+      value: 74.006
       objectReference: {fileID: 0}
     - target: {fileID: 7798889581454086536, guid: be287cbd1d6b5334383515ebf8c7b8ea, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
+      value: -2.013
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: be287cbd1d6b5334383515ebf8c7b8ea, type: 3}
@@ -57088,12 +57089,12 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
-  m_renderer: {fileID: 2066440851}
-  m_maskType: 0
   _SortingLayer: 0
   _SortingLayerID: 0
   _SortingOrder: 0
+  m_hasFontAssetChanged: 0
+  m_renderer: {fileID: 2066440851}
+  m_maskType: 0
 --- !u!23 &2066440851
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -57691,7 +57692,7 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
 --- !u!95 &2091286162
 Animator:
-  serializedVersion: 5
+  serializedVersion: 4
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -57708,8 +57709,7 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!65 &2091286165
 BoxCollider:
   m_ObjectHideFlags: 0
